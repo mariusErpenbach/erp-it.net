@@ -8,7 +8,6 @@ export default function BannerTop() {
   const [beams, setBeams] = useState<number[]>([]);
 
   useEffect(() => {
-    // Erstelle 5 zufällige Höhenwerte für die Light Beams
     const randomHeights = Array.from({ length: 5 }, () => Math.random() * 100);
     setBeams(randomHeights);
   }, []);
@@ -17,7 +16,7 @@ export default function BannerTop() {
     <div className="banner-top">
       {/* UFO */}
       <div className="ufo">
-        <Image src="/ufo1.png" alt="UFO" width={150} height={150} />
+        <Image src="/ufo1.png" alt="UFO" width={250} height={250} />
       </div>
 
       {/* Light Beams */}
@@ -26,6 +25,7 @@ export default function BannerTop() {
           <div key={index} className="light-beam" style={{ top: `${top}%`, animationDelay: `${index * 0.5}s` }}></div>
         ))}
       </div>
+  
     </div>
   );
 }

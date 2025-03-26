@@ -9,11 +9,18 @@
         margin-left:auto;
         display:flex;
         justify-content:flex-end;
-        button{
+        align-items: center;
+        div{
             height:100%;
             width:20%;
             border-style:solid;
-           
+            border-width:0px 1px 0px 0px;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+        }
+        :nth-child(1){
+            border-width:0px 1px 0px 1px;
         }
     }
 }

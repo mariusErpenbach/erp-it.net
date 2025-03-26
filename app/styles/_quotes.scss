@@ -1,0 +1,22 @@
+// styles/QuoteComponent.module.scss
+.quote-container {
+    font-size: 1.6rem;
+    color: #e1d2a8df; // Eine Farbe, die zu deinem Design passt
+    font-style: italic;
+    text-align: center;
+    transition: all 0.5s ease-in-out; /* Glatter Übergang */
+  }
+  
+  .quote-text,
+  .quote-author {
+    transition: opacity 0.5s ease-in-out; /* Glatter Übergang für die Sichtbarkeit */
+  }
+  
+  .fade-in {
+    opacity: 1;
+  }
+  
+  .fade-out {
+    opacity: 0;
+  }
+  
