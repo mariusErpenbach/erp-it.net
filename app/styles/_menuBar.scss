@@ -1,0 +1,20 @@
+#menuBar{
+    height:2.5em;
+    width:100%;
+    display:flex;
+    align-items:center;
+    section{
+        height:100%;
+        width:35%;
+        margin-left:auto;
+        display:flex;
+        justify-content:flex-end;
+        button{
+            height:100%;
+            width:20%;
+            border-style:solid;
+           
+        }
+    }
+}
+
