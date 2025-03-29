@@ -1,17 +1,17 @@
 .quote-container {
     font-size: 1.2rem;
-    color: #8faadc; // Eine Farbe, die zu deinem Design passt
+    color: #8faadc; 
     font-style: italic;
     text-align: center;
-    transition: all 0.5s ease-in-out; /* Glatter Übergang */
-    padding: 1rem; /* Platz für den Text */
-    min-height: 120px; /* Sicherstellen, dass genug Platz für den Text ist */
+    transition: all 0.5s ease-in-out;
+    padding: 1rem;
+    min-height: 120px; 
   }
   
   .quote-text,
   .quote-author {
     
-    transition: opacity 0.5s ease-in-out; /* Glatter Übergang für die Sichtbarkeit */
+    transition: opacity 0.5s ease-in-out;
   }
   
   .fade-in {
@@ -23,10 +23,10 @@
   }
   
   .quote-author {
-    margin-top: 10px; /* Abstand zwischen Zitat und Autor */
-    font-size: 1rem; /* Kleinere Schriftgröße für den Autor */
-    color: #a0b9d3; /* Helle Farbe für den Autor */
-    text-align: center; /* Autor bleibt zentriert */
+    margin-top: 10px; 
+    font-size: 1rem;
+    color: #a0b9d3;
+    text-align: center; 
     position: relative;
-    left: 10%; /* Leichte Verschiebung nach rechts */
+    left: 10%; 
   }
