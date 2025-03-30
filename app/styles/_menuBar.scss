@@ -1,34 +1,45 @@
-#menuBar{
-    height:2.5em;
-    width:100%;
-    display:flex;
-    align-items:center;
-    #erp-it-logo{
+#menuBar {
+    height: 2.5em;
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+    #erp-it-logo {
         color: black;
         padding: 2px 6px;
         box-decoration-break: clone;
         display: inline;
         background-color: rgba(211, 250, 13, 0.958);
     }
-    section{
-        height:100%;
-        width:35%;
-        margin-left:auto;
-        display:flex;
-        justify-content:flex-end;
+
+    section {
+        height: 100%;
+        width: 35%;
+        margin-left: auto;
+        display: flex;
+        justify-content: flex-end;
         align-items: center;
-        div{
-            height:100%;
-            width:20%;
-            border-style:solid;
-            border-width:0px 1px 0px 0px;
-            display:flex;
+
+        a {
+            height: 100%;
+            width: 20%;
+            border-width: 1px;
+            border-color: #5766a3c2;
+            background-color: #2b355a;
+            border-width: 0px 1px 0px 0px;
+            display: flex;
             justify-content: center;
             align-items: center;
+            color: white;
+            text-decoration: none; // Optional für ein sauberes Aussehen
+
+            &:hover {
+                background-color: rgba(255, 192, 203, 0.305);
+            }
         }
-        :nth-child(1){
-            border-width:0px 1px 0px 1px;
+
+        a:nth-child(1) {
+            border-width: 0px 1px 0px 1px;
         }
     }
 }
-
