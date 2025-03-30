@@ -3,6 +3,13 @@
     width:100%;
     display:flex;
     align-items:center;
+    #erp-it-logo{
+        color: black;
+        padding: 2px 6px;
+        box-decoration-break: clone;
+        display: inline;
+        background-color: rgba(211, 250, 13, 0.958);
+    }
     section{
         height:100%;
         width:35%;
