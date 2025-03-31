@@ -11,6 +11,7 @@ const quotes = [
   { text: "Innovation is the ability to see change as an opportunity – not a threat.", author: "Steve Jobs" },
   { text: "The future belongs to those who prepare for it today.", author: "Malcolm X" },
   { text: "We are all explorers in the vast digital universe.", author: "Unknown" },
+  { text: "If you failed to plan, you planned to fail.", author: "Benjamin Franklin" }
 ];
 
 export default function QuoteComponent() {
