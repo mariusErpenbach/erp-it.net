@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { fetchAllArticles } from '../../actions/blogActions';
 import { ArticleMask } from '@/app/types/blog';
 import Link from 'next/link'; // Importiere Link von Next.js
-
+import DOMPurify from 'dompurify';
 export default function ArticlesList() {
   const [status, setStatus] = useState<string>('Lade Artikel...');
   const [articles, setArticles] = useState<ArticleMask[]>([]);
@@ -23,22 +23,20 @@ export default function ArticlesList() {
   }, []);
 
   return (
-    <div className="p-4 bg-gray-100 rounded-lg">
-      <h2 className="font-bold mb-2">Artikel</h2>
-      <p>{status}</p>
-      <ul>
+    <div id="articlesList">
+    
         {articles.map((article) => (
-          <div key={article.id} className="mb-2">
-            <h3>{article.title}</h3>
+          <div key={article.id} className="">
+            <h3>{article.title}</h3><span>{new Date(article.published_date).toLocaleDateString()}</span>
+            <div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(article.preview) }}></div>
             <p>
-              {article.content.slice(0, 666)} ... 
-              <Link href={`/blog/${article.id}`} className="text-blue-500">read more</Link>
+              <Link href={`/blog/${article.id}`} className="">read more</Link>
             </p>
             <img src={article.image_url || "default-image.jpg"} alt={article.image_alt || "Article Image"} />
-            <span>{new Date(article.published_date).toLocaleDateString()}</span>
+            
           </div>
         ))}
-      </ul>
+
     </div>
   );
 }

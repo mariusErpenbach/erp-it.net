@@ -1,7 +1,7 @@
 export interface ArticleMask {
     id: number;
-    slug: string;
     title: string;
+    preview:string;
     content: string;
     image_url: string | null;
     image_alt: string | null;

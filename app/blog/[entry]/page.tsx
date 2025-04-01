@@ -3,6 +3,9 @@
 import { useEffect, useState, use } from 'react';
 import { fetchArticleById } from '../../actions/blogActions';
 import { ArticleMask } from '@/app/types/blog';
+import MenuBar from '@/app/ui/MenuBar';
+import FooterMain from '@/app/ui/FooterMain';
+import DOMPurify from 'dompurify';
 
 interface ArticlePageProps {
   params: Promise<{ entry: string }>;
@@ -48,10 +51,15 @@ export default function ArticlePage({ params }: ArticlePageProps) {
   }
 
   return (
-    <div className="article-page">
+    <div>
+        <MenuBar></MenuBar>
+        <main  className="article-page">
       <h1>{article.title}</h1>
-      <div>{article.content}</div>
+  
+      <div  dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(article.content) }}/>
       <p>Veröffentlicht am: {new Date(article.published_date).toLocaleDateString()}</p>
+      </main>
+      <FooterMain></FooterMain>
     </div>
   );
 }
