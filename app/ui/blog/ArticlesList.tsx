@@ -9,7 +9,7 @@ import { marked } from 'marked';
 import Image from 'next/image'; // Importiere das Image-Tag von Next.js
 
 export default function ArticlesList() {
-  const [status, setStatus] = useState<string>('Lade Artikel...');
+
   const [articles, setArticles] = useState<ArticleMask[]>([]);
   const [articlePreviews, setArticlePreviews] = useState<{ [key: number]: string }>({});
 
@@ -18,7 +18,7 @@ export default function ArticlesList() {
       const result = await fetchAllArticles();
       if (result.success) {
         setArticles(result.data || []);
-        setStatus('✅ Artikel erfolgreich geladen');
+       
         
         // Markdown-Previews umwandeln
         const parsedPreviews: { [key: number]: string } = {};
@@ -27,7 +27,7 @@ export default function ArticlesList() {
         }
         setArticlePreviews(parsedPreviews);
       } else {
-        setStatus(result.message || '❌ Fehler beim Laden');
+       console.log("error while loading articles")
       }
     };
     fetchData();

@@ -1,4 +1,3 @@
-import Link from "next/link";
 import MenuBar from "../ui/MenuBar";
 import ArticlesList from "../ui/blog/ArticlesList";
 import FooterMain from "../ui/FooterMain";

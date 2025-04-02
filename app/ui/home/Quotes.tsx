@@ -39,10 +39,10 @@ export default function QuoteComponent() {
       <p
         className={`quote-text ${isFading ? "fade-out" : "fade-in"}`}
       >
-        "{currentQuote.text}"
+        &quot;{currentQuote.text}&quot;
       </p>
       <p className={`quote-author ${isFading ? "fade-out" : "fade-in"}`}>
-        – {currentQuote.author}
+        &ndash; {currentQuote.author}
       </p>
     </div>
   );
