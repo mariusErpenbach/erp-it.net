@@ -9,7 +9,8 @@ export async function fetchAllArticles(): Promise<{ success: boolean; data: Arti
       host: process.env.DB_HOST,
       user: process.env.DB_USER,
       password: process.env.DB_PASSWORD,
-      database: process.env.DB_NAME
+      database: process.env.DB_NAME,
+      debug:true
     });
 
     // SQL-Abfrage, um alle Artikel zu holen

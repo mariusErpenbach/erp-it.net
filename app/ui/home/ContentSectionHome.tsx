@@ -66,9 +66,9 @@ export default function ContentSectionHome() {
             <strong>Arduino</strong>- und <strong>Raspberry Pi</strong>-Mikrocontroller-Projekte für den <strong>Smart-Home</strong>-Bereich.</p>
           </div>
           <div id="embeddedSoftwarePics">
-              <Image src="https://erp-it.net/ES1.jpg" alt="Embedded Software Image 1" width={400} height={250} />
-              <Image src="https://erp-it.net/ES3.jpg" alt="Embedded Software Image 3" width={400} height={250} />
-              <Image src="https://erp-it.net/ES2.jpg" alt="Embedded Software Image 2" width={400} height={250} />
+              <Image src="https://erp-it.net/uploads/ES1.jpg" alt="Embedded Software Image 1" width={400} height={250} />
+              <Image src="https://erp-it.net/uploads/ES3.jpg" alt="Embedded Software Image 3" width={400} height={250} />
+              <Image src="https://erp-it.net/uploads/ES2.jpg" alt="Embedded Software Image 2" width={400} height={250} />
           </div>
         </section>
       </div>
