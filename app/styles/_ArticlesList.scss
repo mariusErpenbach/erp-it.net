@@ -62,14 +62,13 @@
       display: flex;
       justify-content: flex-start;
       align-items: center;
-
+      img {
+        width:100%;
+        height: auto;
+      }
     }
 
-    img {
-      width: 100%;
-      height: auto;
-      object-fit: cover;
-    }
+   
   }
 
   .status-message {

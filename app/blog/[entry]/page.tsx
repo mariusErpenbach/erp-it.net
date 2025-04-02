@@ -7,6 +7,7 @@ import MenuBar from '@/app/ui/MenuBar';
 import FooterMain from '@/app/ui/FooterMain';
 import DOMPurify from 'dompurify';
 import { marked } from 'marked';
+import Image from 'next/image'; // Importiere das Image-Tag von Next.js
 
 interface ArticlePageProps {
   params: Promise<{ entry: string }>;
@@ -67,7 +68,7 @@ export default function ArticlePage({ params }: ArticlePageProps) {
         } else {
           setStatus(result.message || '❌ Fehler beim Laden');
         }
-      } catch (error) {
+      } catch {
         setStatus('❌ Fehler beim Abrufen des Artikels');
       }
     };
@@ -105,7 +106,15 @@ export default function ArticlePage({ params }: ArticlePageProps) {
                 onMouseEnter={() => setHoveredLink({ domain, url, favicon })}
                 onMouseLeave={() => setHoveredLink(null)}
               >
-                <img src={favicon} alt={domain} className="favicon" onError={(e) => (e.currentTarget.src = '/fallback-icon.png')} />
+                {/* Ersetze das img-Tag durch das Image-Tag von Next.js */}
+                <Image
+                  src={favicon}
+                  alt={domain}
+                  className="favicon"
+                  width={32}
+                  height={32}
+                  onError={(e) => (e.currentTarget.src = '/fallback-icon.png')}
+                />
                 {domain}
               </a>
             ))
@@ -122,7 +131,13 @@ export default function ArticlePage({ params }: ArticlePageProps) {
               left: `${cursorPos.x}px`,
             }}
           >
-            <img src={hoveredLink.favicon} alt="Favicon" className="preview-favicon" />
+            <Image
+              src={hoveredLink.favicon}
+              alt="Favicon"
+              className="preview-favicon"
+              width={32}
+              height={32}
+            />
             <span>{hoveredLink.url}</span>
           </div>
         )}
