@@ -5,28 +5,82 @@
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     font-family: Arial, sans-serif;
-    border-style: solid;
-  border-width: 1px;
-  border-color: #5766a3c2;
-  background-color: #2b355a;
-  color:white;
+    border: 1px solid #5766a3c2;
+    background-color: #2b355a;
+    color: white;
+  
     h1 {
       font-size: 2rem;
-
+      padding: 5%;
       margin-bottom: 15px;
+      border-bottom: 2px solid #8893d8;
     }
   
     div {
       font-size: 1rem;
       line-height: 1.6;
-
       margin-bottom: 20px;
     }
   
     p {
       font-size: 0.9rem;
-
       text-align: right;
       font-style: italic;
     }
-  }
+    #sources {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 10px;
+        background-color: #1e293b;
+        border-radius: 8px;
+        border: 1px solid #5766a3;
+        color: white;
+        margin-top: 20px;
+      }
+      
+      .source-link {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        padding: 5px 10px;
+        border-radius: 5px;
+        background-color: #2b355a;
+        transition: background-color 0.2s;
+        text-decoration: none;
+        color: white;
+      }
+      
+      .source-link:hover {
+        background-color: #3f4a6d;
+      }
+      
+      .favicon {
+        width: 16px;
+        height: 16px;
+        border-radius: 3px;
+      }
+      
+      .link-preview {
+        position: fixed;
+        background: rgba(30, 41, 59, 0.9);
+        padding: 8px 12px;
+        border-radius: 6px;
+        color: white;
+        font-size: 0.8rem;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        transition: opacity 0.2s ease-in-out;
+        pointer-events: none;
+      }
+      
+      .preview-favicon {
+        width: 20px;
+        height: 20px;
+        border-radius: 3px;
+      }
+      
+      
+}

@@ -1,48 +1,119 @@
 #articlesList {
-    display: flex;
-    flex-direction: column;
-    width:24em;
-    margin-bottom: 16px;
-    padding: 12px;
-    color:white;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+
+  .articleShort {
+    width: 48%;
+    height: auto;
+    padding: 20px;
     border-style: solid;
     border-width: 1px;
     border-color: #5766a3c2;
     background-color: #2b355a;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
 
-    h2{
-      font-size: 1.25rem;
-      font-weight: bold;
-      margin-bottom: 8px;
-
+    .content-wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+      flex-grow: 1;
     }
 
-    p {
-      font-size: 1rem;
+    .text-content {
+        background-color: #23273669;
+      flex-grow: 1;
+      padding:3%;
+      white-space: normal;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 12; /* Zeilenbegrenzung auf 3 */
+      -webkit-box-orient: vertical; /* Vertikale Boxorientierung */
+      text-overflow: ellipsis; /* Abkürzung bei Überschuss */
+     
+    }
 
-      margin-bottom: 8px;
-
+    .link-container {
+      margin-top: auto; /* Stellt sicher, dass der "Read more"-Link unten bleibt */
       a {
-        color: #3182ce; // Blaue Links
+        font-size: 1.1rem;
+        color: #ccc900;
         text-decoration: none;
-        font-weight: 600;
+        font-weight: bold;
+        transition: color 0.2s ease;
 
         &:hover {
-          text-decoration: underline;
+          color: #999600;
         }
       }
     }
 
-    img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 8px;
-      margin-bottom: 8px;
+    .image-container {
+        margin-left:2%;
+      min-width: 40%;
+      height: 100%;
+      overflow: hidden;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+
     }
 
-    span {
-      font-size: 0.875rem;
-      color: #a0aec0; // Helleres Grau für das Datum
-      text-align: right;
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
     }
   }
+
+  .status-message {
+    font-size: 1.2rem;
+    color: #333;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  /* Media Queries für kleinere Bildschirme */
+  @media (max-width: 768px) {
+    #articlesList {
+      flex-direction: column;
+    }
+
+    .articleShort {
+      width: 100%;
+      height: auto;
+      margin-bottom: 20px;
+    }
+
+    .image-container {
+      min-width: 100%;
+      height: auto;
+    }
+  }
+
+  @media (max-width: 600px) {
+    #articlesList {
+      flex-direction: column;
+    }
+
+    .articleShort {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+    }
+
+    .text-content {
+      padding-right: 0;
+    }
+
+    .image-container {
+      min-width: 100%;
+    }
+  }
+}

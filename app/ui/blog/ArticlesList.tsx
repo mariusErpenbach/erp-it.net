@@ -1,20 +1,30 @@
 'use client';
+
 import { useEffect, useState } from 'react';
 import { fetchAllArticles } from '../../actions/blogActions';
 import { ArticleMask } from '@/app/types/blog';
-import Link from 'next/link'; // Importiere Link von Next.js
+import Link from 'next/link';
 import DOMPurify from 'dompurify';
+import { marked } from 'marked';
+
 export default function ArticlesList() {
   const [status, setStatus] = useState<string>('Lade Artikel...');
   const [articles, setArticles] = useState<ArticleMask[]>([]);
+  const [articlePreviews, setArticlePreviews] = useState<{ [key: number]: string }>({});
 
   useEffect(() => {
     const fetchData = async () => {
       const result = await fetchAllArticles();
       if (result.success) {
-        setArticles(result.data || []); 
-        console.log(result.data);
+        setArticles(result.data || []);
         setStatus('✅ Artikel erfolgreich geladen');
+        
+        // Markdown-Previews umwandeln
+        const parsedPreviews: { [key: number]: string } = {};
+        for (const article of result.data || []) {
+          parsedPreviews[article.id] = DOMPurify.sanitize(await marked.parse(article.preview));
+        }
+        setArticlePreviews(parsedPreviews);
       } else {
         setStatus(result.message || '❌ Fehler beim Laden');
       }
@@ -24,19 +34,25 @@ export default function ArticlesList() {
 
   return (
     <div id="articlesList">
-    
-        {articles.map((article) => (
-          <div key={article.id} className="">
-            <h3>{article.title}</h3><span>{new Date(article.published_date).toLocaleDateString()}</span>
-            <div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(article.preview) }}></div>
-            <p>
-              <Link href={`/blog/${article.id}`} className="">read more</Link>
-            </p>
-            <img src={article.image_url || "default-image.jpg"} alt={article.image_alt || "Article Image"} />
-            
+      {articles.map((article) => (
+        <div key={article.id} className="articleShort">
+          <div className="content-wrapper">
+              <div className="article-header-short">
+              <h3>{article.title}</h3>
+              </div>
+            <div className="text-container">
+              <span>{new Date(article.published_date).toLocaleDateString()}</span>
+              <div className="text-content"dangerouslySetInnerHTML={{ __html: articlePreviews[article.id] || '' }}></div>
+            </div>
+            <div className="link-container">
+              <Link href={`/blog/${article.id}`}>read more</Link>
+            </div>
           </div>
-        ))}
-
+          <div className="image-container">
+            <img src={article.image_url || "default-image.jpg"} alt={article.image_alt || "Article Image"} />
+          </div>
+        </div>
+      ))}
     </div>
   );
 }
