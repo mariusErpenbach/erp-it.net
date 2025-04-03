@@ -4,9 +4,6 @@ import mysql from 'mysql2/promise';
 
 // Funktion für alle Artikel
 export async function fetchAllArticles(): Promise<{ success: boolean; data: ArticleMask[] | null; message?: string }> {
-  console.log('DB User:', process.env.DB_USER || 'DUMMY_DB_USER');
-  console.log('DB Password:', process.env.DB_PASSWORD || 'DUMMY_DB_PASSWORD');
-  console.log('DB Name:', process.env.DB_NAME || 'DUMMY_DB_NAME');
   try {
     const connection = await mysql.createConnection({
       host: process.env.DB_HOST,
