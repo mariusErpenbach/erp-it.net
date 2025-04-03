@@ -18,8 +18,8 @@ export default function ContentSectionHome() {
                       <Image 
                         src="https://erp-it.net/uploads/webDevPreview.png" 
                         alt="Three business looking People standing in front of monitor that shows a smooth looking website with some statistics on it."
-                        width={500} 
-                        height={300} 
+                        width={250} 
+                        height={270} 
                       />
                     </div>
                 </section>
@@ -34,22 +34,22 @@ export default function ContentSectionHome() {
             Mehr als <strong>Programmieren</strong> – wir entwickeln <strong>maßgeschneiderte Software</strong>, die Ihr Unternehmen <strong>effizienter</strong> und <strong>zukunftssicher</strong> macht. Von der Idee bis zur Umsetzung</p>
           </div>
           <section>
-            <Image src="https://erp-it.net/uploads/alienPlanning.png" alt="Three business aliens having an idea." width={500} height={300} />
+            <Image src="https://erp-it.net/uploads/alienPlanning.png" alt="Three business aliens having an idea." width={150} height={150} />
             <div className="alienPresentationStep">
               <p>Plan</p>
               <i>➡</i>
             </div>
-            <Image src="https://erp-it.net/uploads/alienMeeting.png" alt="Two business aliens are planning a new project together." width={500} height={300} />
+            <Image src="https://erp-it.net/uploads/alienMeeting.png" alt="Two business aliens are planning a new project together." width={150} height={150} />
             <div className="alienPresentationStep">
               <p>Create</p>
               <i>➡</i>
             </div>
-            <Image src="https://erp-it.net/uploads/alienStressTest.png" alt="An coder alien is doing some stress tests." width={500} height={300} />
+            <Image src="https://erp-it.net/uploads/alienStressTest.png" alt="An coder alien is doing some stress tests." width={200} height={150} />
             <div className="alienPresentationStep">
               <p>Present</p>
               <i>➡</i>
             </div>
-            <Image src="https://erp-it.net/uploads/alienCelebration.png" alt="Two business aliens and a coder alien celebrating." width={500} height={300} />
+            <Image src="https://erp-it.net/uploads/alienCelebration.png" alt="Two business aliens and a coder alien celebrating." width={150} height={150} />
           </section>
          <footer>
             <h1>Lets connect and start a project</h1>
@@ -66,9 +66,9 @@ export default function ContentSectionHome() {
             <strong>Arduino</strong>- und <strong>Raspberry Pi</strong>-Mikrocontroller-Projekte für den <strong>Smart-Home</strong>-Bereich.</p>
           </div>
           <div id="embeddedSoftwarePics">
-              <Image src="https://erp-it.net/uploads/ES1.jpg" alt="Embedded Software Image 1" width={400} height={250} />
-              <Image src="https://erp-it.net/uploads/ES3.jpg" alt="Embedded Software Image 3" width={400} height={250} />
-              <Image src="https://erp-it.net/uploads/ES2.jpg" alt="Embedded Software Image 2" width={400} height={250} />
+              <Image src="https://erp-it.net/uploads/ES1.jpg" alt="Embedded Software Image 1" width={200} height={150} />
+              <Image src="https://erp-it.net/uploads/ES3.jpg" alt="Embedded Software Image 3" width={200} height={150} />
+              <Image src="https://erp-it.net/uploads/ES2.jpg" alt="Embedded Software Image 2" width={200} height={150} />
           </div>
         </section>
       </div>

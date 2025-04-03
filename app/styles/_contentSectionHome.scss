@@ -72,7 +72,7 @@
           margin-left: auto;
           margin-top: -2%;
         }
-        img {
+        Image{
             flex-shrink: 1; 
             border-style: solid;
             border-width: 3px;
@@ -120,10 +120,8 @@
       width: 90%;
       height: fit-content;
       flex-wrap: wrap;  // Hier wird das automatische Umbrechen erlaubt
-      img {
-        width: 90px;
-        margin-left: auto;
-        margin-right: auto;
+      Image {
+     
       }
       div {
         display: flex;
@@ -204,7 +202,7 @@
         width: 45%;
         height: 100%; // Optional, falls die Box eine feste Höhe hat
     
-        img {
+        Image{
             width: 100%;  // Bild soll die volle Breite der Box einnehmen
             height: 100%; // Falls nötig, damit es die volle Höhe nutzt
             object-fit: cover; // Sorgt dafür, dass das Bild gut aussieht

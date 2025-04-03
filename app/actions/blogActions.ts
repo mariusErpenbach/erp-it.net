@@ -4,15 +4,17 @@ import mysql from 'mysql2/promise';
 
 // Funktion für alle Artikel
 export async function fetchAllArticles(): Promise<{ success: boolean; data: ArticleMask[] | null; message?: string }> {
+  console.log('DB User:', process.env.DB_USER || 'DUMMY_DB_USER');
+  console.log('DB Password:', process.env.DB_PASSWORD || 'DUMMY_DB_PASSWORD');
+  console.log('DB Name:', process.env.DB_NAME || 'DUMMY_DB_NAME');
   try {
     const connection = await mysql.createConnection({
       host: process.env.DB_HOST,
       user: process.env.DB_USER,
       password: process.env.DB_PASSWORD,
       database: process.env.DB_NAME,
-      debug:true
     });
-
+    
     // SQL-Abfrage, um alle Artikel zu holen
     const [rows] = await connection.execute('SELECT * FROM articles');
     await connection.end();
