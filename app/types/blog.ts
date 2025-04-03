@@ -1,11 +1,12 @@
-export interface ArticleMask {
-    id: number;
-    title: string;
-    preview:string;
-    content: string;
-    image_url: string | null;
-    image_alt: string | null;
-    published_date: string;
-    sources: string;
-  }
-  
+export type ArticleMask = {
+  id: string; // War vorher number
+  title: string;
+  preview: string;
+  content: string;
+  author: string;
+  date: string;
+  image_url: string;
+  image_alt: string;
+  published_date: string;
+  sources: string[];
+};

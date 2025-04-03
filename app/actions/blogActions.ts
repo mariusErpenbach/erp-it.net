@@ -1,23 +1,32 @@
 'use server';
 import { ArticleMask } from "../types/blog";
-import mysql from 'mysql2/promise';
+import connectDB from "../db/mongoDB";
+import { ObjectId } from "mongodb";
 
-// Funktion für alle Artikel
+// Funktion zum Abrufen aller Artikel
 export async function fetchAllArticles(): Promise<{ success: boolean; data: ArticleMask[] | null; message?: string }> {
   try {
-    const connection = await mysql.createConnection({
-      host: process.env.DB_HOST,
-      user: process.env.DB_USER,
-      password: process.env.DB_PASSWORD,
-      database: process.env.DB_NAME,
-    });
-    
-    // SQL-Abfrage, um alle Artikel zu holen
-    const [rows] = await connection.execute('SELECT * FROM articles');
-    await connection.end();
+    const db = await connectDB();
+    if (!db) throw new Error("Datenbankverbindung fehlgeschlagen.");
 
-    // Rückgabe der Artikel-Daten
-    return { success: true, data: rows as ArticleMask[] };
+    const articlesCollection = db.collection("articles");
+    const articles = await articlesCollection.find().toArray();
+
+    // Konvertiere in ArticleMask-Format
+    const formattedArticles: ArticleMask[] = articles.map(article => ({
+      id: article._id.toString(), // Falls number erwartet, evtl. `parseInt(article._id.toString())`
+      title: article.title ?? "Kein Titel",
+      preview: article.preview ?? "Keine Vorschau verfügbar",
+      content: article.content ?? "Kein Inhalt",
+      author: article.author ?? "Unbekannter Autor",
+      date: article.date ?? new Date().toISOString(),
+      image_url: article.image_url ?? "",  // Standardwert, falls nicht vorhanden
+      image_alt: article.image_alt ?? "Kein Bild",
+      published_date: article.published_date ?? new Date().toISOString(),
+      sources: article.sources ?? []
+    }));
+
+    return { success: true, data: formattedArticles };
   } catch (error) {
     return {
       success: false,
@@ -27,23 +36,16 @@ export async function fetchAllArticles(): Promise<{ success: boolean; data: Arti
   }
 }
 
-// Neue Funktion, um einen Artikel nach ID zu holen
-export async function fetchArticleById(id: number): Promise<{ success: boolean; data: ArticleMask | null; message?: string }> {
+// Funktion zum Abrufen eines Artikels nach ID
+export async function fetchArticleById(id: string): Promise<{ success: boolean; data: ArticleMask | null; message?: string }> {
   try {
-    const connection = await mysql.createConnection({
-      host: process.env.DB_HOST,
-      user: process.env.DB_USER,
-      password: process.env.DB_PASSWORD,
-      database: process.env.DB_NAME
-    });
+    const db = await connectDB();
+    if (!db) throw new Error("Datenbankverbindung fehlgeschlagen.");
 
-    // SQL-Abfrage, um einen Artikel basierend auf der ID zu holen
-    const [rows] = await connection.execute('SELECT * FROM articles WHERE id = ?', [id]);
+    const articlesCollection = db.collection("articles");
+    const article = await articlesCollection.findOne({ _id: new ObjectId(id) });
 
-    await connection.end();
-
-    // Wenn kein Artikel gefunden wurde, Rückgabe einer Fehlermeldung
-    if ((rows as ArticleMask[]).length === 0) {
+    if (!article) {
       return {
         success: false,
         message: '❌ Artikel nicht gefunden',
@@ -51,8 +53,21 @@ export async function fetchArticleById(id: number): Promise<{ success: boolean; 
       };
     }
 
-    // Rückgabe des gefundenen Artikels
-    return { success: true, data: (rows as ArticleMask[])[0] };
+    // Konvertiere in ArticleMask-Format
+    const formattedArticle: ArticleMask = {
+      id: article._id.toString(), // Falls number erwartet, evtl. `parseInt(article._id.toString())`
+      title: article.title ?? "Kein Titel",
+      preview: article.preview ?? "Keine Vorschau verfügbar",
+      content: article.content ?? "Kein Inhalt",
+      author: article.author ?? "Unbekannter Autor",
+      date: article.date ?? new Date().toISOString(),
+      image_url: article.image_url ?? "",
+      image_alt: article.image_alt ?? "Kein Bild",
+      published_date: article.published_date ?? new Date().toISOString(),
+      sources: article.sources ?? []
+    };
+
+    return { success: true, data: formattedArticle };
   } catch (error) {
     return {
       success: false,
