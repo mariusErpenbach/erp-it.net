@@ -137,32 +137,13 @@ export default function ArticlePage({ params }: ArticlePageProps) {
           </div>
         
         <div className="img-url-container">
-          <Link href={url}> {url}</Link>
+          <Link href={url} title={url}> {url}</Link>
         </div>
       </div>
     ))}
   </div>
 )}
       </div>
-
-      {hoveredLink && (
-        <div
-          className="link-preview"
-          style={{
-            top: `${cursorPos.y}px`,
-            left: `${cursorPos.x}px`,
-          }}
-        >
-          <Image
-            src={hoveredLink.favicon}
-            alt="Favicon"
-            className="preview-favicon"
-            width={32}
-            height={32}
-          />
-          <span>{hoveredLink.url}</span>
-        </div>
-      )}
       <FooterMain />
     </div>
   );
