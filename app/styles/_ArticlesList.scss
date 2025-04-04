@@ -1,118 +1,64 @@
 #articlesList {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
   padding: 20px;
-
+  
   .articleShort {
-    width: 48%;
-    height: auto;
-    padding: 20px;
-    border-style: solid;
-    border-width: 1px;
-    border-color: #5766a3c2;
-    background-color: #2b355a;
-    transition: all 0.3s ease;
-    box-sizing: border-box;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    position: relative;
+    background-color: #2b355a;
+    border: 1px solid #5766a3c2;
+    padding: 0.5%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
 
     .content-wrapper {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      height: 100%;
-      flex-grow: 1;
-    }
+      padding: 15px;
+      color: #ffffff;
 
-    .text-content {
-        background-color: #23273669;
-      flex-grow: 1;
-      padding:3%;
-      white-space: normal;
-      overflow: hidden;
-      display: -webkit-box;
-      -webkit-line-clamp: 12; /* Zeilenbegrenzung auf 3 */
-      -webkit-box-orient: vertical; /* Vertikale Boxorientierung */
-      text-overflow: ellipsis; /* Abkürzung bei Überschuss */
-     
-    }
+      .article-header-short {
+        h3 {
+          font-size: 1.5rem;
+          color: #e0e0ff;
+          margin-bottom: 10px;
+        }
+      }
 
-    .link-container {
-      margin-top: auto; /* Stellt sicher, dass der "Read more"-Link unten bleibt */
-      a {
-        font-size: 1.1rem;
-        color: #ccc900;
-        text-decoration: none;
-        font-weight: bold;
-        transition: color 0.2s ease;
+      .text-container {
+        span {
+          font-size: 0.9rem;
+          color: #a0a8d9;
+        }
+        .text-content {
+          margin-top: 5px;
+          font-size: 1rem;
+          color: #d0d4f0;
+        }
+      }
 
-        &:hover {
-          color: #999600;
+      .link-container {
+        margin-top: 10px;
+        a {
+          color: #ffcc00;
+          text-decoration: none;
+          font-weight: bold;
+          transition: color 0.3s;
+          &:hover {
+            color: #ffd966;
+          }
         }
       }
     }
 
-    .image-container {
-        margin-left:2%;
-      min-width: 40%;
-      height: 100%;
-      overflow: hidden;
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      Image {
-        width:100%;
-        height: auto;
-      }
-    }
-
-   
-  }
-
-  .status-message {
-    font-size: 1.2rem;
-    color: #333;
-    font-weight: bold;
-    text-align: center;
-  }
-
-  /* Media Queries für kleinere Bildschirme */
-  @media (max-width: 768px) {
-    #articlesList {
-      flex-direction: column;
-    }
-
-    .articleShort {
+    img {
       width: 100%;
-      height: auto;
-      margin-bottom: 20px;
-    }
-
-    .image-container {
-      min-width: 100%;
-      height: auto;
-    }
-  }
-
-  @media (max-width: 600px) {
-    #articlesList {
-      flex-direction: column;
-    }
-
-    .articleShort {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 15px;
-    }
-
-    .text-content {
-      padding-right: 0;
-    }
-
-    .image-container {
-      min-width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-bottom-left-radius: 8px;
+      border-bottom-right-radius: 8px;
     }
   }
 }

@@ -1,7 +1,7 @@
 'use server';
 import { ArticleMask } from "../types/blog";
 import connectDB from "../db/mongoDB";
-import { ObjectId } from "mongodb";
+import { ObjectId } from "mongodb"; // Importiere ObjectId von MongoDB
 
 // Funktion zum Abrufen aller Artikel
 export async function fetchAllArticles(): Promise<{ success: boolean; data: ArticleMask[] | null; message?: string }> {
@@ -14,18 +14,16 @@ export async function fetchAllArticles(): Promise<{ success: boolean; data: Arti
 
     // Konvertiere in ArticleMask-Format
     const formattedArticles: ArticleMask[] = articles.map(article => ({
-      id: article._id.toString(), // Falls number erwartet, evtl. `parseInt(article._id.toString())`
+      id: article._id.toString(), 
       title: article.title ?? "Kein Titel",
       preview: article.preview ?? "Keine Vorschau verfügbar",
       content: article.content ?? "Kein Inhalt",
       author: article.author ?? "Unbekannter Autor",
-      date: article.date ?? new Date().toISOString(),
-      image_url: article.image_url ?? "",  // Standardwert, falls nicht vorhanden
+      image_url: article.image_url ?? "", 
       image_alt: article.image_alt ?? "Kein Bild",
       published_date: article.published_date ?? new Date().toISOString(),
-      sources: article.sources ?? []
+      sources: article.sources ?? "Keine Quellen verfügbar"
     }));
-
     return { success: true, data: formattedArticles };
   } catch (error) {
     return {
@@ -36,14 +34,17 @@ export async function fetchAllArticles(): Promise<{ success: boolean; data: Arti
   }
 }
 
-// Funktion zum Abrufen eines Artikels nach ID
 export async function fetchArticleById(id: string): Promise<{ success: boolean; data: ArticleMask | null; message?: string }> {
   try {
     const db = await connectDB();
     if (!db) throw new Error("Datenbankverbindung fehlgeschlagen.");
 
     const articlesCollection = db.collection("articles");
-    const article = await articlesCollection.findOne({ _id: new ObjectId(id) });
+    // Konvertiere die ID von String zu MongoDB's ObjectId
+    const objectId = new ObjectId(id);
+
+    // Suchen anhand der _id von MongoDB
+    const article = await articlesCollection.findOne({ _id: objectId });
 
     if (!article) {
       return {
@@ -55,16 +56,15 @@ export async function fetchArticleById(id: string): Promise<{ success: boolean; 
 
     // Konvertiere in ArticleMask-Format
     const formattedArticle: ArticleMask = {
-      id: article._id.toString(), // Falls number erwartet, evtl. `parseInt(article._id.toString())`
+      id: article.id,  // Verwende das 'id'-Feld als eindeutige Kennung
       title: article.title ?? "Kein Titel",
       preview: article.preview ?? "Keine Vorschau verfügbar",
       content: article.content ?? "Kein Inhalt",
       author: article.author ?? "Unbekannter Autor",
-      date: article.date ?? new Date().toISOString(),
       image_url: article.image_url ?? "",
       image_alt: article.image_alt ?? "Kein Bild",
       published_date: article.published_date ?? new Date().toISOString(),
-      sources: article.sources ?? []
+      sources: article.sources ?? "Keine Quellen verfügbar"
     };
 
     return { success: true, data: formattedArticle };
