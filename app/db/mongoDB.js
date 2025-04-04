@@ -1,5 +1,4 @@
-require("dotenv").config();
-const { MongoClient } = require("mongodb");
+import { MongoClient } from "mongodb";
 
 // URI aus der .env-Datei holen
 const uri = process.env.MONGO_URI;
@@ -18,4 +17,4 @@ async function connectDB() {
 }
 
 connectDB();
-module.exports = connectDB;
+export default connectDB;
