@@ -11,7 +11,7 @@ type Article = {
   preview: string;
   content: string;
   author: string;
-  image_url: string;
+  preview_image_url: string;
   image_alt: string;
   published_date: string;
   sources: string;
@@ -55,7 +55,7 @@ export default function BlogOverview() {
           </div>
 
           {/* Bild nur anzeigen, wenn eine gültige URL vorhanden ist */}
-          <img src={article.image_url} alt={article.image_alt} />
+          <img src={article.preview_image_url} alt={article.image_alt} />
         </div>
       ))}
       </main>

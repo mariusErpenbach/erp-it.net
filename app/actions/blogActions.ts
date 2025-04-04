@@ -19,7 +19,8 @@ export async function fetchAllArticles(): Promise<{ success: boolean; data: Arti
       preview: article.preview ?? "Keine Vorschau verfügbar",
       content: article.content ?? "Kein Inhalt",
       author: article.author ?? "Unbekannter Autor",
-      image_url: article.image_url ?? "", 
+      preview_image_url: article.preview_image_url ?? "", 
+      main_image_url: article.main_image_url ?? "",
       image_alt: article.image_alt ?? "Kein Bild",
       published_date: article.published_date ?? new Date().toISOString(),
       sources: article.sources ?? "Keine Quellen verfügbar"
@@ -61,10 +62,11 @@ export async function fetchArticleById(id: string): Promise<{ success: boolean; 
       preview: article.preview ?? "Keine Vorschau verfügbar",
       content: article.content ?? "Kein Inhalt",
       author: article.author ?? "Unbekannter Autor",
-      image_url: article.image_url ?? "",
+      preview_image_url: article.preview_image_url ?? "",
       image_alt: article.image_alt ?? "Kein Bild",
       published_date: article.published_date ?? new Date().toISOString(),
-      sources: article.sources ?? "Keine Quellen verfügbar"
+      sources: article.sources ?? "Keine Quellen verfügbar",
+      main_image_url : article.main_image_url ?? "",
     };
 
     return { success: true, data: formattedArticle };

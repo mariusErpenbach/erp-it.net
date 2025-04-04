@@ -4,7 +4,8 @@ export type ArticleMask = {
   preview: string;
   content: string;
   author: string;
-  image_url: string;
+  preview_image_url: string;
+  main_image_url:string;
   image_alt: string;
   published_date: string;
   sources: string;

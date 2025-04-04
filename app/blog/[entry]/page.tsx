@@ -7,7 +7,8 @@ import MenuBar from '@/app/ui/MenuBar';
 import FooterMain from '@/app/ui/FooterMain';
 import DOMPurify from 'dompurify';
 import { marked } from 'marked';
-import Image from 'next/image'; // Importiere das Image-Tag von Next.js
+import Image from 'next/image';
+import Link from 'next/link';
 
 interface ArticlePageProps {
   params: Promise<{ entry: string }>;
@@ -22,7 +23,7 @@ interface SourceLink {
 export default function ArticlePage({ params }: ArticlePageProps) {
   const resolvedParams = use(params);
   const entry = resolvedParams.entry;
-  const articleId = entry;  // Umwandlung von string zu number
+  const articleId = entry;
 
   const [article, setArticle] = useState<ArticleMask | null>(null);
   const [status, setStatus] = useState<string>('Lade Artikel...');
@@ -30,6 +31,7 @@ export default function ArticlePage({ params }: ArticlePageProps) {
   const [cleanLinks, setCleanLinks] = useState<SourceLink[]>([]);
   const [hoveredLink, setHoveredLink] = useState<SourceLink | null>(null);
   const [cursorPos, setCursorPos] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
+  const [articleImgUrls, setArticleImgUrls] = useState<string[]>([]);
 
   function extractUrlsWithDomains(text: string): SourceLink[] {
     if (!text) return [];
@@ -46,20 +48,26 @@ export default function ArticlePage({ params }: ArticlePageProps) {
     });
   }
 
+  function extractImageUrls(imageString: string): string[] {
+    if (!imageString) return [];
+    return imageString
+      .split(/[\n,]+/)
+      .map(url => url.trim())
+      .filter(url => url.startsWith('http'));
+  }
+
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const result = await fetchArticleById(articleId);  // Übergibt die Zahl direkt
+        const result = await fetchArticleById(articleId);
         if (result.success && result.data) {
           setArticle(result.data);
           setStatus('✅ Artikel erfolgreich geladen');
-
-          // Links extrahieren & speichern
           setCleanLinks(extractUrlsWithDomains(result.data.sources));
 
-          // Markdown zu HTML konvertieren
           const parsedMarkdown = await marked.parse(result.data.content);
           setArticleContentHtml(DOMPurify.sanitize(parsedMarkdown));
+          setArticleImgUrls(extractImageUrls(result.data.main_image_url));
         } else {
           setStatus(result.message || '❌ Fehler beim Laden');
         }
@@ -82,61 +90,79 @@ export default function ArticlePage({ params }: ArticlePageProps) {
   return (
     <div onMouseMove={handleMouseMove}>
       <MenuBar />
-      <main className="article-page">
-        <h1>{article.title}</h1>
+      <a href="/blog">back</a>
+      <div className="article-wrapper">
+        <main className="article-page">
+          <h1>{article.title}</h1>
+          <p>Veröffentlicht am: {new Date(article.published_date).toLocaleDateString()}</p>
+          <div dangerouslySetInnerHTML={{ __html: articleContentHtml }} />
+        
 
-        <div dangerouslySetInnerHTML={{ __html: articleContentHtml }} />
-
-        <p>Veröffentlicht am: {new Date(article.published_date).toLocaleDateString()}</p>
-
-        <div id="sources">
-          {cleanLinks.length > 0 ? (
-            cleanLinks.map(({ domain, url, favicon }) => (
-              <a
-                key={url}
-                href={url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="source-link"
-                onMouseEnter={() => setHoveredLink({ domain, url, favicon })}
-                onMouseLeave={() => setHoveredLink(null)}
-              >
-                {/* Ersetze das img-Tag durch das Image-Tag von Next.js */}
-                <Image
-                  src={favicon}
-                  alt={domain}
-                  className="favicon"
-                  width={32}
-                  height={32}
-                  onError={(e) => (e.currentTarget.src = '/fallback-icon.png')}
-                />
-                {domain}
-              </a>
-            ))
-          ) : (
-            <p>Keine Quellen vorhanden</p>
-          )}
-        </div>
-
-        {hoveredLink && (
-          <div
-            className="link-preview"
-            style={{
-              top: `${cursorPos.y}px`,
-              left: `${cursorPos.x}px`,
-            }}
-          >
-            <Image
-              src={hoveredLink.favicon}
-              alt="Favicon"
-              className="preview-favicon"
-              width={32}
-              height={32}
-            />
-            <span>{hoveredLink.url}</span>
+          <div id="sources">
+            {cleanLinks.length > 0 ? (
+              cleanLinks.map(({ domain, url, favicon }) => (
+                <a
+                  key={url}
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="source-link"
+                  title={url}
+                >
+                  <Image
+                    src={favicon}
+                    alt={domain}
+                    className="favicon"
+                    width={32}
+                    height={32}
+                    onError={(e) => (e.currentTarget.src = 'erp-it.net/uploads/ufo1')}
+                  />
+                  {domain}
+                </a>
+              ))
+            ) : (
+              <p>Keine Quellen vorhanden</p>
+            )}
           </div>
-        )}
-      </main>
+        </main>
+        {articleImgUrls.length > 0 && (
+  <div>
+    {articleImgUrls.map((url, index) => (
+      <div className="article-image-container" key={index}>
+          <div className="article-image">
+            <img
+              src={url}
+              alt={`Artikelbild ${index + 1}`}
+            />
+          </div>
+        
+        <div className="img-url-container">
+          <Link href={url}> {url}</Link>
+        </div>
+      </div>
+    ))}
+  </div>
+)}
+      </div>
+
+      {hoveredLink && (
+        <div
+          className="link-preview"
+          style={{
+            top: `${cursorPos.y}px`,
+            left: `${cursorPos.x}px`,
+          }}
+        >
+          <Image
+            src={hoveredLink.favicon}
+            alt="Favicon"
+            className="preview-favicon"
+            width={32}
+            height={32}
+          />
+          <span>{hoveredLink.url}</span>
+        </div>
+      )}
       <FooterMain />
     </div>
   );
