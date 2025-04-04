@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect} from "react";
 import { fetchAllArticles } from "../actions/blogActions"; // Dein fetchAllArticles importieren
 import MenuBar from "../ui/MenuBar";
 import FooterMain from "../ui/FooterMain";
@@ -7,9 +7,7 @@ import FooterMain from "../ui/FooterMain";
 
 // BlogOverview Component
 export default function BlogOverview() {
-  const [articles, setArticles] = useState();
 
-  const [error, setError] = useState<string | null>(null);
 
   // useEffect, um die Artikel beim ersten Rendern zu laden
   useEffect(() => {
@@ -18,7 +16,7 @@ export default function BlogOverview() {
       if (response.success) {
       console.log(response)
       } else {
-        setError(response.message || "Ein Fehler ist aufgetreten");
+        console.log(response)
       }
     }
     loadArticles();
