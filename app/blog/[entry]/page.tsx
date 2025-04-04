@@ -29,8 +29,6 @@ export default function ArticlePage({ params }: ArticlePageProps) {
   const [status, setStatus] = useState<string>('Lade Artikel...');
   const [articleContentHtml, setArticleContentHtml] = useState<string>('');
   const [cleanLinks, setCleanLinks] = useState<SourceLink[]>([]);
-  const [hoveredLink, setHoveredLink] = useState<SourceLink | null>(null);
-  const [cursorPos, setCursorPos] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
   const [articleImgUrls, setArticleImgUrls] = useState<string[]>([]);
 
   function extractUrlsWithDomains(text: string): SourceLink[] {
@@ -79,18 +77,16 @@ export default function ArticlePage({ params }: ArticlePageProps) {
     fetchData();
   }, [articleId]);
 
-  const handleMouseMove = (e: React.MouseEvent) => {
-    setCursorPos({ x: e.clientX + 10, y: e.clientY + 10 });
-  };
+
 
   if (!article) {
     return <div>{status}</div>;
   }
 
   return (
-    <div onMouseMove={handleMouseMove}>
+    <div>
       <MenuBar />
-      <a href="/blog">back</a>
+      <Link href="/blog">back</Link>
       <div className="article-wrapper">
         <main className="article-page">
           <h1>{article.title}</h1>
@@ -101,7 +97,7 @@ export default function ArticlePage({ params }: ArticlePageProps) {
           <div id="sources">
             {cleanLinks.length > 0 ? (
               cleanLinks.map(({ domain, url, favicon }) => (
-                <a
+                <Link
                   key={url}
                   href={url}
                   target="_blank"
@@ -118,7 +114,7 @@ export default function ArticlePage({ params }: ArticlePageProps) {
                     onError={(e) => (e.currentTarget.src = 'erp-it.net/uploads/ufo1')}
                   />
                   {domain}
-                </a>
+                </Link>
               ))
             ) : (
               <p>Keine Quellen vorhanden</p>
