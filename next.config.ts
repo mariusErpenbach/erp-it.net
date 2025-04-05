@@ -11,7 +11,8 @@ const allowedRemotePatterns: { protocol: "https"; hostname: string; pathname: st
   { protocol: "https", hostname: "futurezone.at", pathname: "/**" },
   { protocol: "https", hostname: "p7q8s5f8.rocketcdn.me", pathname: "/**" },
   { protocol: "https", hostname: "erp-it.net", pathname: "/**" },
-  { protocol: "https", hostname: "www.agrarheute.com", pathname: "/**" }
+  { protocol: "https", hostname: "www.agrarheute.com", pathname: "/**" },
+  { protocol: "https", hostname: "uploads.erp-it.net", pathname: "/**" }
 ];
 
 const nextConfig: NextConfig = {

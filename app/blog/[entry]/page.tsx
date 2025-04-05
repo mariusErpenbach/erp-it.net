@@ -111,7 +111,7 @@ export default function ArticlePage({ params }: ArticlePageProps) {
                     className="favicon"
                     width={32}
                     height={32}
-                    onError={(e) => (e.currentTarget.src = 'erp-it.net/uploads/ufo1')}
+                    onError={(e) => (e.currentTarget.src = 'https://uploads.erp-it.net/images/ufo1.png')}
                   />
                   {domain}
                 </Link>

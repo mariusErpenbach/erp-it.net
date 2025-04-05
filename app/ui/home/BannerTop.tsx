@@ -16,7 +16,7 @@ export default function BannerTop() {
     <div className="banner-top">
       {/* UFO */}
       <div className="ufo">
-        <Image src="/ufo1.png" alt="UFO" width={250} height={250} />
+        <Image src="https://uploads.erp-it.net/images/ufo1.png" alt="UFO" width={250} height={250} />
       </div>
 
       {/* Light Beams */}
