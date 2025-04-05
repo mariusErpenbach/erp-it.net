@@ -1,6 +1,6 @@
 # ERP-IT.net
 
-Willkommen im Repository des ERP-IT.net-Projekts! Dieses Projekt ist eine Webplattform, die sich mit verschiedenen Aspekten der Unternehmensressourcenplanung (ERP) und IT-Lösungen befasst.
+Willkommen im Repository des ERP-IT.net-Projekts! Dieses Projekt ist eine Webplattform, die sich mit verschiedenen Aspekten der Unternehmensressourcenplanung (ERP) und IT-Lösungen befasst
 
 ## Technologien
 Das Projekt basiert auf den folgenden Technologien:
