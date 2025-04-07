@@ -37,7 +37,7 @@
     }
   }
   #webDevSection {
-    font-size: 0.8em;
+    font-size: 0.7em;
     padding: 0.3%;
     #webDevOverview {
       @include simpleBox();
@@ -45,13 +45,21 @@
       width: 90%;
       margin-left: auto;
       margin-right: auto;
+      display:flex;
+      flex-direction: column;
+      span {
+        @include textHighlight();
+        width:fit-content;
+        text-align: center;
+        margin-left:2%;
+        margin-top:2%;
+      }
       p {
+        margin-top:-2%;
         margin-left: auto;
         margin-right: auto;
         padding: 4%;
-        span {
-          @include textHighlight();
-        }
+       
       }
     }
     section {
@@ -95,7 +103,7 @@
     }
   }
   #softwareDevSection {
-    font-size: 0.8em;
+    font-size: 0.7em;
     padding: 0.3%;
     #softwareDevOverview {
       @include simpleBox();
@@ -103,13 +111,20 @@
       width: 90%;
       margin-left: auto;
       margin-right: auto;
+      display:flex;
+      flex-direction: column;
+      span {
+        @include textHighlight();
+        width:fit-content;
+        margin-top:2%;
+        margin-left:2%;
+      }
       p {
+        margin-top:-2%;
         margin-left: auto;
         margin-right: auto;
         padding: 4%;
-        span {
-          @include textHighlight();
-        }
+        
       }
     }
     section {
@@ -177,7 +192,7 @@
   }
   #embeddedSoftwareSection{
     display:flex;
-    font-size: 0.8em;
+    font-size: 0.7em;
     padding:0.3%;
     #embeddedSoftwareOverview{
         @include simpleBox();
@@ -185,14 +200,26 @@
         width: 47%;
         margin-left: auto;
         margin-right: auto;
+        display:flex;
+        flex-direction: column;
         span {
           @include textHighlight();
+          width:fit-content;
+          margin-top:2%;
+          margin-left:2%;
         }
-        p {
-          margin-left: auto;
-          margin-right: auto;
-          padding: 4%;
-    
+      
+        div{
+          border-style: solid;
+          border-width: 1px 0px 0px 0px;
+          border-color: #5766a3c2;
+          h1{
+            margin-left:2%;
+            text-align: center;
+          }
+          p{
+            margin-top:-10%;
+          }
         }
     }
     #embeddedSoftwarePics {
@@ -205,6 +232,16 @@
             width: 100%;  // Bild soll die volle Breite der Box einnehmen
             height: 100%; // Falls nötig, damit es die volle Höhe nutzt
             object-fit: cover; // Sorgt dafür, dass das Bild gut aussieht
+        }
+        p {
+          @include simpleBox();
+          font-size:1.6em;
+          width:90%;
+          padding:3%;
+          margin-top:1%;
+      
+
+    
         }
     }
   }

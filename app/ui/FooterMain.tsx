@@ -9,26 +9,26 @@ export default function FooterMain() {
         <div className="footer-section">
           <h3>Rechtliches</h3>
           <ul>
-            <li><Link href="/impressum">Impressum</Link></li>
-            <li><Link href="/datenschutz">Datenschutz</Link></li>
-            <li><Link href="/cookie-richtlinie">Cookie-Richtlinie</Link></li>
+            {/* <li><Link href="/impressum">Impressum</Link></li> */}
+            {/* <li><Link href="/datenschutz">Datenschutz</Link></li> */}
+            {/* <li><Link href="/cookie-richtlinie">Cookie-Richtlinie</Link></li> */}
           </ul>
         </div>
 
         <div className="footer-section">
           <h3>Unternehmen</h3>
           <ul>
-            <li><Link href="/ueber-uns">Über uns</Link></li>
-            <li><Link href="/blog">Blog</Link></li>
-            <li><Link href="/partner">Partner</Link></li>
+            {/* <li><Link href="/ueber-uns">Über uns</Link></li> */}
+            {/* <li><Link href="/blog">Blog</Link></li> */}
+            {/* <li><Link href="/partner">Partner</Link></li> */}
           </ul>
         </div>
 
         <div className="footer-section">
           <h3>Support</h3>
           <ul>
-            <li><Link href="/kontakt">Kontakt</Link></li>
-            <li><Link href="/faq">FAQ</Link></li>
+            {/* <li><Link href="/kontakt">Kontakt</Link></li>
+            <li><Link href="/faq">FAQ</Link></li> */}
           </ul>
         </div>
 
@@ -43,7 +43,7 @@ export default function FooterMain() {
       <div className="footer-bottom">
         <p>&copy; {new Date().getFullYear()} Alle Rechte vorbehalten.</p>
         <div className="footer-legal-links">
-          <Link href="/nutzungsbedingungen">Nutzungsbedingungen</Link>
+          {/* <Link href="/nutzungsbedingungen">Nutzungsbedingungen</Link> */}
           {/* <Link href="/sitemap">Sitemap</Link> */}
         </div>
       </div>
