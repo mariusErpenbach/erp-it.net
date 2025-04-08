@@ -42,7 +42,7 @@ export default function ContentSectionHome() {
           </div>
      
          <div id="idea-form-container">
-            <h1>Let's connect and start a project!</h1>
+         <h1>Let&apos;s connect and start a project&#63;</h1>
           <IdeaForm/>
           </div>
           <SkillChart/>
