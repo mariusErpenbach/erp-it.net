@@ -18,7 +18,7 @@ export default function ContentSectionHome() {
                 </p></div>
                     <div>
                       <Image 
-                        src="https://erp-it.net/uploads/webDevPreview.png" 
+                        src="https://uploads.erp-it.net/images/webDevPreview.png" 
                         alt="Three business looking People standing in front of monitor that shows a smooth looking website with some statistics on it."
                         width={250} 
                         height={270} 
@@ -54,12 +54,11 @@ export default function ContentSectionHome() {
               <div><h1>Atmospherische Hintergrundbeleuchtung</h1><p>Über Microcontroller gesteuerte LEDs Leuchten, welche die Farben dynamisch in Echtzeit anpassen, abgestimmt auf die Farbpallete des Bildschirminhalts.</p></div>
               <div><h1>Streaming Display</h1><p>Ein ESP32 mit einem Touchscreen als externes Eingabe Gerät zur Programmsteuerung, Navigation, oder Minibildschirm.</p></div>
               
-            
           </div>
           <div id="embeddedSoftwarePics">
-              <Image src="https://erp-it.net/uploads/ES1.jpg" alt="Embedded Software Image 1" width={200} height={150} />
-              <Image src="https://erp-it.net/uploads/ES3.jpg" alt="Embedded Software Image 3" width={200} height={150} />
-              <Image src="https://erp-it.net/uploads/ES2.jpg" alt="Embedded Software Image 2" width={200} height={150} />
+              <Image src="https://uploads.erp-it.net/images/ES1.jpg" alt="Embedded Software Image 1" width={200} height={150} />
+              <Image src="https://uploads.erp-it.net/images/ES3.jpg" alt="Embedded Software Image 3" width={200} height={150} />
+              <Image src="https://uploads.erp-it.net/images/ES2.jpg" alt="Embedded Software Image 2" width={200} height={150} />
               <p>
             <strong>Arduino</strong>- und <strong>Raspberry Pi</strong>-Mikrocontroller-Projekte für den <strong>Smart-Home</strong>-Bereich.
             </p>

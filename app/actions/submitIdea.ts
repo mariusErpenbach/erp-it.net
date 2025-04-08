@@ -13,6 +13,7 @@ type Idea = {
 };
 
 export async function submitIdea(data: { idea: string; kontakt?: string }) {
+  
   if (!data.idea.trim()) throw new Error("Ideenfeld ist leer.");
 
   let client: MongoClient | null = null;
