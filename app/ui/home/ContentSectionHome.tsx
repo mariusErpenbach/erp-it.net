@@ -15,8 +15,8 @@ export default function ContentSectionHome() {
               </div>
                <section>
                 <div><p>Eine <strong>Website</strong> sollte nicht nur gut aussehen, sondern auch <strong>gefunden</strong> werden. Wir optimieren <strong>Struktur</strong>, <strong>Ladezeiten</strong> und <strong>semantisches HTML</strong>, um eine gute <strong>SEO-Performance</strong> und <strong>barrierefreie Nutzung</strong> sicherzustellen.
-                </p></div>
-                    <div>
+                </p>
+                <div id="webDev-image-container">
                       <Image 
                         src="https://uploads.erp-it.net/images/webDevPreview.png" 
                         alt="Three business looking People standing in front of monitor that shows a smooth looking website with some statistics on it."
@@ -24,9 +24,13 @@ export default function ContentSectionHome() {
                         height={270} 
                       />
                     </div>
+                </div>
+             
                 </section>
                 <footer>
-                 <p> webdev examples: Shopfolio </p>
+                <h1>Möchtest du mitwirken beim erp-it Blog?</h1>
+                <p>                Ich bin immer offen für neue Autoren, die Interesse daran haben, Beiträge rund um Themen aus der IT-Welt zu verfassen. Es geht dabei um den Austausch von Gedanken, Ideen und Erfahrungen – ganz ohne Druck. Falls du Lust hast, deinen Text beizusteuern, melde dich gerne!
+                </p>
                 </footer>
         </section>
 
@@ -38,7 +42,7 @@ export default function ContentSectionHome() {
           </div>
      
          <div id="idea-form-container">
-            <h1>Lets connect and start a project!</h1>
+            <h1>Let's connect and start a project!</h1>
           <IdeaForm/>
           </div>
           <SkillChart/>
@@ -56,9 +60,9 @@ export default function ContentSectionHome() {
               
           </div>
           <div id="embeddedSoftwarePics">
-              <Image src="https://uploads.erp-it.net/images/ES1.jpg" alt="Embedded Software Image 1" width={200} height={150} />
-              <Image src="https://uploads.erp-it.net/images/ES3.jpg" alt="Embedded Software Image 3" width={200} height={150} />
-              <Image src="https://uploads.erp-it.net/images/ES2.jpg" alt="Embedded Software Image 2" width={200} height={150} />
+              <Image src="https://uploads.erp-it.net/images/ES1.jpg" alt="Embedded Software Image 1" width={300} height={200}/>
+              <Image src="https://uploads.erp-it.net/images/ES3.jpg" alt="Embedded Software Image 3" width={300} height={200}/>
+              <Image src="https://uploads.erp-it.net/images/ES2.jpg" alt="Embedded Software Image 2" width={300} height={200}/>
               <p>
             <strong>Arduino</strong>- und <strong>Raspberry Pi</strong>-Mikrocontroller-Projekte für den <strong>Smart-Home</strong>-Bereich.
             </p>

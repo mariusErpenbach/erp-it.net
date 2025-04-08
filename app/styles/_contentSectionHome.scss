@@ -17,12 +17,12 @@
 #contentSectionHome {
   margin-top: -1%;
   display: flex;
-
+  flex-wrap: wrap;
   .contentSectionHome-section {
     padding: 1%;
     padding-top:0.6%;
-    width: 31%;
-    max-width: 33%;
+    width: 30%;
+    
     margin-left: auto;
     margin-right: auto;
     min-height: 25vw;
@@ -77,36 +77,45 @@
 
       div {
         display: flex;
-        align-items: flex-start;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
         p {
           width: 79%;
           margin-left: auto;
           margin-top: -2%;
         }
-        Image{
-            flex-shrink: 1; 
-            border-style: solid;
-            border-width: 3px;
-            border-color: #5766a3c2;
-            margin-top: 4%;
-            max-width: 100%; 
-            width: auto; 
-            height: auto; 
-          }
+        #webDev-image-container{
+        margin-top:-10%;
+        }
       }
+   
     }
     footer {
       @include simpleBox;
-      margin-left: auto;
-      margin-right: auto;
-      margin-top: 2%;
-      width: 90%;
-      text-align: end;
+      width:90%;
+      padding-top:2%;
+      margin-top:2%;
+      margin-left:auto;
+      margin-right:auto;
+      border-color:yellow;
+      border-width:5px;
+   h1{
+    @include textHighlight();
+    width:fit-content;
+    margin-left:2%;
+   }
+   p{
+    font-size:1.4em;
+    margin-top:-2%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 4%;
+   }
     }
   }
   #softwareDevSection {
     font-size: 0.7em;
-  
     #softwareDevOverview {
       @include simpleBox();
       height: fit-content;
@@ -126,7 +135,6 @@
         margin-left: auto;
         margin-right: auto;
         padding: 4%;
-        
       }
     }
     section {
@@ -136,8 +144,6 @@
       margin-top: 0.5%;
       display: flex;
       width: 90%;
-    
-      
       div {
         display: flex;
         font-size: 0.6em;
@@ -173,6 +179,8 @@
             textarea{
                width:99%;
                height:10em;
+               color:white;
+               background-color:#3a446a;
             }
             div {  
                 display: flex;
@@ -182,6 +190,8 @@
                 input {
                   flex-grow: 1; 
                   max-width: 40%;
+                  color:white;
+                  background-color:#3a446a;
                 }
               
                 button {
@@ -393,10 +403,10 @@
         flex-direction: column;
         width: 45%;
         height: 100%; // Optional, falls die Box eine feste Höhe hat
-        Image{
-            width: 100%;  // Bild soll die volle Breite der Box einnehmen
-            height: 100%; // Falls nötig, damit es die volle Höhe nutzt
-            object-fit: cover; // Sorgt dafür, dass das Bild gut aussieht
+        img{
+        object-fit: cover;
+        width:auto;
+            
         }
         p {
           @include simpleBox();
@@ -408,4 +418,56 @@
     }
   }
   
+}
+/* Media Query für kleinere Bildschirme */
+@media (max-width: 1024px) {
+  #contentSectionHome .contentSectionHome-section {
+    width:70vw;
+  }
+  #contentSectionHome {
+    flex-direction: column;  /* Stellt die Sections untereinander */
+  }
+
+  .contentSectionHome-section {
+    width: 90%;  /* Stellt sicher, dass jede Section 90% der Breite einnimmt */
+    margin-top: 10px;  /* Fügt Abstand zwischen den Sections hinzu */
+  
+  }
+}
+
+/* Media Query für sehr kleine Bildschirme */
+@media (max-width: 768px) {
+  .contentSectionHome-section {
+   
+    width: 80vw;  /* Jede Section nimmt die volle Breite ein */
+    margin-top: 15px;  /* Größerer Abstand für bessere Lesbarkeit */
+   
+  }
+  #contentSectionHome .contentSectionHome-section {
+    width:70vw;
+  }
+  #contentSectionHome #webDevSection section {
+    flex-direction: column;
+
+  }
+  
+  #contentSectionHome #embeddedSoftwareSection {
+    
+    flex-direction: column;
+    
+  }
+  #contentSectionHome #embeddedSoftwareSection #embeddedSoftwareOverview {
+  
+
+margin-left:0%;
+margin-right:0%;
+width:100%;
+  }
+
+  /* Optional: Schriftgröße anpassen */
+  .contentSectionHome-section p {
+    font-size: 1.2em;  /* Kleinere Schriftgröße auf mobilen Geräten */
+  }
+
+
 }

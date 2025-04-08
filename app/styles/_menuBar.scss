@@ -3,6 +3,8 @@
     width: 100%;
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    padding: 0 15px;
 
     #erp-it-logo {
         color: black;
@@ -14,15 +16,15 @@
 
     section {
         height: 100%;
-        width: 35%;
-        margin-left: auto;
+        width: auto;
         display: flex;
         justify-content: flex-end;
         align-items: center;
 
         a {
             height: 100%;
-            width: 20%;
+            width: auto;
+            padding: 0 15px;
             border-width: 1px;
             border-color: #5766a3c2;
             background-color: #2b355a;
@@ -31,15 +33,34 @@
             justify-content: center;
             align-items: center;
             color: white;
-            text-decoration: none; // Optional für ein sauberes Aussehen
+            text-decoration: none;
 
             &:hover {
                 background-color: rgba(255, 192, 203, 0.305);
             }
+
+            &:first-child {
+                border-width: 0px 1px 0px 1px;
+            }
+        }
+    }
+
+    // Media Query für kleinere Bildschirme
+    @media (max-width: 768px) {
+        height: auto;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+
+        section {
+            width: 100%;
+            justify-content: space-around;
+            margin-top: 10px;
         }
 
-        a:nth-child(1) {
-            border-width: 0px 1px 0px 1px;
+        a {
+            width: auto;
+            padding: 10px 20px;
         }
     }
 }

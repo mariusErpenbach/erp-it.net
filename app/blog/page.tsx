@@ -53,9 +53,11 @@ export default function BlogOverview() {
               <Link href={`/blog/${article.id}`}>read more</Link>
             </div>
           </div>
+          <div id="preview-image-container">  
+            <Image src={article.preview_image_url} alt={article.image_alt} width={500} height={350} />
+            </div>
 
-          {/* Bild nur anzeigen, wenn eine gültige URL vorhanden ist */}
-          <Image src={article.preview_image_url} alt={article.image_alt} fill />
+        
         </div>
       ))}
       </main>
