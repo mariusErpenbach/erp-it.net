@@ -25,30 +25,6 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/blog": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": false,
-      "srcRoute": "/blog",
-      "dataRoute": "/blog.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
     "/": {
       "experimentalBypassFor": [
         {
@@ -72,13 +48,37 @@
         "x-next-revalidated-tags",
         "x-next-revalidate-tag-token"
       ]
+    },
+    "/blog": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "Next-Action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/blog",
+      "dataRoute": "/blog.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
     }
   },
   "dynamicRoutes": {},
   "notFoundRoutes": [],
   "preview": {
-    "previewModeId": "720739d9d056001797f42e3eead02660",
-    "previewModeSigningKey": "566d8490e3b79551021b35b456b1068f7ba129216aa85ab286415cfbba555e8f",
-    "previewModeEncryptionKey": "bfac577fee8e57adc7c4ffac1e29ff28efbcc7e5f6d7727710057f5b6c33a173"
+    "previewModeId": "4b57617496df51249528e3df78da25b5",
+    "previewModeSigningKey": "e8490749567184ad01166edd113ed315238efb50673ad9310d4b4f026986a9c0",
+    "previewModeEncryptionKey": "871455a0d95f20395d67b53183937acc43ba9be382fbf530b825d94ea22a3b66"
   }
 }

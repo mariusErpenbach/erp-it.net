@@ -191,32 +191,170 @@
           
         }
       }
-      #skillChart{
-        margin-top:2%;
-        margin-left:auto;
-          margin-right:auto;
-        width:90%;
-        
-        h1{
-          @include textHighlight()
-          
+      #skillChart {
+        margin-top: 2%;
+        margin-left: auto;
+        margin-right: auto;
+        width: 90%;
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        @include simpleBox();
+      
+        h1 {
+          @include textHighlight();
+          font-size: 1.2em;
+     
         }
-        table{
-          @include simpleBox();
-          margin-top:1%;
-          width:100%;
-          tr{
-           td{
-            border-style:solid;
-            
-            #htmlSkill{
-              width:100%;
-              background-color:green;
+      
+        table {
+          margin-top: 1%;
+          width: 100%;
+          border-collapse: collapse;
+      
+          tr {
+            td {
+              color: white;
+              border-radius: 5px;
+              position: relative;
+              display: flex;
+              width: 94%;
+              padding: 5px;
+              height: 2em;
+              align-items: center;
+      
+              .skillBar {
+                height: 100%;
+                border-radius: 5px;
+
+                display: flex;
+                align-items: center;
+                color: white;
+                font-weight: bold;
+                padding-left: 10px;
+                padding-right: 10px;
+                .hover-indicator{
+                  margin-left:1%;
+                  border-style:solid;
+                  border-width:1.5px;
+                  display:flex;
+                  padding:1%;
+                  font-size:0.6em;
+                
+                  color:white;
+                  background-color:#353c53cb;
+                  &:hover{
+                    border-style:none;
+                    div{
+                      display:none;
+                    }
+                  }
+                  .frameworkName {
+                    margin-left:1%;
+                    display:none;
+                    font-size: 1.2em;
+                    margin:5%;
+                    padding-right:5%;
+                    width:fit-content;
+                  }
+          
+                  &:hover .frameworkName {
+                    display:inline-block;
+                  }
+                 
+                }
+                
+              }
+              
+              
             }
-           }
+      
+            #htmlSkill {
+              td {
+                background-color: rgb(227, 76, 38);
+              }
+              .skillBar {
+                width: 99%;
+                background-color: rgb(227, 76, 38);
+              }
+            }
+      
+            #xamlSkill {
+              td {
+                background-color: rgb(66, 103, 178);
+              }
+              .skillBar {
+                width: 55%;
+                background-color: rgb(66, 103, 178);
+              }
+            }
+      
+            #cssSkill {
+              td {
+                background-color: rgb(38, 77, 228);
+              }
+              .skillBar {
+                width: 90%;
+                background-color: rgb(38, 77, 228);
+              }
+            }
+      
+            #jsSkill {
+              td {
+                background-color: rgb(247, 223, 30);
+              }
+              .skillBar {
+                width: 80%;
+                background-color: rgb(247, 223, 30);
+                color: black;
+              }
+            }
+      
+            #pySkill {
+              td {
+                background-color: rgb(53, 114, 165);
+              }
+              .skillBar {
+                width: 75%;
+                background-color: rgb(53, 114, 165);
+              }
+            }
+      
+            #csharpSkill {
+              td {
+                background-color: rgb(155, 89, 182);
+              }
+              .skillBar {
+                width: 80%;
+                background-color: rgb(155, 89, 182);
+              }
+            }
+      
+            #cppSkill {
+              td {
+                background-color: rgb(0, 122, 204);
+              }
+              .skillBar {
+                width: 35%;
+                background-color: rgb(0, 122, 204);
+              }
+            }
+      
+            #holyCSkill {
+              td {
+                background-color: rgb(153, 0, 0);
+                
+              }
+              .skillBar {
+                width: 8%;
+                background-color: rgb(153, 0, 0);
+                font-size:0.6em;
+              }
+            }
           }
         }
       }
+      
   }
   #embeddedSoftwareSection{
     display:flex;

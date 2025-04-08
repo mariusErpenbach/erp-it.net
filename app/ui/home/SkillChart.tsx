@@ -1,38 +1,58 @@
 const SkillChart = () => {
-    return(
-        <div id="skillChart">
-        <h1>Mein Coding Skillset</h1>
-        <table>
-          <tbody>
+  return (
+    <div id="skillChart">
+      <h1>Mein Coding Skillset</h1>
+      <table>
+        <tbody>
           <tr>
-            <td id="htmlSkill" >HTML</td>
+            <td id="htmlSkill">
+              <div className="skillBar">HTML<div className="hover-indicator"><div>+1</div><span className="frameworkName">Next.js</span></div></div>
+              
+            </td>
           </tr>
           <tr>
-            <td id="cssSkill" className="skillBar">CSS</td>
+            <td id="xamlSkill">
+              <div className="skillBar">XAML<div className="hover-indicator"><div>+1</div><span className="frameworkName">Avalonia</span></div></div>
+              
+            </td>
           </tr>
           <tr>
-            <td>Javascript</td>
-            <td><div id="jsSkill" className="skillBar"></div></td>
+            <td id="cssSkill">
+              <div className="skillBar">CSS<div className="hover-indicator"><div>+1</div><span className="frameworkName">SCSS/SASS</span></div></div>
+              
+            </td>
           </tr>
           <tr>
-            <td>Python</td>
-            <td><div id="pySkill" className="skillBar"></div></td>
+            <td id="jsSkill">
+              <div className="skillBar">JavaScript <div className="hover-indicator"><div>+1</div><span className="frameworkName">Next.js, TypeScript</span></div>
+              </div>
+            </td>
           </tr>
           <tr>
-            <td>C#</td>
-            <td><div id="csharpSkill" className="skillBar"></div></td>
+            <td id="pySkill">
+              <div className="skillBar">Python<div className="hover-indicator"><div>+1</div><span className="frameworkName">Django </span></div></div>
+              
+            </td>
           </tr>
           <tr>
-            <td>C++</td>
-            <td><div id="cppSkill" className="skillBar"></div></td>
+            <td id="csharpSkill">
+              <div className="skillBar">C# <div className="hover-indicator"><div>+1</div><span className="frameworkName">Avalonia</span></div></div>
+            </td>
           </tr>
           <tr>
-            <td>Holy-C</td>
-            <td><div id="holyCSkill" className="skillBar"></div></td>
+            <td id="cppSkill">
+              <div className="skillBar">C++</div>
+            </td>
           </tr>
-          </tbody>
-        </table>
-      </div>
-    )
-}
-export default SkillChart
+          <tr>
+            <td id="holyCSkill">
+              <div className="skillBar">Holy-C</div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  );
+};
+
+export default SkillChart;
