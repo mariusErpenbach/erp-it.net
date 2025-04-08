@@ -4,7 +4,7 @@ import { fetchAllArticles } from "../actions/blogActions";
 import MenuBar from "../ui/MenuBar";
 import FooterMain from "../ui/FooterMain";
 import Link from "next/link";
-
+import Image from "next/image";
 type Article = {
   id: string;
   title: string;
@@ -55,7 +55,7 @@ export default function BlogOverview() {
           </div>
 
           {/* Bild nur anzeigen, wenn eine gültige URL vorhanden ist */}
-          <img src={article.preview_image_url} alt={article.image_alt} />
+          <Image src={article.preview_image_url} alt={article.image_alt} fill />
         </div>
       ))}
       </main>
