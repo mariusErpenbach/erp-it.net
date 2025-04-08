@@ -61,73 +61,14 @@
       }
     }
   }
-
-  > div:last-child {
-    flex: 0.8;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-
-    .article-image-container {
-      display: flex;
-      padding:5%;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.5rem;;
-      border-style: solid;
-      border-width: 1px;
-      border-color: #5766a3c2;
-      background-color: #2b355a;
-      .article-image {
-        width: 100%;
-       
-        border: 1px solid #444;
-        border-radius: 0.5rem;
-        overflow: hidden;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
-    
-        img {
-          width: 100%;
-          height: auto;
-          display: block;
-        }
-      }
-    
-      .img-url-container {
-        width: 100%;
-        max-width: 400px; // Gleiche max-width wie das Bild
-        margin-top: 10px;
-        
-        a {  // Statt 'Link' nun 'a' verwenden
-          display: block;
-          width: 95%;
-          text-align: center;  // Zentriert den Linktext
-          margin-top:-2%;
-          font-size:0.7em;
-          padding: 1%;
-          background: #36324e; // Dunkler Hintergrund für Quellen
-          border: 1px solid #444;
-          border-radius: 0.5rem;
-          text-decoration: none;
-          color:white;
-         
-          text-decoration: none;
-          border-radius: 5px;
-          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); // Optional: Schatten für den Link
-          transition: background 0.2s ease;
-        
-          // Zeilenumbruch verhindern und mit "..." abkürzen, falls der Text zu lang ist
-          white-space: nowrap;
-          overflow: hidden;
-          text-overflow: ellipsis;
-        
-          &:hover {
-         
-            transform: scale(1.01);  // Etwas Vergrößerung beim Hover
-          }
-        }
-      }
-    }
+  }
+.article-image-container{
+  
+  background-color: pink;
+  position:relative;
+  width:30em;
+  height:22.5em;
+  img{
     
   }
 }

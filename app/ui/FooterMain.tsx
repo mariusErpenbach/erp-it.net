@@ -35,7 +35,7 @@ export default function FooterMain() {
         <div className="footer-section">
           <h3>Social Media</h3>
           <ul>
-            <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+            <li><Link href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</Link></li>
           </ul>
         </div>
       </div>

@@ -1,36 +1,40 @@
-  {
+{
     "name": "erp-it.net",
     "version": "0.1.0",
     "private": true,
     "scripts": {
-      "dev": "next dev",
-      "export": "next export",
-      "build": "next build",
-      "start": "next start",
-      "lint": "next lint"
+        "dev": "next dev",
+        "export": "next export",
+        "build": "next build",
+        "start": "next start",
+        "lint": "next lint"
     },
     "dependencies": {
-      "dompurify": "^3.2.4",
-      "dotenv": "^16.4.7",
-      "fontawesome": "^5.6.3",
-      "framer-motion": "^12.6.2",
-      "marked": "^15.0.7",
-      "mongodb": "^6.15.0",
-      "mysql2": "^3.14.0",
-      "next": "15.2.4",
-      "nodemailer": "^6.10.0",
-      "react": "^19.0.0",
-      "react-dom": "^19.0.0",
-      "sass": "^1.86.0",
-      "scss": "^0.2.4"
+        "dompurify": "^3.2.4",
+        "dotenv": "^16.4.7",
+        "fontawesome": "^5.6.3",
+        "framer-motion": "^12.6.2",
+        "ioredis": "^5.6.0",
+        "marked": "^15.0.7",
+        "mongodb": "^6.15.0",
+        "mysql2": "^3.14.0",
+        "next": "15.2.4",
+        "nodemailer": "^6.10.0",
+        "react": "^19.0.0",
+        "react-dom": "^19.0.0",
+        "request-ip": "^3.3.0",
+        "sass": "^1.86.0",
+        "scss": "^0.2.4"
     },
     "devDependencies": {
-      "@eslint/eslintrc": "^3",
-      "@types/node": "^20",
-      "@types/react": "^19",
-      "@types/react-dom": "^19",
-      "eslint": "^9",
-      "eslint-config-next": "15.2.4",
-      "typescript": "^5"
+        "@eslint/eslintrc": "^3",
+        "@types/node": "^20",
+        "@types/nodemailer": "^6.4.17",
+        "@types/react": "^19",
+        "@types/react-dom": "^19",
+        "@types/request-ip": "^0.0.41",
+        "eslint": "^9",
+        "eslint-config-next": "15.2.4",
+        "typescript": "^5"
     }
-  }
+}

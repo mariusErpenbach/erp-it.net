@@ -124,18 +124,18 @@ export default function ArticlePage({ params }: ArticlePageProps) {
         {articleImgUrls.length > 0 && (
   <div>
     {articleImgUrls.map((url, index) => (
-      <div className="article-image-container" key={index}>
-          <div className="article-image">
-            <img
-              src={url}
-              alt={`Artikelbild ${index + 1}`}
-            />
-          </div>
-        
-        <div className="img-url-container">
-          <Link href={url} title={url}> {url}</Link>
-        </div>
-      </div>
+
+<div className="article-image-container" key={url}>
+
+  <Image
+    src={url}
+    alt={`Artikelbild ${index + 1}`}
+    fill
+    className="articleImage"
+    style={{ objectFit: 'cover' }}
+  />
+</div>
+
     ))}
   </div>
 )}

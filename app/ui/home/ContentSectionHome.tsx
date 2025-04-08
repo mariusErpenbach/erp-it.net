@@ -1,5 +1,6 @@
 import Image from 'next/image';
-
+import IdeaForm from './IdeaForm';
+import SkillChart from './SkillChart';
 export default function ContentSectionHome() {
     return (
       <div id="contentSectionHome">
@@ -36,13 +37,12 @@ export default function ContentSectionHome() {
             Mehr als <strong>Programmieren</strong> – wir entwickeln <strong>maßgeschneiderte Software</strong>, die Ihr Unternehmen <strong>effizienter</strong> und <strong>zukunftssicher</strong> macht. Von der Idee bis zur Umsetzung</p>
           </div>
      
-         <footer>
-            <h1>Lets connect and start a project</h1>
-            <form action="submit">
-              <textarea name="your idea" placeholder="Deine Idee"></textarea>
-              <div><input type="text" placeholder="Dein Kontakt"/> <button>Senden</button></div>
-            </form>
-          </footer> 
+         <div id="idea-form-container">
+            <h1>Lets connect and start a project!</h1>
+          <IdeaForm/>
+          </div>
+          <SkillChart/>
+
         </section>
 
         <section id="embeddedSoftwareSection" className="contentSectionHome-section">
