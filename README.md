@@ -2,6 +2,15 @@
 
 Willkommen im Repository des ERP-IT.net-Projekts! Dieses Projekt ist eine Webplattform, die sich mit verschiedenen Aspekten der Unternehmensressourcenplanung (ERP) und IT-Lösungen befasst
 
+## Inhaltsverzeichnis
+1. [Technologien](#technologien)
+2. [Setup & Installation](#setup--installation)
+3. [Features](#features)
+4. [Projektstruktur](#projektstruktur)
+5. [Weiterentwicklung](#weiterentwicklung)
+6. [Lizenz](#lizenz)
+7. [Kontakt](#kontakt)
+
 ## Technologien
 Das Projekt basiert auf den folgenden Technologien:
 
@@ -51,9 +60,16 @@ Um das Projekt lokal auszuführen, folge diesen Schritten:
 
 ## Weiterentwicklung
 Geplante Features und Verbesserungen:
-- Integration eines **CMS** für eine einfachere Inhaltspflege
-- Implementierung einer **Suchfunktion** für Blog-Artikel
-- Verbesserung der **SEO-Optimierung** für eine bessere Auffindbarkeit
+## Geplante Features (Stand: 08.04.2025)
+
+🆕 Folgende Features sind in Planung:
+
+- 🗳️ **Umfragemöglichkeit für Blogartikel**  
+  Besucher sollen die Möglichkeit erhalten, zu bestimmten Blogposts abzustimmen oder Feedback zu geben.
+
+- 🔗 **Footer-Links: Sitemap**  
+  Im Footer wird ein Link zur Sitemap eingebaut, um die Navigation und SEO zu verbessern.
+
 
 ## Lizenz
 Dieses Projekt steht unter der **MIT-Lizenz**. Mehr dazu in der Datei `LICENSE.md`.
