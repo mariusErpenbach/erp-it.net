@@ -9,7 +9,7 @@ export default function FooterMain() {
         <div className="footer-section">
           <h3>Rechtliches</h3>
           <ul>
-            {/* <li><Link href="/impressum">Impressum</Link></li> */}
+            <li><Link href="/impressum">Impressum</Link></li>
             {/* <li><Link href="/datenschutz">Datenschutz</Link></li> */}
             {/* <li><Link href="/cookie-richtlinie">Cookie-Richtlinie</Link></li> */}
           </ul>

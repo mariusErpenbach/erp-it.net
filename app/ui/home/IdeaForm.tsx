@@ -17,7 +17,7 @@ export default function IdeaForm() {
       setMessage("Danke für deine Idee! ✌️");
       setIdea("");
       setKontakt("");
-    } catch (error) {
+    } catch{
       setMessage("Huch, irgendwas ging schief – versuch's später nochmal!");
     } finally {
       setIsSubmitting(false);
