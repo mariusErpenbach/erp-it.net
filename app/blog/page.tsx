@@ -5,6 +5,7 @@ import MenuBar from "../ui/MenuBar";
 import FooterMain from "../ui/FooterMain";
 import Link from "next/link";
 import Image from "next/image";
+
 type Article = {
   id: string;
   title: string;

@@ -14,7 +14,6 @@ export default function FooterMain() {
             {/* <li><Link href="/cookie-richtlinie">Cookie-Richtlinie</Link></li> */}
           </ul>
         </div>
-
         <div className="footer-section">
           <h3>Unternehmen</h3>
           <ul>

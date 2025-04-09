@@ -181,12 +181,15 @@
                height:10em;
                color:white;
                background-color:#3a446a;
+               border-style:solid;
+               border-width:1px;
+               margin:1%;
             }
             div {  
                 display: flex;
                 justify-content: space-between;
                 align-items: center; 
-                
+                padding:1%;
                 input {
                   flex-grow: 1; 
                   max-width: 40%;
@@ -195,7 +198,10 @@
                 }
               
                 button {
-                    border-radius:10%;
+                  color:white;
+                  background-color: #3a446a;
+                  border-radius:10%;
+                  padding:1%;
                 }
               }
           

@@ -3,9 +3,7 @@ import MenuBar from "../ui/MenuBar";
 import FooterMain from "../ui/FooterMain";
 import Link from "next/link";
 const DatenschutzPage = () => {
-
   return (
-    
     <>
       <MenuBar />
       <section id="privacySection">

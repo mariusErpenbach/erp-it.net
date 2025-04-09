@@ -3,6 +3,6 @@
   "/blog/[entry]/page": "app/blog/[entry]/page.js",
   "/blog/page": "app/blog/page.js",
   "/datenschutz/page": "app/datenschutz/page.js",
-  "/page": "app/page.js",
-  "/impressum/page": "app/impressum/page.js"
+  "/impressum/page": "app/impressum/page.js",
+  "/page": "app/page.js"
 }

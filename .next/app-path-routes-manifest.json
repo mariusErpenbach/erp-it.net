@@ -3,6 +3,6 @@
   "/blog/[entry]/page": "/blog/[entry]",
   "/blog/page": "/blog",
   "/datenschutz/page": "/datenschutz",
-  "/page": "/",
-  "/impressum/page": "/impressum"
+  "/impressum/page": "/impressum",
+  "/page": "/"
 }
