@@ -1,7 +1,8 @@
 {
   "/_not-found/page": "app/_not-found/page.js",
+  "/blog/[entry]/page": "app/blog/[entry]/page.js",
   "/blog/page": "app/blog/page.js",
-  "/impressum/page": "app/impressum/page.js",
+  "/datenschutz/page": "app/datenschutz/page.js",
   "/page": "app/page.js",
-  "/blog/[entry]/page": "app/blog/[entry]/page.js"
+  "/impressum/page": "app/impressum/page.js"
 }

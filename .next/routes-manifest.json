@@ -43,6 +43,12 @@
       "namedRegex": "^/blog(?:/)?$"
     },
     {
+      "page": "/datenschutz",
+      "regex": "^/datenschutz(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/datenschutz(?:/)?$"
+    },
+    {
       "page": "/impressum",
       "regex": "^/impressum(?:/)?$",
       "routeKeys": {},
