@@ -1,0 +1,82 @@
+@mixin textHighlight {
+    color: black;
+    padding: 2px 8px;
+    font-size:1.4em;
+    box-decoration-break: clone;
+    display: inline;
+    background-color: rgba(211, 250, 13, 0.958);
+  }
+  @mixin simpleBox {
+    padding: 0.5%;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #5766a3c2;
+    background-color: #202844;
+  }
+  
+  #privacySection {
+    a,
+      a:link {
+        color: white;
+        text-decoration: underline;
+  
+   
+      }
+    font-size: 0.8em;
+    width: 60%;
+    margin: 2% auto;
+    @include simpleBox();
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  
+    h1 {
+      @include textHighlight();
+      font-size: 1.6em;
+      margin: 2% 0;
+      width: fit-content;
+    }
+  
+    article {
+      padding: 4%;
+      width: 70%;
+  
+      h2 {
+        font-size: 1.4em;
+        margin-top: 2%;
+        margin-bottom: 1%;
+        color: #d3fa0d;
+      }
+  
+      p {
+        font-size: 1.2em;
+        line-height: 1.6em;
+        margin-bottom: 2%;
+        color: white;
+      }
+  
+      ul {
+        margin-left: 5%;
+        li {
+          margin-bottom: 1%;
+          font-size: 1.1em;
+          color: white;
+        }
+      }
+  
+      
+    }
+  
+    footer {
+      width: 100%;
+      padding: 2%;
+      border-top: 1px solid #5766a3c2;
+      text-align: center;
+  
+      p {
+        font-size: 1em;
+        color: #ccc;
+      }
+    }
+  }
+  

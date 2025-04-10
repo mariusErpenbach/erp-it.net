@@ -1,13 +1,24 @@
-@use "mixins.scss" as *;
-@use "menuBar.scss";
-@use "bannerTop.scss";
-@use "home.scss";
-@use "quotes.scss";
-@use "contentSectionHome.scss";
-@use "footerMain.scss";
-@use "Article.scss";
+// General Style:
+@use "Mixins.scss" as *;
+@use "FooterMain.scss";
+@use "MenuBar.scss";
+// Main Page
+@use "Home.scss";
+
+@use "BannerTop.scss";
+    // Content Section Main Page
+    @use "Quotes.scss";
+    @use "ContentSectionHome.scss";
+
+// Blog 
 @use "ArticlesList.scss";
-@use "articlePage";
-@use "impressum.scss";
-@use "datenschutz.scss";
-//      content: 'Die Einführung der Nvidia GeForce RTX 50-Serie hat...', // Volltext
+@use "ArticlePage";
+
+// Footer Pages:
+
+@use "Impressum.scss";
+@use "Datenschutz.scss";
+
+@use "Tools.scss";
+    @use "PyLibs.scss"
+

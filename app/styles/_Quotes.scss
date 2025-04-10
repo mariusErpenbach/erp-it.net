@@ -1,0 +1,32 @@
+.quote-container {
+    font-size: 1.2rem;
+    color: #8faadc; 
+    font-style: italic;
+    text-align: center;
+    transition: all 0.5s ease-in-out;
+    padding: 1rem;
+    min-height: 120px; 
+  }
+  
+  .quote-text,
+  .quote-author {
+    
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  .fade-in {
+    opacity: 1;
+  }
+  
+  .fade-out {
+    opacity: 0;
+  }
+  
+  .quote-author {
+    margin-top: 10px; 
+    font-size: 1rem;
+    color: #a0b9d3;
+    text-align: center; 
+    position: relative;
+    left: 10%; 
+  }

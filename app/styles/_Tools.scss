@@ -1,0 +1,28 @@
+#toolsPage{
+  
+   color:white;
+ 
+   main{
+    margin-top:5%;
+    margin-bottom:5%;
+    #toolList{
+        .tool-page-link{
+            font-size:1em;
+            color:rgb(255, 213, 213);
+            border-style:solid;
+            border-width:1.5px;
+            border-color:white;
+            background-color:rgb(141, 112, 154);
+            padding:1%;
+            margin:1%;
+    
+        }
+        a:link{
+           
+            text-decoration: none;
+        }
+       
+    }
+   }
+    
+}

@@ -53,6 +53,18 @@
       "regex": "^/impressum(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/impressum(?:/)?$"
+    },
+    {
+      "page": "/tools",
+      "regex": "^/tools(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/tools(?:/)?$"
+    },
+    {
+      "page": "/tools/pyLibs",
+      "regex": "^/tools/pyLibs(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/tools/pyLibs(?:/)?$"
     }
   ],
   "dataRoutes": [],

@@ -26,8 +26,8 @@ export default function FooterMain() {
         <div className="footer-section">
           <h3>Support</h3>
           <ul>
-            {/* <li><Link href="/kontakt">Kontakt</Link></li>
-            <li><Link href="/faq">FAQ</Link></li> */}
+           <li><Link href="/tools">Tools</Link></li>
+             {/* <li><Link href="/faq">FAQ</Link></li> */}
           </ul>
         </div>
 

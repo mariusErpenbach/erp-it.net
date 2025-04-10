@@ -1,30 +1,6 @@
 {
   "version": 4,
   "routes": {
-    "/datenschutz": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": false,
-      "srcRoute": "/datenschutz",
-      "dataRoute": "/datenschutz.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
     "/blog": {
       "experimentalBypassFor": [
         {
@@ -49,7 +25,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/impressum": {
+    "/tools/pyLibs": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -62,8 +38,32 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/impressum",
-      "dataRoute": "/impressum.rsc",
+      "srcRoute": "/tools/pyLibs",
+      "dataRoute": "/tools/pyLibs.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/tools": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "Next-Action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/tools",
+      "dataRoute": "/tools.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -96,13 +96,61 @@
         "x-next-revalidated-tags",
         "x-next-revalidate-tag-token"
       ]
+    },
+    "/datenschutz": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "Next-Action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/datenschutz",
+      "dataRoute": "/datenschutz.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/impressum": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "Next-Action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/impressum",
+      "dataRoute": "/impressum.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
     }
   },
   "dynamicRoutes": {},
   "notFoundRoutes": [],
   "preview": {
-    "previewModeId": "0fc1474a738324cccd24c6c9c9b8dd7d",
-    "previewModeSigningKey": "9172e15a6f11000c510313126e58c996ba822cd553c9e254a8845297fc224af6",
-    "previewModeEncryptionKey": "53d8e9b8cee87bce97e321e7ebceeceb5d8de4b33562672fb32aea2f30245adf"
+    "previewModeId": "ef82b6bae5c797cdc02ca7f89e47652a",
+    "previewModeSigningKey": "14c2b9256a78e0798819658b2b9a23cfed858cd5eb7b3b41053ed70cca3ffd77",
+    "previewModeEncryptionKey": "bba1a899858406ed157db6086c1e5be14d0be3bf3d9fd58d38a2ee832a8da43d"
   }
 }

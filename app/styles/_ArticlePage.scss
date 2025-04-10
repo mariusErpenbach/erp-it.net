@@ -1,0 +1,172 @@
+.article-wrapper {
+  margin:auto;
+  display: flex;
+  justify-content: center;
+
+  padding: 2rem;
+  min-height: 100vh;
+
+  gap: 2rem;
+  width:60%;
+  .article-page {
+    flex: 1;
+    max-width: 50ch; // Breite reduzieren, damit der Text mittiger erscheint
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    color: #ffffff; // Helle Schrift
+    padding:2%;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #5766a3c2;
+    background-color: #202844;
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+
+    div {
+      line-height: 1.7;
+    }
+
+
+    #sources {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 1rem;
+
+      .source-link {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem 0.75rem;
+        background: #36324e; // Dunkler Hintergrund für Quellen
+        border: 1px solid #444;
+        border-radius: 0.5rem;
+        text-decoration: none;
+        color: #fff;
+        transition: background 0.2s ease;
+
+        &:hover {
+          background: #555; // Etwas hellere Farbe im Hover-Zustand
+        }
+
+        .favicon {
+          width: 20px;
+          height: 20px;
+        }
+      }
+    }
+  }
+  }
+.article-image-container{
+  
+  background-color: pink;
+  position:relative;
+  width:30em;
+  height:22.5em;
+
+}
+
+.link-preview {
+  position: fixed;
+  background: #333; // Dunkler Hintergrund
+  border: 1px solid #444;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  pointer-events: none;
+  z-index: 9999;
+
+  .preview-favicon {
+    width: 24px;
+    height: 24px;
+  }
+
+  span {
+    font-size: 0.85rem;
+    max-width: 300px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #fff; // Helle Farbe für den Link-Text
+  }
+}
+/* Allgemeine Styles für größere Bildschirme */
+
+
+/* Responsive Anpassungen für kleinere Bildschirme */
+@media (max-width: 768px) {
+  .article-wrapper {
+    flex-direction: column; /* Stapelt die Elemente vertikal */
+    padding: 1rem; /* Weniger Padding auf kleineren Geräten */
+    width: 90%; /* Weitesten Abstand zur Bildschirmkante für kleinere Geräte */
+  }
+
+  .article-page {
+    max-width: 100%; /* Maximale Breite auf 100% setzen */
+    padding: 3%; /* Etwas mehr Padding für den Textbereich */
+  }
+
+  .article-page h1 {
+    font-size: 2rem; /* Kleinere Schriftgröße für den Titel */
+  }
+
+  .article-image-container {
+    padding: 2%; /* Weniger Padding für das Bildcontainer */
+  }
+
+  .img-url-container a {
+    font-size: 0.85em; /* Kleinere Schriftgröße für Links */
+    padding: 8px; /* Etwas weniger Padding für Links */
+  }
+
+  .source-link {
+    font-size: 0.85rem; /* Kleinere Schriftgröße für Quellen */
+    gap: 0.3rem; /* Weniger Abstand zwischen Icon und Text */
+  }
+
+  .link-preview {
+    font-size: 0.8rem; /* Kleinere Schriftgröße für Vorschau */
+  }
+}
+
+/* Weitere Anpassungen für sehr kleine Bildschirme (z.B. Handys) */
+@media (max-width: 480px) {
+  .article-wrapper {
+    padding: 0.5rem; /* Sehr wenig Padding auf kleinsten Geräten */
+    width: 100%; /* Volle Breite einnehmen */
+  }
+
+  .article-page h1 {
+    font-size: 1.5rem; /* Noch kleinere Schriftgröße für sehr kleine Geräte */
+  }
+
+  .article-page p {
+    font-size: 0.9rem; /* Kleinere Schriftgröße für den Paragraphen */
+  }
+
+  .article-image-container {
+    padding: 0.5rem; /* Noch weniger Padding für das Bildcontainer */
+  }
+
+  .img-url-container a {
+    font-size: 0.75em; /* Kleinere Schriftgröße für Links */
+    padding: 6px; /* Noch weniger Padding */
+  }
+
+  .source-link {
+    font-size: 0.75rem; /* Noch kleinere Schriftgröße */
+    gap: 0.25rem; /* Weniger Abstand */
+  }
+
+  .link-preview {
+    font-size: 0.7rem; /* Sehr kleine Schriftgröße für die Vorschau */
+  }
+}
