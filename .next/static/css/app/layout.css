@@ -103,67 +103,72 @@
 }
 
 #menuBar {
-  height: 2.5em;
+  height: 3.5em;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 15px;
+  padding: 0 1.5rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background: #0f172a; /* Dunkler Space-Marine-Blauton */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 #menuBar #erp-it-logo {
-  color: black;
-  padding: 2px 6px;
-  -webkit-box-decoration-break: clone;
-          box-decoration-break: clone;
-  display: inline;
-  background-color: rgba(211, 250, 13, 0.958);
+  color: #0f172a; /* Dunkle Schrift für Kontrast */
+  padding: 0.3rem 1rem;
+  font-size: 1.5em;
+  font-weight: 700;
+  background-color: rgba(211, 250, 13, 0.958); /* Ihr Markengelb */
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+#menuBar #erp-it-logo:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  background-color: #d3fa0d; /* Volle Deckkraft beim Hover */
 }
 #menuBar section {
   height: 100%;
-  width: auto;
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  margin-right: 0.9%;
+  gap: 0.5rem;
 }
 #menuBar section a {
   height: 100%;
-  width: auto;
-  padding: 0 15px;
-  border-width: 1px;
-  border-color: rgba(87, 102, 163, 0.7607843137);
-  background-color: #2b355a;
-  border-width: 0px 1px 0px 0px;
+  padding: 0 1.5rem;
   display: flex;
-  justify-content: center;
   align-items: center;
-  color: white;
+  color: #e2e8f0;
+  font-weight: 500;
   text-decoration: none;
+  transition: all 0.2s ease;
+  position: relative;
+  background: transparent;
+}
+#menuBar section a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 3px;
+  background: #d3fa0d;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
 }
 #menuBar section a:hover {
-  background-color: rgba(255, 192, 203, 0.305);
+  color: white;
+  background: rgba(255, 255, 255, 0.05);
 }
-#menuBar section a:first-child {
-  border-width: 0px 1px 0px 1px;
+#menuBar section a:hover::after {
+  width: 80%;
 }
-@media (max-width: 768px) {
-  #menuBar {
-    height: auto;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 10px;
-  }
-  #menuBar section {
-    width: 100%;
-    justify-content: space-around;
-    margin-top: 10px;
-  }
-  #menuBar a {
-    width: auto;
-    padding: 10px 20px;
-  }
-}
-
 body {
   color: white;
   background-color: #1e2952;
@@ -177,6 +182,7 @@ body {
   height: 10em;
   background-color: #2a386e;
   overflow: hidden;
+  margin-top: 3.5em;
 }
 .banner-top .ufo {
   position: absolute;
