@@ -1,11 +1,3 @@
 {
-  "/_not-found/page": "app/_not-found/page.js",
-  "/blog/[entry]/page": "app/blog/[entry]/page.js",
-  "/datenschutz/page": "app/datenschutz/page.js",
-  "/tools/page": "app/tools/page.js",
-  "/blog/page": "app/blog/page.js",
-  "/tools/pyLibs/page": "app/tools/pyLibs/page.js",
-  "/impressum/page": "app/impressum/page.js",
-  "/page": "app/page.js",
-  "/tools/tailClasses/page": "app/tools/tailClasses/page.js"
+  "/page": "app/page.js"
 }

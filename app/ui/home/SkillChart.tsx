@@ -24,13 +24,13 @@ const SkillChart = () => {
           </tr>
           <tr>
             <td id="jsSkill">
-              <div className="skillBar">JavaScript <div className="hover-indicator"><div>+1</div><span className="frameworkName">Next.js, TypeScript</span></div>
+              <div className="skillBar">JavaScript <div className="hover-indicator"><div>+2</div><span className="frameworkName">Next.js, TypeScript</span></div>
               </div>
             </td>
           </tr>
           <tr>
             <td id="pySkill">
-              <div className="skillBar">Python<div className="hover-indicator"><div>+1</div><span className="frameworkName">Django </span></div></div>
+              <div className="skillBar">Python<div className="hover-indicator"><div>+2</div><span className="frameworkName">Django, Flask</span></div></div>
               
             </td>
           </tr>
