@@ -1,5 +1,5 @@
 // General Style:
-@use "Mixins.scss" as *;
+@use "Mixins.scss";
 @use "FooterMain.scss";
 @use "MenuBar.scss";
 // Main Page
@@ -20,5 +20,7 @@
 @use "Datenschutz.scss";
 
 @use "Tools.scss";
-    @use "PyLibs.scss"
+    @use "PyLibs.scss";
+    @use "TailwindClasses.scss";
 
+    

@@ -9,26 +9,31 @@
     top: 0;
     left: 0;
     z-index: 1000;
-    background: #0f172a; /* Dunkler Space-Marine-Blauton */
+    background-color:#0f172a89;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 
     #erp-it-logo {
         color: #0f172a; /* Dunkle Schrift für Kontrast */
-        padding: 0.3rem 1rem;
-        font-size: 1.5em;
+        padding: 0.2rem 1rem;
+        font-size: 1em;
         font-weight: 700;
         background-color: rgba(211, 250, 13, 0.958); /* Ihr Markengelb */
         border-radius: 4px;
         box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
         transition: all 0.3s ease;
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
+    
 
         &:hover {
             transform: translateY(-2px);
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
             background-color: #d3fa0d; /* Volle Deckkraft beim Hover */
+        }
+        &:visited{
+            text-decoration: none;
+        }
+        &:link{
+            text-decoration: none;
         }
     }
 
@@ -36,7 +41,7 @@
         height: 100%;
         display: flex;
         gap: 0.5rem;
-
+        margin-right:1.5%;
         a {
             height: 100%;
             padding: 0 1.5rem;
@@ -48,7 +53,6 @@
             transition: all 0.2s ease;
             position: relative;
             background: transparent;
-
             &::after {
                 content: '';
                 position: absolute;

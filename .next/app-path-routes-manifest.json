@@ -1,0 +1,11 @@
+{
+  "/_not-found/page": "/_not-found",
+  "/blog/[entry]/page": "/blog/[entry]",
+  "/datenschutz/page": "/datenschutz",
+  "/tools/page": "/tools",
+  "/blog/page": "/blog",
+  "/tools/pyLibs/page": "/tools/pyLibs",
+  "/impressum/page": "/impressum",
+  "/page": "/",
+  "/tools/tailClasses/page": "/tools/tailClasses"
+}

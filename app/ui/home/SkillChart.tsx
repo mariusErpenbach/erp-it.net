@@ -18,7 +18,7 @@ const SkillChart = () => {
           </tr>
           <tr>
             <td id="cssSkill">
-              <div className="skillBar">CSS<div className="hover-indicator"><div>+1</div><span className="frameworkName">SCSS/SASS</span></div></div>
+              <div className="skillBar">CSS<div className="hover-indicator"><div>+1</div><span className="frameworkName">Tailwind</span></div></div>
               
             </td>
           </tr>

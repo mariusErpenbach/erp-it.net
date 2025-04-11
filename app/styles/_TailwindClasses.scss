@@ -1,0 +1,67 @@
+#cheatsheetTable{
+    margin-top:3.5em;
+            h2{
+                text-align:center;
+            }
+        .cheatsheet-page {
+        margin-bottom: 2rem;
+        padding: 1rem;
+        background-color: #202844;
+        border: 1px solid #5766a3c2;
+        border-radius: 0.5rem;
+     
+        h1 {
+          font-size: 1.5rem;
+          margin-bottom: 1rem;
+          color: white;
+          border-bottom: 1px solid #5766a3c2;
+          padding-bottom: 0.5rem;
+        }
+      
+        table {
+          width: 100%;
+          border-collapse: collapse;
+          color: white;
+      
+          thead {
+            background-color: #1a213f;
+            border-bottom: 1px solid #5766a3c2;
+      
+            th {
+              text-align: left;
+              padding: 0.75rem 1rem;
+              font-weight: 600;
+              font-size: 1rem;
+              color: white;
+            }
+          }
+      
+          tbody {
+            tr {
+              &:nth-child(even) {
+                background-color: #2a345a;
+              }
+      
+              &:nth-child(odd) {
+                background-color: #202844;
+              }
+      
+              td {
+                padding: 0.75rem 1rem;
+                vertical-align: top;
+                font-size: 0.95rem;
+      
+                code {
+                  background-color: rgba(255, 255, 255, 0.1);
+                  padding: 0.2rem 0.4rem;
+                  border-radius: 4px;
+                  font-family: 'Fira Code', monospace;
+                  white-space: nowrap;
+                  display: inline-block;
+                }
+              }
+            }
+          }
+        }
+      }
+}

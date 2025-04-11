@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import "../app/styles/main.scss";
+import MenuBar from "./ui/MenuBar";
+import FooterMain from "./ui/FooterMain";
+// import '../app/styles/Tailwindglobals.css'
 import { IBM_Plex_Serif } from 'next/font/google'
 
 // IBM Plex Serif einbinden
@@ -22,8 +25,9 @@ export default function RootLayout({
     <html lang="en"  className={ibmPlexSerif.className}>
 
       <body>
-        
+        <MenuBar></MenuBar>
         {children}
+        <FooterMain></FooterMain>
       </body>
     </html>
   );

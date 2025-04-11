@@ -1,36 +1,40 @@
+$primaryColor:rgba(211, 250, 13, 0.958);
+
 @mixin textHighlight {
   color: black;
   padding: 2px 8px;
   font-size:1.4em;
   box-decoration-break: clone;
   display: inline;
-  background-color: rgba(211, 250, 13, 0.958);
-}
-@mixin simpleBox {
+  background-color: $primaryColor;
+  };
+  @mixin simpleBox {
   padding: 0.5%;
   border-style: solid;
   border-width: 1px;
   border-color: #5766a3c2;
   background-color: #202844;
-}
+  };
+
 
 #contentSectionHome {
+
   margin-top: -1%;
   display: flex;
   flex-wrap: wrap;
   .contentSectionHome-section {
-    padding: 1%;
     padding-top:0.6%;
-    width: 30%;
-    
+    width: 31.5%;
     margin-left: auto;
     margin-right: auto;
     min-height: 25vw;
-    background: linear-gradient(to bottom,#3a446a, #202844 );
+    background: linear-gradient(to bottom,#2f3757, #202844 );
     border-style: solid;
     border-width: 1px;
     border-color: #5766a3c2;
+    border-radius: 4px;
     div {
+      border-radius: 4px;
       p {
         padding: 10%;
         font-size: 1.4em;
@@ -42,7 +46,7 @@
    
    
     #webDevOverview {
-      @include simpleBox();
+      @include simpleBox;
       height: fit-content;
       width: 90%;
       margin-left: auto;
@@ -55,6 +59,8 @@
         text-align: center;
         margin-left:2%;
         margin-top:2%;
+        
+
       }
       p {
         margin-top:-2%;
@@ -212,6 +218,7 @@
         margin-left: auto;
         margin-right: auto;
         width: 90%;
+        padding:1%;
         display:flex;
         flex-direction:column;
         align-items:center;
@@ -227,22 +234,22 @@
           margin-top: 1%;
           width: 100%;
           border-collapse: collapse;
-      
+         
           tr {
             td {
               color: white;
+          
               border-radius: 5px;
               position: relative;
               display: flex;
               width: 94%;
               padding: 5px;
-              height: 2em;
+              height: 2.4em;
               align-items: center;
       
               .skillBar {
                 height: 100%;
                 border-radius: 5px;
-
                 display: flex;
                 align-items: center;
                 color: white;
@@ -255,7 +262,7 @@
                   border-width:1.5px;
                   display:flex;
                   padding:1%;
-                  font-size:0.6em;
+                  font-size:0.65em;
                 
                   color:white;
                   background-color:#353c53cb;
@@ -291,6 +298,7 @@
               }
               .skillBar {
                 width: 99%;
+     
                 background-color: rgb(227, 76, 38);
               }
             }
@@ -341,7 +349,7 @@
                 background-color: rgb(155, 89, 182);
               }
               .skillBar {
-                width: 80%;
+                width: 65%;
                 background-color: rgb(155, 89, 182);
               }
             }
@@ -362,9 +370,9 @@
                 
               }
               .skillBar {
-                width: 8%;
+                width: 9%;
                 background-color: rgb(153, 0, 0);
-                font-size:0.6em;
+                overflow:hidden;
               }
             }
           }
