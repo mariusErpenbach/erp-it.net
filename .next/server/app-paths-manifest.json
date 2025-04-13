@@ -1,3 +1,5 @@
 {
-  "/page": "app/page.js"
+  "/page": "app/page.js",
+  "/tools/page": "app/tools/page.js",
+  "/tools/xamlList/page": "app/tools/xamlList/page.js"
 }

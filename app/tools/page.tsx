@@ -13,6 +13,8 @@ export default function ToolsPage() {
         <main>
         <div id="toolList">
             <Link className="tool-page-link"href="/tools/pyLibs">Standard Python Libraries</Link>
+            <Link className="tool-page-link"href="/tools/xamlList">XAML List</Link>
+            <Link className="tool-page-link"href="/tools/">Tailwind Sheet</Link>
         </div>
         </main>
    

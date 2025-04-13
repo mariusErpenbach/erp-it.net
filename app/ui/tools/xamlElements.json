@@ -1,0 +1,213 @@
+[
+    {
+      "element": "Grid",
+      "framework_used_in": ["WPF", "UWP", "Avalonia"],
+      "allowed_properties": [
+        "RowDefinitions",
+        "ColumnDefinitions",
+        "Children",
+        "HorizontalAlignment",
+        "VerticalAlignment",
+        "Margin"
+      ]
+    },
+    {
+      "element": "StackPanel",
+      "framework_used_in": ["WPF", "UWP", "Avalonia"],
+      "allowed_properties": [
+        "Orientation",
+        "Children",
+        "HorizontalAlignment",
+        "VerticalAlignment",
+        "Margin"
+      ]
+    },
+    {
+      "element": "Canvas",
+      "framework_used_in": ["WPF", "UWP", "Avalonia"],
+      "allowed_properties": [
+        "Children",
+        "HorizontalAlignment",
+        "VerticalAlignment",
+        "Left",
+        "Top",
+        "Width",
+        "Height"
+      ]
+    },
+    {
+      "element": "Button",
+      "framework_used_in": ["WPF", "UWP", "Avalonia"],
+      "allowed_properties": [
+        "Content",
+        "Width",
+        "Height",
+        "HorizontalAlignment",
+        "VerticalAlignment",
+        "Click"
+      ]
+    },
+    {
+      "element": "TextBox",
+      "framework_used_in": ["WPF", "UWP", "Avalonia"],
+      "allowed_properties": [
+        "Text",
+        "Width",
+        "Height",
+        "HorizontalAlignment",
+        "VerticalAlignment",
+        "TextChanged"
+      ]
+    },
+    {
+      "element": "ComboBox",
+      "framework_used_in": ["WPF", "UWP", "Avalonia"],
+      "allowed_properties": [
+        "ItemsSource",
+        "SelectedItem",
+        "SelectedIndex",
+        "Width",
+        "Height"
+      ]
+    },
+    {
+      "element": "ListBox",
+      "framework_used_in": ["WPF", "UWP", "Avalonia"],
+      "allowed_properties": [
+        "ItemsSource",
+        "SelectedItem",
+        "SelectedIndex",
+        "Width",
+        "Height"
+      ]
+    },
+    {
+      "element": "CheckBox",
+      "framework_used_in": ["WPF", "UWP", "Avalonia"],
+      "allowed_properties": [
+        "IsChecked",
+        "Content",
+        "Width",
+        "Height"
+      ]
+    },
+    {
+      "element": "RadioButton",
+      "framework_used_in": ["WPF", "UWP", "Avalonia"],
+      "allowed_properties": [
+        "IsChecked",
+        "Content",
+        "Width",
+        "Height"
+      ]
+    },
+    {
+      "element": "Slider",
+      "framework_used_in": ["WPF", "UWP", "Avalonia"],
+      "allowed_properties": [
+        "Minimum",
+        "Maximum",
+        "Value",
+        "Width",
+        "Height"
+      ]
+    },
+    {
+      "element": "ProgressBar",
+      "framework_used_in": ["WPF", "UWP", "Avalonia"],
+      "allowed_properties": [
+        "Minimum",
+        "Maximum",
+        "Value",
+        "Width",
+        "Height"
+      ]
+    },
+    {
+      "element": "Image",
+      "framework_used_in": ["WPF", "UWP", "Avalonia"],
+      "allowed_properties": [
+        "Source",
+        "Width",
+        "Height",
+        "HorizontalAlignment",
+        "VerticalAlignment"
+      ]
+    },
+    {
+      "element": "DatePicker",
+      "framework_used_in": ["WPF", "UWP", "Avalonia"],
+      "allowed_properties": [
+        "SelectedDate",
+        "Width",
+        "Height",
+        "HorizontalAlignment",
+        "VerticalAlignment"
+      ]
+    },
+    {
+      "element": "ListView",
+      "framework_used_in": ["WPF", "UWP", "Avalonia"],
+      "allowed_properties": [
+        "ItemsSource",
+        "SelectedItem",
+        "SelectedIndex",
+        "Width",
+        "Height"
+      ]
+    },
+    {
+      "element": "TextBlock",
+      "framework_used_in": ["WPF", "UWP", "Avalonia"],
+      "allowed_properties": [
+        "Text",
+        "FontSize",
+        "Foreground",
+        "Width",
+        "Height"
+      ]
+    },
+    {
+      "element": "Window",
+      "framework_used_in": ["WPF", "Avalonia"],
+      "allowed_properties": [
+        "Title",
+        "Width",
+        "Height",
+        "Content",
+        "IsResizable"
+      ]
+    },
+    {
+      "element": "TabControl",
+      "framework_used_in": ["WPF", "Avalonia"],
+      "allowed_properties": [
+        "SelectedIndex",
+        "TabStripPlacement",
+        "Width",
+        "Height"
+      ]
+    },
+    {
+      "element": "Expander",
+      "framework_used_in": ["WPF", "Avalonia"],
+      "allowed_properties": [
+        "IsExpanded",
+        "Header",
+        "Width",
+        "Height"
+      ]
+    },
+    {
+      "element": "ProgressRing",
+      "framework_used_in": ["UWP"],
+      "allowed_properties": [
+        "IsActive",
+        "Diameter",
+        "Foreground",
+        "Width",
+        "Height"
+      ]
+    }
+  ]
+  
