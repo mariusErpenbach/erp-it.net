@@ -1,5 +1,5 @@
-export default function blogLayout () {
-return 
+export default function BlogLayout () {
+return(
 <div id="articleF">
 <div id="flexRow">
     
@@ -13,5 +13,5 @@ return
     <div id="column3"></div>
 
 </div>
-</div>
+</div>)
 }
