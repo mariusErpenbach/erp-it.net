@@ -1,30 +1,6 @@
 {
   "version": 4,
   "routes": {
-    "/blog/testZone": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": false,
-      "srcRoute": "/blog/testZone",
-      "dataRoute": "/blog/testZone.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
     "/datenschutz": {
       "experimentalBypassFor": [
         {
@@ -49,7 +25,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/blog": {
+    "/blog/testZone": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -62,8 +38,8 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/blog",
-      "dataRoute": "/blog.rsc",
+      "srcRoute": "/blog/testZone",
+      "dataRoute": "/blog/testZone.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -73,7 +49,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/tools/xamlList": {
+    "/impressum": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -86,8 +62,56 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/tools/xamlList",
-      "dataRoute": "/tools/xamlList.rsc",
+      "srcRoute": "/impressum",
+      "dataRoute": "/impressum.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/tools/csharpLibs": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "Next-Action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/tools/csharpLibs",
+      "dataRoute": "/tools/csharpLibs.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/tools": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "Next-Action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/tools",
+      "dataRoute": "/tools.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -145,7 +169,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/tools": {
+    "/tools/xamlList": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -158,8 +182,8 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/tools",
-      "dataRoute": "/tools.rsc",
+      "srcRoute": "/tools/xamlList",
+      "dataRoute": "/tools/xamlList.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -169,7 +193,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/impressum": {
+    "/blog": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -182,8 +206,8 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/impressum",
-      "dataRoute": "/impressum.rsc",
+      "srcRoute": "/blog",
+      "dataRoute": "/blog.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -221,8 +245,8 @@
   "dynamicRoutes": {},
   "notFoundRoutes": [],
   "preview": {
-    "previewModeId": "581b72dedc6380460380e9598a3913a2",
-    "previewModeSigningKey": "fd336e60897b596235ef26e9178d1a0fad7fb9cb9fcb07a37d2ad02c42468e4c",
-    "previewModeEncryptionKey": "73aa72626cacc6cb53fdce81a258d685a8d3d042be75aa70ed579b43cc91d461"
+    "previewModeId": "72f3cd71013882a58fb94df9b95fe063",
+    "previewModeSigningKey": "eceff1c505a3fdef65056a63df73e7e7d1eb0bcf7b5e0ff6891135c12ead3261",
+    "previewModeEncryptionKey": "ef0fe65432d890fa94991356edaac93738727e7cd53333750528cb9bcb9220d7"
   }
 }

@@ -3,11 +3,12 @@
   "/blog/[entry]/page": "/blog/[entry]",
   "/blog/page": "/blog",
   "/blog/testZone/page": "/blog/testZone",
-  "/datenschutz/page": "/datenschutz",
   "/impressum/page": "/impressum",
-  "/tools/pyLibs/page": "/tools/pyLibs",
-  "/tools/page": "/tools",
+  "/datenschutz/page": "/datenschutz",
   "/page": "/",
-  "/tools/xamlList/page": "/tools/xamlList",
-  "/tools/tailClasses/page": "/tools/tailClasses"
+  "/tools/csharpLibs/page": "/tools/csharpLibs",
+  "/tools/page": "/tools",
+  "/tools/pyLibs/page": "/tools/pyLibs",
+  "/tools/tailClasses/page": "/tools/tailClasses",
+  "/tools/xamlList/page": "/tools/xamlList"
 }

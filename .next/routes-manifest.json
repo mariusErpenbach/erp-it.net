@@ -67,6 +67,12 @@
       "namedRegex": "^/tools(?:/)?$"
     },
     {
+      "page": "/tools/csharpLibs",
+      "regex": "^/tools/csharpLibs(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/tools/csharpLibs(?:/)?$"
+    },
+    {
       "page": "/tools/pyLibs",
       "regex": "^/tools/pyLibs(?:/)?$",
       "routeKeys": {},
