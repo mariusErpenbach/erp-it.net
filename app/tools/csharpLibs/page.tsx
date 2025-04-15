@@ -1,11 +1,11 @@
 "use client"
-import CSharpStandardLibs from "@/app/ui/tools/csharpStandardLibs"
+import CSharpLibs from "@/app/ui/tools/csharpLibs"
 
 
 export default function csharpPage(){
     return(
         <div>
-       <CSharpStandardLibs></CSharpStandardLibs>
+       <CSharpLibs></CSharpLibs>
         </div>
     )
 }
