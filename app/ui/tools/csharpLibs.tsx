@@ -3,7 +3,7 @@ import csharpLibs from './csharpLibs.json';
   export default function CSharpLibs() {
     return (
       <div className="csharp-libs">
-        <h2>🐍 Csharp Standardbibliothek (integrierte Libraries)</h2>
+        <h2>🐍 Csharp Libraries</h2>
         {csharpLibs.map((group, index) => (
           <div key={index} className="category-group">
             <h3>{group.category}</h3>

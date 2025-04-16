@@ -1,3 +1,6 @@
 {
-  "/tools/csharpLibs/page": "app/tools/csharpLibs/page.js"
+  "/page": "app/page.js",
+  "/tools/page": "app/tools/page.js",
+  "/tools/csharpLibs/page": "app/tools/csharpLibs/page.js",
+  "/tools/xamlList/page": "app/tools/xamlList/page.js"
 }

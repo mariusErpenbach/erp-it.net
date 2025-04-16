@@ -1,28 +1,62 @@
-#toolsPage{
+#back-to-top-btn {
+    position: fixed;
+    bottom: 2em;
+    right: 2em;
+    background-color: red;
+    color: white;
+    width: fit-content;
+    padding: 1em;
+    height: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  }
+  #back-to-top-btn:hover {
+    background-color: darkred;
+  }
+#toolsPage {
+    padding: 2rem;
+    background-color: #121212; // Darkmode Hintergrund
+    color: #ffffff; // Grundfarbe für Text
   
-   color:white;
- 
-   main{
-    margin-top:5%;
-    margin-bottom:5%;
-    #toolList{
-        .tool-page-link{
-            font-size:1em;
-            color:rgb(255, 213, 213);
-            border-style:solid;
-            border-width:1.5px;
-            border-color:white;
-            background-color:rgb(141, 112, 154);
-            padding:1%;
-            margin:1%;
-    
+    #toolList {
+      .tool-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-family: sans-serif;
+        background-color: #1e1e1e; // Tabellenhintergrund
+        color: #ffffff;
+  
+        th,
+        td {
+          border: 1px solid #333;
+          padding: 12px;
+          text-align: left;
         }
-        a:link{
-           
-            text-decoration: none;
+  
+        th {
+          background-color: #2a2a2a;
+          font-weight: bold;
+          color: #ffffff;
         }
-       
+  
+        tr:nth-child(even) {
+          background-color: #181818;
+        }
+  
+        a {
+          color: #66baff;
+          text-decoration: none;
+  
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
     }
-   }
-    
-}
+  }
+  

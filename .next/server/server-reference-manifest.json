@@ -1,5 +1,17 @@
 {
-  "node": {},
+  "node": {
+    "4004560669a640b0acde0890f81add12f7e8bbb2b1": {
+      "workers": {
+        "app/page": {
+          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2Fhome%2Fdci%2FDesktop%2FGithub%2Ferp-it.net%2Fapp%2Factions%2FsubmitIdea.ts%22%2C%5B%7B%22id%22%3A%224004560669a640b0acde0890f81add12f7e8bbb2b1%22%2C%22exportedName%22%3A%22submitIdea%22%7D%5D%5D%5D&__client_imported__=true!",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/page": "action-browser"
+      }
+    }
+  },
   "edge": {},
   "encryptionKey": "KwD7gha+wcjL5xRXYhSZeiGbtywMM2hdqg5dqYPjqfE="
 }

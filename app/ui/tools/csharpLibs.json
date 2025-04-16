@@ -263,5 +263,165 @@
           ]
         }
       ]
-    }
+    }, {
+        "category": "🧙 Avalonia UI Basics",
+        "entries": [
+          {
+            "lib": "Avalonia.Controls",
+            "desc": "Alle grundlegenden UI-Elemente wie Button, TextBox, StackPanel, Grid etc.",
+            "methods": [
+              "Button – Klickbare Schaltfläche",
+              "TextBox – Eingabefeld",
+              "StackPanel – Vertikale/Horizontale Anordnung",
+              "Grid – Rasterbasierte Layoutsteuerung"
+            ]
+          },
+          {
+            "lib": "Avalonia.Markup.Xaml",
+            "desc": "Ermöglicht das Laden und Parsen von .xaml-Dateien",
+            "methods": [
+              "AvaloniaXamlLoader.Load() – XAML laden",
+              "x:Class – Code-Behind Verknüpfung"
+            ]
+          },
+          {
+            "lib": "Avalonia.Layout",
+            "desc": "Enums und Logik für Layout-Orientierungen",
+            "methods": [
+              "Orientation.Vertical / Horizontal – Ausrichtung",
+              "Dock – Positionierung in DockPanels",
+              "HorizontalAlignment / VerticalAlignment – Ausrichtung"
+            ]
+          },
+          {
+            "lib": "Avalonia.Styling",
+            "desc": "Styling von Controls, ähnlich wie CSS",
+            "methods": [
+              ":hover, :pressed – Pseudostates",
+              "Setter – Eigenschaft setzen",
+              "Styles – Sammlung von Settern"
+            ]
+          },
+          {
+            "lib": "Avalonia.Media",
+            "desc": "Grafik, Farben, Brushes",
+            "methods": [
+              "Brushes.Red – Vordefinierte Farben",
+              "SolidColorBrush – Feste Farbe",
+              "LinearGradientBrush – Farbverläufe"
+            ]
+          },
+          {
+            "lib": "Avalonia.Data",
+            "desc": "Datenbindungssystem, sehr ähnlich zu WPF",
+            "methods": [
+              "Binding – Bindung zu Property",
+              "INotifyPropertyChanged – Änderungen erkennen",
+              "TwoWay, OneWay – Bindungsrichtung"
+            ]
+          },
+          {
+            "lib": "Avalonia.Input",
+            "desc": "Tastatur, Maus, Fokus",
+            "methods": [
+              "KeyDown – Tastendruck",
+              "PointerPressed – Mausaktionen",
+              "FocusManager – Fokussteuerung"
+            ]
+          },
+          {
+            "lib": "Avalonia.Interactivity",
+            "desc": "Event-Routing-System wie in WPF",
+            "methods": [
+              "RoutedEvent – Registrieren und auslösen von Events",
+              "RaiseEvent() – Event auslösen"
+            ]
+          }
+        ]
+      },
+      {
+        "category": "🛠️ Erweiterte Avalonia UI Bibliotheken",
+        "entries": [
+          {
+            "lib": "CommunityToolkit.Mvvm",
+            "desc": "Microsoft’s modernes MVVM Toolkit: ObservableObject, RelayCommand, INotifyPropertyChanged Boilerplate ade!",
+            "methods": [
+              "ObservableObject – Basis-Klasse für Bindings",
+              "RelayCommand – Einfaches Command-Pattern",
+              "INotifyPropertyChanged – Für Bindungen"
+            ]
+          },
+          {
+            "lib": "Avalonia.Dialogs",
+            "desc": "Erweiterte Dialog-Funktionen wie FileOpenDialog, ColorPicker etc.",
+            "methods": [
+              "OpenFileDialog() – Datei öffnen",
+              "SaveFileDialog() – Datei speichern",
+              "ColorPicker() – Farbwahl"
+            ]
+          },
+          {
+            "lib": "Avalonia.ReactiveUI",
+            "desc": "Integration mit ReactiveUI – für reaktives MVVM mit Observables und State-Streams.",
+            "methods": [
+              "ReactiveObject – Basis für reaktive Bindungen",
+              "ReactiveCommand – Reaktive Commands",
+              "WhenAnyValue() – Beobachtet Werte"
+            ]
+          },
+          {
+            "lib": "Avalonia.Svg",
+            "desc": "Anzeige und Verarbeitung von SVG-Dateien in Avalonia UI.",
+            "methods": [
+              "SvgImageSource – SVG-Bildquelle",
+              "SvgParser – SVG-Datei parsen",
+              "SvgElement – SVG-Element anzeigen"
+            ]
+          },
+          {
+            "lib": "Avalonia.FuncUI",
+            "desc": "Funktionaler Ansatz zur UI-Entwicklung mit Avalonia (F# basiert).",
+            "methods": [
+              "Program – Definiert das Hauptprogramm",
+              "Component – Definiert UI-Komponenten",
+              "Render – Rendern von UI"
+            ]
+          },
+          {
+            "lib": "Avalonia.Diagnostics",
+            "desc": "Debugging-Tools zur Laufzeit, z. B. Live-Tree-Inspector und Style-Viewer.",
+            "methods": [
+              "TreeInspector – UI-Struktur untersuchen",
+              "StyleViewer – Stile während der Laufzeit ansehen"
+            ]
+          },
+          {
+            "lib": "AvaloniaEdit",
+            "desc": "Code-Editor-Komponente, basiert auf ICSharpCode.AvalonEdit.",
+            "methods": [
+              "TextEditor – Texteditor für Quellcode",
+              "Highlighting – Syntax-Highlighting",
+              "AutoComplete – Automatische Vervollständigung"
+            ]
+          },
+          {
+            "lib": "Avalonia.Labs",
+            "desc": "Experimentelle Controls und neue UI-Komponenten, z. B. TabControl2, InfoBar.",
+            "methods": [
+              "TabControl2 – Erweiterte Tab-Steuerung",
+              "InfoBar – Benachrichtigungsleiste",
+              "Expander – Erweitern von Inhalten"
+            ]
+          },
+          {
+            "lib": "FluentAvalonia",
+            "desc": "UI-Komponenten im Fluent Design (ähnlich Windows 11).",
+            "methods": [
+              "FluentButton – Fluent Design Button",
+              "FluentTextBox – Fluent Design TextBox",
+              "FluentDialog – Fluent Design Dialog"
+            ]
+          }
+        ]
+      }
   ]
