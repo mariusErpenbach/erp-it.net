@@ -742,6 +742,17 @@ body {
   .contentSectionHome-section p {
     font-size: 1.2em; /* Kleinere Schriftgröße auf mobilen Geräten */
   }
+  #contentSectionHome #embeddedSoftwareSection #embeddedSoftwarePics {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+  }
+  #contentSectionHome #embeddedSoftwareSection #embeddedSoftwarePics img {
+    max-width: 100%;
+  }
 }
 #articlesList {
   display: grid;

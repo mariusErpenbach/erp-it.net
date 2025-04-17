@@ -411,6 +411,7 @@ $primaryColor:rgba(211, 250, 13, 0.958);
             margin-top:-10%;
           }
         }
+     
     }
     #embeddedSoftwarePics {
         display: flex;
@@ -482,6 +483,18 @@ width:100%;
   .contentSectionHome-section p {
     font-size: 1.2em;  /* Kleinere Schriftgröße auf mobilen Geräten */
   }
+  #contentSectionHome #embeddedSoftwareSection #embeddedSoftwarePics  {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left:auto;
+    margin-right:auto;
+   
+    width:100%;
+}
+  #contentSectionHome #embeddedSoftwareSection #embeddedSoftwarePics img {
 
-
+    max-width:100%;
+   
+}
 }

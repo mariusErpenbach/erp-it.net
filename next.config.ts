@@ -17,8 +17,9 @@ const allowedRemotePatterns: { protocol: "https"; hostname: string; pathname: st
 
 const nextConfig: NextConfig = {
   images: {
-    remotePatterns: allowedRemotePatterns, // Jetzt korrekt typisiert
+    remotePatterns: allowedRemotePatterns, // Allowed remote image sources
   },
+  allowedDevOrigins: [process.env.NEXT_PUBLIC_DEV_URL || 'http://localhost:3000'],
 };
 
 export default nextConfig;
