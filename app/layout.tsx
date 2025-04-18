@@ -8,7 +8,7 @@ import { IBM_Plex_Serif } from 'next/font/google'
 // IBM Plex Serif einbinden
 const ibmPlexSerif = IBM_Plex_Serif({
   subsets: ['latin'], // Sprachen, die die Schriftart unterstützen
-  weight: ['400', '700'], // Du kannst die gewünschten Gewichtungen angeben
+  weight: ['500', '700'], // Du kannst die gewünschten Gewichtungen angeben
   display: 'swap', // Optimiere die Schriftanzeige
 })
 export const metadata: Metadata = {

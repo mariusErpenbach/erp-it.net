@@ -86,11 +86,15 @@ export default function ArticlePage({ params }: ArticlePageProps) {
   return (
     <div>
       <MenuBar />
-      <Link href="/blog">back</Link>
       <div className="article-wrapper">
         <main className="article-page">
+              {/* article meta section */}
+          <header>
           <h1>{article.title}</h1>
           <p>Veröffentlicht am: {new Date(article.published_date).toLocaleDateString()}</p>
+
+          </header>
+              {/* content section */}
           <div dangerouslySetInnerHTML={{ __html: articleContentHtml }} />
         
 
@@ -123,6 +127,7 @@ export default function ArticlePage({ params }: ArticlePageProps) {
         </main>
         {articleImgUrls.length > 0 && (
   <div>
+    {/* image section */}
     {articleImgUrls.map((url, index) => (
 
 <div className="article-image-container" key={url}>

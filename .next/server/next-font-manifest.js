@@ -1,1 +1,1 @@
-self.__NEXT_FONT_MANIFEST="{\"pages\":{},\"app\":{\"/home/dci/Desktop/Github/erp-it.net/app/layout\":[\"static/media/4a55e3a359b42768-s.p.woff2\",\"static/media/5a38c412fa3989d0-s.p.woff2\"]},\"appUsingSizeAdjust\":true,\"pagesUsingSizeAdjust\":false}"
+self.__NEXT_FONT_MANIFEST="{\"pages\":{},\"app\":{\"/home/dci/Desktop/Github/erp-it.net/app/layout\":[\"static/media/301c9070498588dc-s.p.woff2\",\"static/media/5a38c412fa3989d0-s.p.woff2\"]},\"appUsingSizeAdjust\":true,\"pagesUsingSizeAdjust\":false}"

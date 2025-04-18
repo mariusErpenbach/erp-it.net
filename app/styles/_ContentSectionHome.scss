@@ -43,7 +43,7 @@ $primaryColor:rgba(211, 250, 13, 0.958);
   }
   #webDevSection {
     font-size: 0.7em;
-   
+    padding-bottom:1%;
    
     #webDevOverview {
       @include simpleBox;
@@ -104,8 +104,9 @@ $primaryColor:rgba(211, 250, 13, 0.958);
       margin-top:2%;
       margin-left:auto;
       margin-right:auto;
-      border-color:yellow;
-      border-width:5px;
+      border-color:rgba(211, 250, 13, 0.958);
+      border-width:3px;
+  
    h1{
     @include textHighlight();
     width:fit-content;
@@ -493,7 +494,7 @@ width:100%;
     width:100%;
 }
   #contentSectionHome #embeddedSoftwareSection #embeddedSoftwarePics img {
-
+    
     max-width:100%;
    
 }
