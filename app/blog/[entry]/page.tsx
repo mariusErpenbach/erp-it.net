@@ -3,8 +3,6 @@
 import { useEffect, useState, use } from 'react';
 import { fetchArticleById } from '../../actions/blogActions';
 import { ArticleMask } from '@/app/types/blog';
-import MenuBar from '@/app/ui/MenuBar';
-import FooterMain from '@/app/ui/FooterMain';
 import DOMPurify from 'dompurify';
 import { marked } from 'marked';
 import Image from 'next/image';

@@ -1,8 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
 import { fetchAllArticles } from "../actions/blogActions"; 
-import MenuBar from "../ui/MenuBar";
-import FooterMain from "../ui/FooterMain";
 import Link from "next/link";
 import Image from "next/image";
 
