@@ -37,7 +37,7 @@ export default function BlogOverview() {
 
   return (
     <div id="blog-page">
-      <MenuBar />
+ 
 
       <main id="articlesList">
       {articles.map((article) => (
@@ -63,7 +63,7 @@ export default function BlogOverview() {
       ))}
       </main>
 
-      <FooterMain />
+
     </div>
   );
 }

@@ -85,7 +85,7 @@ export default function ArticlePage({ params }: ArticlePageProps) {
 
   return (
     <div>
-      <MenuBar />
+  
       <div className="article-wrapper">
         <main className="article-page">
               {/* article meta section */}
@@ -145,7 +145,7 @@ export default function ArticlePage({ params }: ArticlePageProps) {
   </div>
 )}
       </div>
-      <FooterMain />
+
     </div>
   );
 }
