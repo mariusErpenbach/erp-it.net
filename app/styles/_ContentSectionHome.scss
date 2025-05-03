@@ -417,12 +417,13 @@ $primaryColor:rgba(211, 250, 13, 0.958);
     #embeddedSoftwarePics {
         display: flex;
         flex-direction: column;
-        width: 45%;
-        height: 100%; // Optional, falls die Box eine feste Höhe hat
+        width: auto;
+        height: auto; // Optional, falls die Box eine feste Höhe hat
         img{
         object-fit: cover;
         width:auto;
-            
+        height:auto;
+        max-width:90%;
         }
         p {
           @include simpleBox();

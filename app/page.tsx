@@ -2,7 +2,7 @@
 import BannerTop from "./ui/home/BannerTop";
 import Quotes from "./ui/home/Quotes";
 import ContentSectionHome from "./ui/home/ContentSectionHome";
-import SafeRiddle from "./ui/home/SafeRiddle";
+import PolygonSlider from "./ui/home/PolygonSlider";
 
 
 export default function Home() {
@@ -12,7 +12,7 @@ export default function Home() {
      <BannerTop></BannerTop>
      <Quotes></Quotes>
      <ContentSectionHome></ContentSectionHome>
-     <SafeRiddle></SafeRiddle>
+     <PolygonSlider></PolygonSlider>
     </div>
   );
 }
