@@ -1,0 +1,14 @@
+{
+  "/_not-found/page": "/_not-found",
+  "/blog/[entry]/page": "/blog/[entry]",
+  "/blog/page": "/blog",
+  "/blog/testZone/page": "/blog/testZone",
+  "/impressum/page": "/impressum",
+  "/datenschutz/page": "/datenschutz",
+  "/page": "/",
+  "/tools/csharpLibs/page": "/tools/csharpLibs",
+  "/tools/pyLibs/page": "/tools/pyLibs",
+  "/tools/page": "/tools",
+  "/tools/xamlList/page": "/tools/xamlList",
+  "/tools/tailClasses/page": "/tools/tailClasses"
+}

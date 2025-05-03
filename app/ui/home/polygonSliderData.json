@@ -1,0 +1,93 @@
+[
+    {
+      "bereich": "Prozesse",
+      "fragen": [
+        "Welche Kernprozesse (z. B. Auftragsabwicklung, Einkauf, Produktion) möchten Sie im ERP-System abbilden?",
+        "Gibt es Mehrstufen-Workflows (z. B. Freigaben), die automatisch ausgeführt werden sollen?",
+        "Wie häufig ändern sich Ihre Abläufe, und benötigen wir eine leicht anpassbare Workflow-Engine?",
+        "Welche Prozess-Ereignisse (z. B. Statuswechsel, Fehlermeldungen) müssen protokolliert werden?",
+        "Wie sollen Ausnahmen oder manuelle Eingriffe in Standardprozesse gehandhabt werden?"
+      ]
+    },
+    {
+      "bereich": "Stammdaten",
+      "fragen": [
+        "Welche Entitäten (Kunden, Artikel, Lieferanten usw.) sind für Ihr Geschäft essentiell?",
+        "Welche Pflichtfelder (z. B. Artikelnummer, Kundennummer) müssen für jede Entität hinterlegt sein?",
+        "Wie möchten Sie Dublettenprüfung und Datenvalidierung beim Anlegen neuer Datensätze umsetzen?",
+        "Besteht eine vorhandene Datenquelle, aus der wir Stammdaten migrieren können?",
+        "Sollen Änderungen an Stammdaten versioniert oder in einem Änderungslog festgehalten werden?"
+      ]
+    },
+    {
+      "bereich": "Rollen",
+      "fragen": [
+        "Welche Benutzergruppen (z. B. Vertrieb, Buchhaltung, Lager) benötigen unterschiedliche Zugriffsrechte?",
+        "Welche Aktionen (lesen, anlegen, löschen) sollen Sie pro Rolle steuern können?",
+        "Benötigt jede Rolle eine eigene Start- und Übersichtsansicht im UI?",
+        "Gibt es temporäre Rollen (z. B. Urlaubsvertretung), die wir einfach zuweisen und entfernen können?",
+        "Sollen Sie Berechtigungen auf einzelne Datensätze (z. B. eigene Kunden) beschränken?"
+      ]
+    },
+    {
+      "bereich": "Integration",
+      "fragen": [
+        "Mit welchen Systemen (ERP, CRM, Onlineshop, Buchhaltung) sollen Daten ausgetauscht werden?",
+        "Welche Datenformate (JSON, XML, CSV) und Protokolle (REST, SOAP) bevorzugen Sie für die Anbindung?",
+        "Müssen Daten in Echtzeit synchronisiert werden oder genügen zeitlich geplante Batch-Jobs?",
+        "Wer übernimmt die Wartung und Überwachung der Schnittstellen nach der Einführung?",
+        "Gibt es bestehende API-Dokumentationen oder Middleware-Lösungen, die wir nutzen können?"
+      ]
+    },
+    {
+      "bereich": "Security",
+      "fragen": [
+        "Welche Authentifizierungsverfahren (Passwort, SSO, MFA) möchten Sie einsetzen?",
+        "Welche Daten gelten als besonders schützenswert und benötigen zusätzliche Verschlüsselung?",
+        "Soll das System detaillierte Audit-Logs für sicherheitsrelevante Aktionen führen?",
+        "Brauchen Sie IP-Restriktionen oder Netzwerk-Firewalls für den Zugriff auf das ERP?",
+        "Wie lange sollen Protokolldaten (Logs, Änderungen) aufbewahrt werden?"
+      ]
+    },
+    {
+      "bereich": "Scalability",
+      "fragen": [
+        "Mit welchem jährlichen Datenwachstum rechnen Sie (Transaktionen, Dokumente)?",
+        "Wie viele gleichzeitige Benutzer werden maximal erwartet?",
+        "Planen Sie neben dem Hauptstandort weitere Mandanten oder Niederlassungen?",
+        "Möchten Sie das System in der Cloud, on-premise oder hybrid betreiben?",
+        "Sollen Module einzeln skaliert werden können (z. B. Separate Services für Reporting)?"
+      ]
+    },
+    {
+      "bereich": "Analytics",
+      "fragen": [
+        "Welche Kennzahlen (Umsatz, Lagerbestand, Durchlaufzeit) müssen jederzeit abrufbar sein?",
+        "Benötigen Sie interaktive Dashboards oder regelmäßige automatisierte Reports?",
+        "Welche Filter- und Drill-Down-Funktionen sind für Ihre Auswertungen wichtig?",
+        "Sollen Daten aus Fremdsystemen (z. B. Webshop, CRM) in die Analysen einfließen?",
+        "Möchten Sie historische Trends über längere Zeiträume speichern und auswerten?"
+      ]
+    },
+    {
+      "bereich": "Usability",
+      "fragen": [
+        "Welche Endgeräte (Desktop, Tablet, Smartphone) sollen primär unterstützt werden?",
+        "Muss das Interface mehrsprachig umgesetzt werden?",
+        "Welche Schulungsaufwände pro Rolle sind akzeptabel (z. B. Selbstlernvideos, Workshops)?",
+        "Brauchen Sie konfigurierbare Dashboards oder Widgets für unterschiedliche Nutzer?",
+        "Wünschen Sie integrierte Hilfe- und Feedbackfunktionen direkt im System?"
+      ]
+    },
+    {
+      "bereich": "Support",
+      "fragen": [
+        "Wie schnell soll auf Fehler oder Anfragen (SLA-Zeitfenster) reagiert werden?",
+        "Welche Supportkanäle (E-Mail, Chat, Telefon) sollen verfügbar sein?",
+        "Möchten Sie ein integriertes Ticketsystem oder externe Tools anbinden?",
+        "Brauchen Sie Self-Service-Funktionen wie FAQs oder Troubleshooting-Guides?",
+        "Wie oft sollen Systemupdates durchgeführt und dokumentiert werden?"
+      ]
+    }
+  ]
+  

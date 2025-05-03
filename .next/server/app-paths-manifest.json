@@ -1,4 +1,14 @@
 {
+  "/_not-found/page": "app/_not-found/page.js",
+  "/blog/[entry]/page": "app/blog/[entry]/page.js",
+  "/blog/page": "app/blog/page.js",
+  "/blog/testZone/page": "app/blog/testZone/page.js",
+  "/impressum/page": "app/impressum/page.js",
+  "/datenschutz/page": "app/datenschutz/page.js",
   "/page": "app/page.js",
-  "/blog/[entry]/page": "app/blog/[entry]/page.js"
+  "/tools/csharpLibs/page": "app/tools/csharpLibs/page.js",
+  "/tools/pyLibs/page": "app/tools/pyLibs/page.js",
+  "/tools/page": "app/tools/page.js",
+  "/tools/xamlList/page": "app/tools/xamlList/page.js",
+  "/tools/tailClasses/page": "app/tools/tailClasses/page.js"
 }
