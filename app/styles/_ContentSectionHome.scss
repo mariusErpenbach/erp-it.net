@@ -13,7 +13,8 @@ $primaryColor:rgba(211, 250, 13, 0.958);
   border-style: solid;
   border-width: 1px;
   border-color: #5766a3c2;
-  background-color: #202844;
+  background: linear-gradient(135deg, #1c202c, #2226592c);
+  
   };
 
 
@@ -386,13 +387,14 @@ $primaryColor:rgba(211, 250, 13, 0.958);
     font-size: 0.7em;
   
     #embeddedSoftwareOverview{
-        @include simpleBox();
+        
         height: fit-content;
-        width: 47%;
+      width:80%;
         margin-left: auto;
         margin-right: auto;
         display:flex;
         flex-direction: column;
+        padding-left:3%;
         span {
           @include textHighlight();
           width:fit-content;
@@ -404,12 +406,17 @@ $primaryColor:rgba(211, 250, 13, 0.958);
           border-style: solid;
           border-width: 1px 0px 0px 0px;
           border-color: #5766a3c2;
+           @include simpleBox();
+
           h1{
             margin-left:2%;
             text-align: center;
           }
-          p{
-            margin-top:-10%;
+          p {
+            margin-top:-2%;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 4%;
           }
         }
      
@@ -419,18 +426,25 @@ $primaryColor:rgba(211, 250, 13, 0.958);
         flex-direction: column;
         width: auto;
         height: auto; // Optional, falls die Box eine feste Höhe hat
+        margin-top:7%;
+
         img{
         object-fit: cover;
         width:auto;
         height:auto;
-        max-width:90%;
+        max-width:80%;
+        margin-left:auto;
+        margin-right:auto;
         }
         p {
           @include simpleBox();
           font-size:1.4em;
-          width:90%;
+          width:auto;
+          max-width:70%;
+          margin-left:auto;
+          margin-right:auto;
           padding:3%;
-          margin-top:10%;
+          margin-top:2%;
         }
     }
   }

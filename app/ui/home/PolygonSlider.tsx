@@ -187,12 +187,21 @@ export default function PolygonSlider() {
         </svg>
       </div>
       <div id="polygonSliderRightBox">
+        <h3>Wichtige Fragen bei der Planung ihrer Software</h3>
         <ul>
           {currentQuestions.map((question, index) => (
             <li key={index}>{question}</li>
           ))}
         </ul>
-      </div>
+
+          <footer> 
+          <button onClick={() => setSpinCounter((prevCounter) => (prevCounter - 1 + polygonSliderData.length) % polygonSliderData.length)}>prev</button>
+
+          <button onClick={() => setSpinCounter((prevCounter) => (prevCounter + 1) % polygonSliderData.length)}>next</button>
+          </footer>
+          
+
+          </div>
     </section>
     
     </div>
