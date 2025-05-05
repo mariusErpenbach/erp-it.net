@@ -2,10 +2,13 @@
 
 .hypercube-svg {
     fill: white; /* Default fill color for the SVG */
+    width:4em;
+    height:auto;
 }
 
 .hypercube-outer {
     stroke: white; /* Stroke color for the outer cube */
+
 }
 
 .hypercube-inner {
@@ -14,4 +17,53 @@
 
 .hypercube-line {
     stroke: white; /* Stroke color for the connecting lines */
+}
+
+.cube-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 400px;
+    margin: auto;
+}
+
+.outerCube,
+.innerCube {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    transform-style: preserve-3d;
+}
+
+.face {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: rgba(211, 250, 13, 0.958);
+    color:black;
+    font-size:2rem;
+    border-style:solid;
+    border-width: 1px;
+    border-color:black;
+}
+
+/* Positioning the faces of the cube */
+.face:nth-child(1) {
+    transform: rotateY(0deg) translateZ(100px);
+}
+.face:nth-child(2) {
+    transform: rotateY(90deg) translateZ(100px);
+}
+.face:nth-child(3) {
+    transform: rotateY(180deg) translateZ(100px);
+}
+.face:nth-child(4) {
+    transform: rotateY(-90deg) translateZ(100px);
+}
+.face:nth-child(5) {
+    transform: rotateX(90deg) translateZ(100px);
+}
+.face:nth-child(6) {
+    transform: rotateX(-90deg) translateZ(100px);
 }

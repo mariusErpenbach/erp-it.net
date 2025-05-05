@@ -1,5 +1,5 @@
 "use client";
-
+import Hypercube from "./art/Hypercube";
 import Link from "next/link";
 
 export default function FooterMain() {
@@ -17,6 +17,7 @@ export default function FooterMain() {
         <div className="footer-section">
           <h3>Unternehmen</h3>
           <ul>
+            <Hypercube></Hypercube>
             {/* <li><Link href="/ueber-uns">Über uns</Link></li> */}
             {/* <li><Link href="/blog">Blog</Link></li> */}
             {/* <li><Link href="/partner">Partner</Link></li> */}
