@@ -1,4 +1,6 @@
 #footerMain {
+  display:flex;
+  flex-direction: row;
     margin-top:1%;
     margin-bottom:-1%;
     background: #151f28;
@@ -7,101 +9,113 @@
     font-family: 'Segoe UI', system-ui, sans-serif;
     min-height:30vh;
     width:auto;
-    .footer-columns {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 2rem;
-      margin-bottom: 2rem;
-  
-      @media (max-width: 768px) {
-        grid-template-columns: 1fr 1fr;
-      }
-  
-      @media (max-width: 480px) {
-        grid-template-columns: 1fr;
-      }
-    }
-  
-    .footer-section {
-      h3 {
-        width:fit-content;
-        font-size: 1.1rem;
-        margin-bottom: 1.2rem;
-        position: relative;
-        color: black;
-        padding: 2px 6px;
-        box-decoration-break: clone;
-      
-        background-color: rgba(211, 250, 13, 0.958);
-        
-        &::after {
-          content: '';
-          position: absolute;
-          left: 0;
-          bottom: -8px;
-          width: 40px;
-          height: 2px;
-          background: #3498db;
-        }
-      }
-  
-      ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-  
-        li {
-          margin-bottom: 0.6rem;
-  
-          a {
-            color: #bdc3c7;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            font-size: 0.9rem;
-  
-            &:hover {
-              color: #3498db;
-              padding-left: 5px;
-            }
-          }
-        }
-      }
-    }
-  
-    .footer-bottom {
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      padding-top: 1.5rem;
-      display: flex;
+    display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem; // Add spacing between elements
+
+  .footer-columns {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+
+    @media (max-width: 768px) {
       flex-direction: column;
       align-items: center;
-      text-align: center;
-      gap: 1rem;
-  
-      @media (min-width: 768px) {
-        flex-direction: row;
-        justify-content: space-between;
+    }
+  }
+
+  .footer-section {
+    flex: 1;
+    min-width: 200px; // Ensure sections have a minimum width
+
+    h3 {
+      text-align: left;
+      width:fit-content;
+      font-size: 1.1rem;
+      margin-bottom: 1.2rem;
+      position: relative;
+      color: black;
+      padding: 2px 6px;
+      box-decoration-break: clone;
+    
+      background-color: rgba(211, 250, 13, 0.958);
+      
+      &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -8px;
+        width: 40px;
+        height: 2px;
+        background: #3498db;
       }
-  
-      p {
-        margin: 0;
-        font-size: 0.85rem;
-        color: #7f8c8d;
-      }
-  
-      .footer-legal-links {
-        display: flex;
-        gap: 1rem;
-  
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      padding-left: 0;
+
+      li {
+        margin-bottom: 0.6rem;
+
         a {
-          color: #7f8c8d;
-          font-size: 0.85rem;
+          color: #bdc3c7;
           text-decoration: none;
-          transition: color 0.3s ease;
-  
+          transition: all 0.3s ease;
+          font-size: 0.9rem;
+
           &:hover {
             color: #3498db;
+            padding-left: 5px;
           }
         }
       }
     }
   }
+
+  .footer-bottom {
+    flex: 1 100%; // Ensure it spans the full width
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+    margin-top: 2rem;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    p {
+      margin: 0;
+      font-size: 0.85rem;
+      color: #7f8c8d;
+    }
+
+    .footer-legal-links {
+      display: flex;
+      gap: 1rem;
+
+      a {
+        color: #7f8c8d;
+        font-size: 0.85rem;
+        text-decoration: none;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: #3498db;
+        }
+      }
+    }
+  }
+}
