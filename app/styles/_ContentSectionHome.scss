@@ -33,9 +33,9 @@ $primaryColor:rgba(211, 250, 13, 0.958);
     border-style: solid;
     border-width: 1px;
     border-color: #5766a3c2;
-    border-radius: 4px;
+    border-radius: 12px; // Stärkere Abrundung
     div {
-      border-radius: 4px;
+      border-radius: 8px;
       p {
         padding: 10%;
         font-size: 1.4em;
@@ -107,6 +107,7 @@ $primaryColor:rgba(211, 250, 13, 0.958);
       margin-right:auto;
       border-color:rgba(211, 250, 13, 0.958);
       border-width:3px;
+      border-radius: 12px;
   
    h1{
     @include textHighlight();
@@ -179,6 +180,7 @@ $primaryColor:rgba(211, 250, 13, 0.958);
         display:flex;
         flex-direction: column;
         align-items:center;
+        border-radius: 12px;
         form{
             
             width:100%;
@@ -225,6 +227,7 @@ $primaryColor:rgba(211, 250, 13, 0.958);
         flex-direction:column;
         align-items:center;
         @include simpleBox();
+        border-radius: 12px;
       
         h1 {
           @include textHighlight();
@@ -407,6 +410,7 @@ $primaryColor:rgba(211, 250, 13, 0.958);
           border-width: 1px 0px 0px 0px;
           border-color: #5766a3c2;
            @include simpleBox();
+           border-radius: 8px;
 
           h1{
             margin-left:2%;
@@ -435,6 +439,7 @@ $primaryColor:rgba(211, 250, 13, 0.958);
         max-width:80%;
         margin-left:auto;
         margin-right:auto;
+        border-radius: 8px;
         }
         p {
           @include simpleBox();
