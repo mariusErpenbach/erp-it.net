@@ -1,0 +1,42 @@
+#sitemap {
+    padding: 2rem;
+    background-color: #202844;
+    color: #ffffff;
+
+    ul {
+        list-style: none;
+        padding: 0;
+
+        li {
+            margin-bottom: 0.5rem;
+
+            a {
+                color: #66baff;
+                text-decoration: none;
+                font-weight: bold;
+                transition: color 0.3s;
+
+                &:hover {
+                    color: #ffd966;
+                }
+            }
+
+            ul {
+                margin-left: 1.5rem;
+
+                li {
+                    margin-bottom: 0.3rem;
+
+                    a {
+                        font-weight: normal;
+                        color: #8faadc;
+
+                        &:hover {
+                            color: #d3fa0d;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

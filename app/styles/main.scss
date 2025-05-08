@@ -4,11 +4,12 @@
 @use "MenuBar.scss";
 // Main Page
 @use "Home.scss";
-
-@use "BannerTop.scss";
+    @use './PolygonSlider';
+    @use './Hypercube.scss';
+    @use "BannerTop.scss";
     // Content Section Main Page
-    @use "Quotes.scss";
-    @use "ContentSectionHome.scss";
+        @use "Quotes.scss";
+        @use "ContentSectionHome.scss";
 
 // Blog 
 @use "ArticlesList.scss";
@@ -18,11 +19,11 @@
 
 @use "Impressum.scss";
 @use "Datenschutz.scss";
-
+@use 'Sitemap.scss';
 @use "Tools.scss";
     @use "PyLibs.scss";
     @use "TailwindClasses.scss";
     @use "Xaml-list.scss";
     @use "CsharpLibs.scss";
-@use './_PolygonSlider';
-@use './_Hypercube.scss';
+
+

@@ -1,9 +1,21 @@
 /* Styling for the Hypercube component */
+#cube-wrapper{ 
+    margin-top:-6%;
+  width:6em;
+  height:6em;
+
+    position:relative; /* Changed to relative for proper containment */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 .hypercube-svg {
     fill: white; /* Default fill color for the SVG */
     width:4em;
     height:auto;
+    position:absolute;
+    left:0;
 }
 
 .hypercube-outer {
@@ -20,50 +32,50 @@
 }
 
 .cube-container {
+    width: 100%; /* Match the size of the wrapper */
+    height: 100%; /* Match the size of the wrapper */
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 400px;
-    height: 400px;
-    margin: auto;
 }
 
 .outerCube,
 .innerCube {
     position: relative;
-    width: 200px;
-    height: 200px;
+    width: 50px; /* Reduced size for logo */
+    height: 50px; /* Reduced size for logo */
     transform-style: preserve-3d;
 }
 
 .face {
     position: absolute;
-    width: 200px;
-    height: 200px;
+    width: 50px; /* Match cube size */
+    height: 50px; /* Match cube size */
     background: rgba(211, 250, 13, 0.958);
     color:black;
     font-size:2rem;
     border-style:solid;
     border-width: 1px;
     border-color:black;
+    transform: translateZ(25px); /* Adjust depth to match new size */
 }
 
 /* Positioning the faces of the cube */
 .face:nth-child(1) {
-    transform: rotateY(0deg) translateZ(100px);
+    transform: rotateY(0deg) translateZ(25px);
 }
 .face:nth-child(2) {
-    transform: rotateY(90deg) translateZ(100px);
+    transform: rotateY(90deg) translateZ(25px);
 }
 .face:nth-child(3) {
-    transform: rotateY(180deg) translateZ(100px);
+    transform: rotateY(180deg) translateZ(25px);
 }
 .face:nth-child(4) {
-    transform: rotateY(-90deg) translateZ(100px);
+    transform: rotateY(-90deg) translateZ(25px);
 }
 .face:nth-child(5) {
-    transform: rotateX(90deg) translateZ(100px);
+    transform: rotateX(90deg) translateZ(25px);
 }
 .face:nth-child(6) {
-    transform: rotateX(-90deg) translateZ(100px);
+    transform: rotateX(-90deg) translateZ(25px);
 }

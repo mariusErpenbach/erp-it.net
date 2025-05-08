@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import polygonSliderData from "./polygonSliderData.json";
 
 export default function PolygonSlider() {
@@ -31,7 +31,7 @@ export default function PolygonSlider() {
     const polygons = document.querySelectorAll("#outerPolygon polygon");
     polygons.forEach((polygon) => {
       const htmlPolygon = polygon as HTMLElement; // Cast to HTMLElement to access style property
-      htmlPolygon.style.transition = "opacity 0.1s ease";
+      htmlPolygon.style.transition = "opacity 0.2s ease";
       htmlPolygon.style.opacity = "0";
     });
 
@@ -42,7 +42,7 @@ export default function PolygonSlider() {
         const htmlPolygon = polygon as HTMLElement; // Cast to HTMLElement to access style property
         htmlPolygon.style.transition = "opacity 0.7s ease";
         htmlPolygon.style.opacity = "1";
-      }, distance * 50); // Delay based on distance, 0.1s per step
+      }, distance * 85); // Delay based on distance, 0.1s per step
     });
   };
 
@@ -52,45 +52,6 @@ export default function PolygonSlider() {
     handleFanEffect(); // Trigger the fan effect
   };
 
- 
-
-
-  const handleMouseWheelSpin = (e: WheelEvent) => {
-   
-
-    if (e.deltaY < 0) {
-      setSpinCounter((prevCounter) => (prevCounter + 1) % sides); // Increment counter
-    } else if (e.deltaY > 0) {
-      setSpinCounter((prevCounter) => (prevCounter - 1 + sides) % sides); // Decrement counter
-    }
-
-  };
-
-
-  useEffect(() => {
-    const handleWheel = (e: WheelEvent) => {
-      e.preventDefault();
-      handleMouseWheelSpin(e); // Call the new function to handle mouse wheel spin
-    };
-
-    const handleMouseEnter = () => {
-      document.addEventListener('wheel', handleWheel, { passive: false });
-    };
-
-    const handleMouseLeave = () => {
-      document.removeEventListener('wheel', handleWheel);
-    };
-
-    const svgElement = document.getElementById('outerPolygon');
-    svgElement?.addEventListener('mouseenter', handleMouseEnter);
-    svgElement?.addEventListener('mouseleave', handleMouseLeave);
-
-    return () => {
-      svgElement?.removeEventListener('mouseenter', handleMouseEnter);
-      svgElement?.removeEventListener('mouseleave', handleMouseLeave);
-      document.removeEventListener('wheel', handleWheel);
-    };
-  }, []);
 
   return (
     <div id="polygonSlider">
@@ -187,21 +148,28 @@ export default function PolygonSlider() {
         </svg>
       </div>
       <div id="polygonSliderRightBox">
-        <h3>Wichtige Fragen bei der Planung ihrer Software</h3>
+        <h3>Wichtige Fragen bei der Planung ihrer Software: {words[spinCounter]}</h3>
         <ul>
-          {currentQuestions.map((question, index) => (
-            <li key={index}>{question}</li>
-          ))}
+          <AnimatePresence mode="wait">
+            {currentQuestions.map((question, index) => (
+              <motion.li
+                key={`${spinCounter}-${index}`} // Dynamischer Schlüssel basierend auf spinCounter und Index
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
+              >
+                {question}
+              </motion.li>
+            ))}
+          </AnimatePresence>
         </ul>
 
-          <footer> 
+        <footer>
           <button onClick={() => setSpinCounter((prevCounter) => (prevCounter - 1 + polygonSliderData.length) % polygonSliderData.length)}>prev</button>
-
           <button onClick={() => setSpinCounter((prevCounter) => (prevCounter + 1) % polygonSliderData.length)}>next</button>
-          </footer>
-          
-
-          </div>
+        </footer>
+      </div>
     </section>
     
     </div>

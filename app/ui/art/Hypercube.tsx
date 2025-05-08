@@ -40,35 +40,37 @@ const Hypercube: React.FC = () => {
     }, []);
 
     return (
-        <div className="cube-container">
-            {/* Outer cube rotates in opposite direction */}
-            <div
-                className="outerCube"
-                style={{
-                    transform: `rotateX(${angleXOuter}deg) rotateY(${angleYOuter}deg)`
-                }}
-            >
-                <div className="face" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}><p style={{transform:`rotate(${textRotation}deg)`}}>M.</p></div>
-                <div className="face" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center'}}>B</div>
-                <div className="face" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center'}}>C</div>
-                <div className="face" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>D</div>
-                <div className="face" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}><p style={{transform:"rotate(-90deg)"}}>M.</p></div>
-                <div className="face" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}><p style={{transform:"rotate(-90deg)"}}>M.</p></div>
-            </div>
+        <div id="cube-wrapper">
+            <div className="cube-container">
+                {/* Outer cube rotates in opposite direction */}
+                <div
+                    className="outerCube"
+                    style={{
+                        transform: `rotateX(${angleXOuter}deg) rotateY(${angleYOuter}deg)`
+                    }}
+                >
+                    <div className="face" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}><p style={{transform:`rotate(${textRotation}deg)`}}>M</p></div>
+                    <div className="face" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center'}}>M</div>
+                    <div className="face" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center'}}>M</div>
+                    <div className="face" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>M</div>
+                    <div className="face" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}><p style={{transform:"rotate(-90deg)"}}>M</p></div>
+                    <div className="face" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}><p style={{transform:"rotate(-90deg)"}}>M</p></div>
+                </div>
 
-            {/* Inner cube rotates in 3D */}
-            <div
-                className="innerCube"
-                style={{
-                    transform: `rotateX(${angleXInner}deg) rotateY(${angleYInner}deg)`
-                }}
-            >
-                <div className="face" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', background:"rgba(211, 250, 13, 0.958)"}}><p style={{color:"black",transform:`rotate(${textRotation}deg)`} }>E.</p></div>
-                <div className="face" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center'}}>2</div>
-                <div className="face" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>3</div>
-                <div className="face" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>4</div>
-                <div className="face" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center'}}><p style={{transform:"rotate(-90deg)"}}>E.</p></div>
-                <div className="face" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center'}}><p style={{transform:"rotate(-90deg)"}}>E.</p></div>
+                {/* Inner cube rotates in 3D */}
+                <div
+                    className="innerCube"
+                    style={{
+                        transform: `rotateX(${angleXInner}deg) rotateY(${angleYInner}deg)`
+                    }}
+                >
+                    <div className="face" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', background:"rgba(211, 250, 13, 0.958)"}}><p style={{color:"black",transform:`rotate(${textRotation}deg)`} }>E</p></div>
+                    <div className="face" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center'}}>E</div>
+                    <div className="face" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>E</div>
+                    <div className="face" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>E</div>
+                    <div className="face" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center'}}><p style={{transform:"rotate(-90deg)"}}>E</p></div>
+                    <div className="face" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center'}}><p style={{transform:"rotate(-90deg)"}}>E</p></div>
+                </div>
             </div>
         </div>
     );

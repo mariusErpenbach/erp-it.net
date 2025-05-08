@@ -17,7 +17,7 @@ export default function FooterMain() {
         <div className="footer-section">
           <h3>Unternehmen</h3>
           <ul>
-            <Hypercube></Hypercube>
+            <div id="hypercube-box"></div><Hypercube></Hypercube>
             {/* <li><Link href="/ueber-uns">Über uns</Link></li> */}
             {/* <li><Link href="/blog">Blog</Link></li> */}
             {/* <li><Link href="/partner">Partner</Link></li> */}
@@ -44,7 +44,7 @@ export default function FooterMain() {
         <p>&copy; {new Date().getFullYear()} Alle Rechte vorbehalten.</p>
         <div className="footer-legal-links">
           {/* <Link href="/nutzungsbedingungen">Nutzungsbedingungen</Link> */}
-          {/* <Link href="/sitemap">Sitemap</Link> */}
+          <Link href="/sitemap">Sitemap</Link>
         </div>
       </div>
     </footer>
