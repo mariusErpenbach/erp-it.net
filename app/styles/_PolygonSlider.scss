@@ -32,8 +32,18 @@ section{
         height: 75vh;
         margin:auto;
         position: relative;
+        width: 50%;
+        height: auto;
+
         svg{
             cursor:pointer;
+            width: 70vh;
+            height: 70vh;
+            max-width: 100%;
+            max-height: 100%;
+            position: relative;
+            pointer-events: auto;
+            overflow: visible;
         }
       }
     #polygonSliderRightBox{
@@ -91,7 +101,7 @@ footer {
   justify-content: space-between;
   margin-top: 20px;
   position: relative;
-  z-index: 10; // Ensure buttons are above other elements
+  z-index: 10; 
 
   button {
     background-color: #3b3f6b;
@@ -109,6 +119,49 @@ footer {
 
     &:active {
       background-color: #202844;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  #polygonSlider {
+    section {
+      flex-direction: column;
+      padding: 1%;
+
+      #polyBox {
+        height: 50vh;
+      }
+
+      #polygonSliderRightBox {
+        width: 100%; 
+        margin: 0;
+        padding: 10px;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  #polygonSlider {
+    section {
+      #polyBox {
+        height: 40vh; 
+      }
+
+      #polygonSliderRightBox {
+        padding: 5px; 
+        h3 {
+          font-size: 1.2em; 
+        }
+
+        ul {
+          li {
+            font-size: 0.9rem; 
+            margin: 2%;
+          }
+        }
+      }
     }
   }
 }

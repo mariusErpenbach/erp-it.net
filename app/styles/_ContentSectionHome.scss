@@ -14,7 +14,6 @@ $primaryColor:rgba(211, 250, 13, 0.958);
   border-width: 1px;
   border-color: #5766a3c2;
   background: linear-gradient(135deg, #1c202c, #2226592c);
-  
   };
 
 
@@ -28,7 +27,7 @@ $primaryColor:rgba(211, 250, 13, 0.958);
     width: 31.5%;
     margin-left: auto;
     margin-right: auto;
-    min-height: 25vw;
+    height:auto;
     background: linear-gradient(to bottom,#2f3757, #202844 );
     border-style: solid;
     border-width: 1px;
@@ -71,6 +70,19 @@ $primaryColor:rgba(211, 250, 13, 0.958);
        
       }
     }
+    #webDev-image-container{
+      display:flex;
+      flex-direction:row;
+      
+    img{
+      object-fit: cover;
+    
+      max-width:80%;
+      margin-left:auto;
+      margin-right:auto;
+      border-radius: 8px;
+    }
+    }
     section {
       @include simpleBox();
       margin-left: auto;
@@ -87,16 +99,14 @@ $primaryColor:rgba(211, 250, 13, 0.958);
         flex-direction: column;
         align-items: center;
         justify-content: center;
+      
         p {
           width: 79%;
           margin-left: auto;
           margin-top: -2%;
         }
-        #webDev-image-container{
-        margin-top:-10%;
-        }
+        
       }
-   
     }
     footer {
       @include simpleBox;
@@ -108,7 +118,6 @@ $primaryColor:rgba(211, 250, 13, 0.958);
       border-color:rgba(211, 250, 13, 0.958);
       border-width:3px;
       border-radius: 12px;
-  
    h1{
     @include textHighlight();
     width:fit-content;
@@ -171,218 +180,69 @@ $primaryColor:rgba(211, 250, 13, 0.958);
         }
       }
     }
-    #idea-form-container{
+    #idea-form-container {
         @include simpleBox();
-        margin-top:1%;
-        width:90%;
-        margin-left:auto;
-        margin-right:auto;
-        display:flex;
-        flex-direction: column;
-        align-items:center;
-        border-radius: 12px;
-        form{
-            
-            width:100%;
-            margin-top: 0.5%;
-            
-            textarea{
-               width:99%;
-               height:10em;
-               color:white;
-               background-color:#3a446a;
-               border-style:solid;
-               border-width:1px;
-               margin:1%;
-            }
-            div {  
-                display: flex;
-                justify-content: space-between;
-                align-items: center; 
-                padding:1%;
-                input {
-                  flex-grow: 1; 
-                  max-width: 40%;
-                  color:white;
-                  background-color:#3a446a;
-                }
-              
-                button {
-                  color:white;
-                  background-color: #3a446a;
-                  border-radius:10%;
-                  padding:1%;
-                }
-              }
-          
-        }
-      }
-      #skillChart {
-        margin-top: 2%;
+        margin-top: 1%;
+        width: 90%;
         margin-left: auto;
         margin-right: auto;
-        width: 90%;
-        padding:1%;
-        display:flex;
-        flex-direction:column;
-        align-items:center;
-        @include simpleBox();
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         border-radius: 12px;
-      
-        h1 {
-          @include textHighlight();
-          font-size: 1.2em;
-     
-        }
-      
-        table {
-          margin-top: 1%;
-          width: 100%;
-          border-collapse: collapse;
-         
-          tr {
-            td {
-              color: white;
-          
-              border-radius: 5px;
-              position: relative;
-              display: flex;
-              width: 94%;
-              padding: 5px;
-              height: 2.4em;
-              align-items: center;
-      
-              .skillBar {
-                height: 100%;
-                border-radius: 5px;
-                display: flex;
-                align-items: center;
-                color: white;
-                font-weight: bold;
-                padding-left: 10px;
-                padding-right: 10px;
-                .hover-indicator{
-                  margin-left:1%;
-                  border-style:solid;
-                  border-width:1.5px;
-                  display:flex;
-                  padding:1%;
-                  font-size:0.65em;
-                
-                  color:white;
-                  background-color:#353c53cb;
-                  &:hover{
-                    border-style:none;
-                    div{
-                      display:none;
-                    }
-                  }
-                  .frameworkName {
-                    margin-left:1%;
-                    display:none;
-                    font-size: 1.2em;
-                    margin:5%;
-                    padding-right:5%;
-                    width:fit-content;
-                  }
-          
-                  &:hover .frameworkName {
-                    display:inline-block;
-                  }
-                 
-                }
-                
-              }
-              
-              
-            }
-      
-            #htmlSkill {
-              td {
-                background-color: rgb(227, 76, 38);
-              }
-              .skillBar {
+
+        form {
+            width: 100%;
+            margin-top: 0.5%;
+
+            textarea {
                 width: 99%;
-     
-                background-color: rgb(227, 76, 38);
-              }
+                height: 10em;
+                color: white;
+                background-color: #3a446a;
+                border-style: solid;
+                border-width: 1px;
+                margin: 1%;
+                border-radius: 8px; /* Abrundung hinzugefügt */
+                padding: 10px; /* Padding für besseren Textabstand */
             }
-      
-            #xamlSkill {
-              td {
-                background-color: rgb(66, 103, 178);
-              }
-              .skillBar {
-                width: 55%;
-                background-color: rgb(66, 103, 178);
-              }
+
+            div {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 1%;
+
+                input {
+                    flex-grow: 1;
+                    max-width: 40%;
+                    color: white;
+                    background-color: #3a446a;
+                    border-radius: 8px; /* Abrundung hinzugefügt */
+                    padding: 10px; /* Padding für besseren Textabstand */
+                }
+
+                button {
+                    color: white;
+                    background-color: #3a446a;
+                    border-radius: 12px; /* Stärkere Abrundung */
+                    padding: 10px 20px; /* Größeres Padding für bessere Klickfläche */
+                    transition: background-color 0.3s ease; /* Smooth Hover Effekt */
+
+                    &:hover {
+                        background-color: #5766a3; /* Hover-Farbe */
+                    }
+                }
             }
-      
-            #cssSkill {
-              td {
-                background-color: rgb(38, 77, 228);
-              }
-              .skillBar {
-                width: 90%;
-                background-color: rgb(38, 77, 228);
-              }
+
+            p {
+                margin-top: 10px; /* Abstand zur Nachricht */
+                font-size: 1.2em; /* Größere Schrift für Feedback */
+                text-align: center; /* Zentrierte Nachricht */
             }
-      
-            #jsSkill {
-              td {
-                background-color: rgb(247, 223, 30);
-              }
-              .skillBar {
-                width: 80%;
-                background-color: rgb(247, 223, 30);
-                color: black;
-              }
-            }
-      
-            #pySkill {
-              td {
-                background-color: rgb(53, 114, 165);
-              }
-              .skillBar {
-                width: 75%;
-                background-color: rgb(53, 114, 165);
-              }
-            }
-      
-            #csharpSkill {
-              td {
-                background-color: rgb(155, 89, 182);
-              }
-              .skillBar {
-                width: 65%;
-                background-color: rgb(155, 89, 182);
-              }
-            }
-      
-            #cppSkill {
-              td {
-                background-color: rgb(0, 122, 204);
-              }
-              .skillBar {
-                width: 35%;
-                background-color: rgb(0, 122, 204);
-              }
-            }
-      
-            #holyCSkill {
-              td {
-                background-color: rgb(153, 0, 0);
-                
-              }
-              .skillBar {
-                width: 9%;
-                background-color: rgb(153, 0, 0);
-                overflow:hidden;
-              }
-            }
-          }
         }
       }
+   
       
   }
   #embeddedSoftwareSection{
@@ -396,6 +256,7 @@ $primaryColor:rgba(211, 250, 13, 0.958);
         margin-left: auto;
         margin-right: auto;
         display:flex;
+      
         flex-direction: column;
         padding-left:3%;
         span {
@@ -411,6 +272,7 @@ $primaryColor:rgba(211, 250, 13, 0.958);
           border-color: #5766a3c2;
            @include simpleBox();
            border-radius: 8px;
+           margin-bottom:2%;
 
           h1{
             margin-left:2%;
@@ -466,56 +328,46 @@ $primaryColor:rgba(211, 250, 13, 0.958);
 
   .contentSectionHome-section {
     width: 90%;  /* Stellt sicher, dass jede Section 90% der Breite einnimmt */
-    margin-top: 10px;  /* Fügt Abstand zwischen den Sections hinzu */
+    margin-top: 10px  /* Fügt Abstand zwischen den Sections hinzu */
   
   }
 }
 
 /* Media Query für sehr kleine Bildschirme */
 @media (max-width: 768px) {
+  #contentSectionHome {
+    flex-direction: column; /* Stellt die Sections untereinander */
+  }
+
   .contentSectionHome-section {
-   
-    width: 80vw;  /* Jede Section nimmt die volle Breite ein */
-    margin-top: 15px;  /* Größerer Abstand für bessere Lesbarkeit */
-   
-  }
-  #contentSectionHome .contentSectionHome-section {
-    width:70vw;
-  }
-  #contentSectionHome #webDevSection section {
-    flex-direction: column;
-
-  }
-  
-  #contentSectionHome #embeddedSoftwareSection {
-    
-    flex-direction: column;
-    
-  }
-  #contentSectionHome #embeddedSoftwareSection #embeddedSoftwareOverview {
-  
-
-margin-left:0%;
-margin-right:0%;
-width:100%;
+    width: 100%; /* Jede Section nimmt die volle Breite ein */
+    margin-top: 15px; /* Größerer Abstand für bessere Lesbarkeit */
   }
 
-  /* Optional: Schriftgröße anpassen */
-  .contentSectionHome-section p {
-    font-size: 1.2em;  /* Kleinere Schriftgröße auf mobilen Geräten */
+  #webDevSection section,
+  #softwareDevSection section,
+  #embeddedSoftwareSection section {
+    flex-direction: column; /* Elemente untereinander anordnen */
   }
-  #contentSectionHome #embeddedSoftwareSection #embeddedSoftwarePics  {
-    display:flex;
+
+  #webDevOverview,
+  #softwareDevOverview,
+  #embeddedSoftwareOverview {
+    text-align: center; /* Zentrierter Text für kleinere Bildschirme */
+  }
+
+  #embeddedSoftwarePics {
+    display: flex;
     flex-direction: column;
-    justify-content: center;
-    margin-left:auto;
-    margin-right:auto;
-   
-    width:100%;
-}
-  #contentSectionHome #embeddedSoftwareSection #embeddedSoftwarePics img {
-    
-    max-width:100%;
-   
-}
+    align-items: center;
+    img {
+      max-width: 100%; /* Bilder passen sich der Bildschirmbreite an */
+      height: auto;
+    }
+  }
+
+  #idea-form-container {
+    width: 100%; /* Volle Breite für das Formular */
+    padding: 10px; /* Zusätzlicher Abstand für kleinere Bildschirme */
+  }
 }

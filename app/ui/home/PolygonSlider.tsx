@@ -47,7 +47,6 @@ export default function PolygonSlider() {
   };
 
   const spinPoly: () => void = () => {
- 
     setSpinCounter((prevCounter) => (prevCounter + 1) % polygonSliderData.length); // Increment counter and loop back to 0 after reaching the last field
     handleFanEffect(); // Trigger the fan effect
   };
@@ -55,14 +54,11 @@ export default function PolygonSlider() {
 
   return (
     <div id="polygonSlider">
-    <section style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
-      <div id="polyBox" style={{ flex: 1 }}>
+    <section id="polygonSliderSection">
+      <div id="polyBox">
         <svg
           id="outerPolygon"
-          width="70vh"
-          height="70vh"
           viewBox="0 0 300 300"
-          style={{ position: 'absolute', pointerEvents: 'auto', overflow: 'visible' }}
           onClick={spinPoly}>
           <defs>
             <linearGradient id="unifiedGradient" gradientUnits="objectBoundingBox">
@@ -148,8 +144,8 @@ export default function PolygonSlider() {
         </svg>
       </div>
       <div id="polygonSliderRightBox">
-        <h3>Wichtige Fragen bei der Planung ihrer Software: {words[spinCounter]}</h3>
-        <ul>
+        <h3 id="polygonSliderHeading">Wichtige Fragen bei der Planung ihrer Software: {words[spinCounter]}</h3>
+        <ul id="polygonSliderQuestions">
           <AnimatePresence mode="wait">
             {currentQuestions.map((question, index) => (
               <motion.li
@@ -165,9 +161,9 @@ export default function PolygonSlider() {
           </AnimatePresence>
         </ul>
 
-        <footer>
-          <button onClick={() => setSpinCounter((prevCounter) => (prevCounter - 1 + polygonSliderData.length) % polygonSliderData.length)}>prev</button>
-          <button onClick={() => setSpinCounter((prevCounter) => (prevCounter + 1) % polygonSliderData.length)}>next</button>
+        <footer id="polygonSliderFooter">
+          <button id="prevButton" onClick={() => setSpinCounter((prevCounter) => (prevCounter - 1 + polygonSliderData.length) % polygonSliderData.length)}>prev</button>
+          <button id="nextButton" onClick={() => setSpinCounter((prevCounter) => (prevCounter + 1) % polygonSliderData.length)}>next</button>
         </footer>
       </div>
     </section>

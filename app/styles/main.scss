@@ -4,12 +4,14 @@
 @use "MenuBar.scss";
 // Main Page
 @use "Home.scss";
-    @use './PolygonSlider';
+   
     @use './Hypercube.scss';
     @use "BannerTop.scss";
     // Content Section Main Page
         @use "Quotes.scss";
         @use "ContentSectionHome.scss";
+        @use './PolygonSlider.scss';
+        @use "Skillchart.scss";
 
 // Blog 
 @use "ArticlesList.scss";
@@ -26,5 +28,4 @@
     @use "TailwindClasses.scss";
     @use "Xaml-list.scss";
     @use "CsharpLibs.scss";
-
 

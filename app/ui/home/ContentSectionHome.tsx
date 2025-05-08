@@ -7,21 +7,20 @@ export default function ContentSectionHome() {
         <section id="webDevSection" className="contentSectionHome-section">
             <div id="webDevOverview">
             <span><strong>Web-Development</strong></span> 
-            <p>
-            Optimierte Ladezeiten, Code-Splitting und effiziente APIs für reaktionsschnelle Webanwendungen.
-            </p>
-              </div>
-               <section>
-                <div><p>Optimierte Struktur und semantisches HTML für bessere SEO und Barrierefreiheit.
+            <p>Optimierte Struktur und semantisches HTML für bessere SEO und Barrierefreiheit.
                 </p>
                 <div id="webDev-image-container">
                       <Image 
                         src="https://uploads.erp-it.net/images/webDevPreview.png" 
                         alt="Website mit Statistiken" 
-                        width={250} 
-                        height={270} 
+                        width={200} 
+                        height={150} 
                       />
                     </div>
+              </div>
+               <section>
+                <div>
+            
                 </div>
                 </section>
                 <footer>
@@ -42,7 +41,7 @@ export default function ContentSectionHome() {
          <h1>Let&apos;s connect&#33;</h1>
           <IdeaForm/>
           </div>
-          <SkillChart/>
+        
         </section>
 
         <section id="embeddedSoftwareSection" className="contentSectionHome-section">
@@ -56,9 +55,6 @@ export default function ContentSectionHome() {
               <Image src="https://uploads.erp-it.net/images/ES1.jpg" alt="Embedded Software 1" width={300} height={200}/>
               <Image src="https://uploads.erp-it.net/images/ES3.jpg" alt="Embedded Software 3" width={300} height={200}/>
               <Image src="https://uploads.erp-it.net/images/ES2.jpg" alt="Embedded Software 2" width={300} height={200}/>
-              <p>
-            Arduino- und Raspberry Pi-Projekte für Smart-Home.
-            </p>
           </div>
         </section>
       </div>

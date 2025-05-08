@@ -194,102 +194,6 @@ body {
   margin-top: 3.5em;
 }
 
-#polygonSlider section {
-  padding: 0.5%;
-  border-style: solid;
-  border-width: 1px;
-  border-color: rgba(87, 102, 163, 0.7607843137);
-  background: linear-gradient(135deg, #1c202c, rgba(34, 38, 89, 0.1725490196));
-  margin-top: 1%;
-  border-style: solid;
-  border-width: 1px;
-  background-color: #202844;
-  display: flex;
-}
-#polygonSlider section #polyBox {
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 75vh;
-  margin: auto;
-  position: relative;
-}
-#polygonSlider section #polyBox svg {
-  cursor: pointer;
-}
-#polygonSlider section #polygonSliderRightBox {
-  display: flex;
-  flex-direction: column;
-  align-self: center;
-  margin-left: -4%;
-  margin-right: 2%;
-  width: 50%;
-  height: 100%;
-  background: linear-gradient(135deg, #191a1b, #3b3f6b);
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  color: #f5f5f5;
-  padding: 20px;
-  flex: 1 1;
-}
-#polygonSlider section #polygonSliderRightBox h3 {
-  color: black;
-  padding: 2px 8px;
-  font-size: 1.4em;
-  -webkit-box-decoration-break: clone;
-          box-decoration-break: clone;
-  display: inline;
-  background-color: rgba(211, 250, 13, 0.958);
-  width: -moz-fit-content;
-  width: fit-content;
-  margin: 1%;
-}
-#polygonSlider section #polygonSliderRightBox ul {
-  list-style: none;
-  padding: 0;
-}
-#polygonSlider section #polygonSliderRightBox ul li {
-  font-size: 1rem;
-  margin-bottom: 0.5rem;
-  padding: 0.5rem;
-  background: linear-gradient(135deg, rgba(31, 24, 24, 0.596), rgb(25, 37, 70));
-  border-radius: 5px;
-  transition: background 0.3s ease, transform 0.2s ease;
-  width: -moz-fit-content;
-  width: fit-content;
-  margin: 4%;
-}
-#polygonSlider section #polygonSliderRightBox ul li:hover {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.3));
-  transform: scale(1.02);
-}
-
-footer {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 20px;
-  position: relative;
-  z-index: 10;
-}
-footer button {
-  background-color: #3b3f6b;
-  color: #f5f5f5;
-  border: none;
-  border-radius: 5px;
-  padding: 10px 20px;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: background-color 0.3s ease;
-}
-footer button:hover {
-  background-color: #5766a3;
-}
-footer button:active {
-  background-color: #202844;
-}
-
 /* Styling for the Hypercube component */
 #cube-wrapper {
   margin-top: -6%;
@@ -473,7 +377,7 @@ footer button:active {
   width: 31.5%;
   margin-left: auto;
   margin-right: auto;
-  min-height: 25vw;
+  height: auto;
   background: linear-gradient(to bottom, #2f3757, #202844);
   border-style: solid;
   border-width: 1px;
@@ -525,6 +429,17 @@ footer button:active {
   margin-right: auto;
   padding: 4%;
 }
+#contentSectionHome #webDevSection #webDev-image-container {
+  display: flex;
+  flex-direction: row;
+}
+#contentSectionHome #webDevSection #webDev-image-container img {
+  object-fit: cover;
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 8px;
+}
 #contentSectionHome #webDevSection section {
   padding: 0.5%;
   border-style: solid;
@@ -550,9 +465,6 @@ footer button:active {
   width: 79%;
   margin-left: auto;
   margin-top: -2%;
-}
-#contentSectionHome #webDevSection section div #webDev-image-container {
-  margin-top: -10%;
 }
 #contentSectionHome #webDevSection footer {
   padding: 0.5%;
@@ -681,6 +593,8 @@ footer button:active {
   border-style: solid;
   border-width: 1px;
   margin: 1%;
+  border-radius: 8px; /* Abrundung hinzugefügt */
+  padding: 10px; /* Padding für besseren Textabstand */
 }
 #contentSectionHome #softwareDevSection #idea-form-container form div {
   display: flex;
@@ -693,149 +607,23 @@ footer button:active {
   max-width: 40%;
   color: white;
   background-color: #3a446a;
+  border-radius: 8px; /* Abrundung hinzugefügt */
+  padding: 10px; /* Padding für besseren Textabstand */
 }
 #contentSectionHome #softwareDevSection #idea-form-container form div button {
   color: white;
   background-color: #3a446a;
-  border-radius: 10%;
-  padding: 1%;
+  border-radius: 12px; /* Stärkere Abrundung */
+  padding: 10px 20px; /* Größeres Padding für bessere Klickfläche */
+  transition: background-color 0.3s ease; /* Smooth Hover Effekt */
 }
-#contentSectionHome #softwareDevSection #skillChart {
-  margin-top: 2%;
-  margin-left: auto;
-  margin-right: auto;
-  width: 90%;
-  padding: 1%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 0.5%;
-  border-style: solid;
-  border-width: 1px;
-  border-color: rgba(87, 102, 163, 0.7607843137);
-  background: linear-gradient(135deg, #1c202c, rgba(34, 38, 89, 0.1725490196));
-  border-radius: 12px;
+#contentSectionHome #softwareDevSection #idea-form-container form div button:hover {
+  background-color: #5766a3; /* Hover-Farbe */
 }
-#contentSectionHome #softwareDevSection #skillChart h1 {
-  color: black;
-  padding: 2px 8px;
-  font-size: 1.4em;
-  -webkit-box-decoration-break: clone;
-          box-decoration-break: clone;
-  display: inline;
-  background-color: rgba(211, 250, 13, 0.958);
-  font-size: 1.2em;
-}
-#contentSectionHome #softwareDevSection #skillChart table {
-  margin-top: 1%;
-  width: 100%;
-  border-collapse: collapse;
-}
-#contentSectionHome #softwareDevSection #skillChart table tr td {
-  color: white;
-  border-radius: 5px;
-  position: relative;
-  display: flex;
-  width: 94%;
-  padding: 5px;
-  height: 2.4em;
-  align-items: center;
-}
-#contentSectionHome #softwareDevSection #skillChart table tr td .skillBar {
-  height: 100%;
-  border-radius: 5px;
-  display: flex;
-  align-items: center;
-  color: white;
-  font-weight: bold;
-  padding-left: 10px;
-  padding-right: 10px;
-}
-#contentSectionHome #softwareDevSection #skillChart table tr td .skillBar .hover-indicator {
-  margin-left: 1%;
-  border-style: solid;
-  border-width: 1.5px;
-  display: flex;
-  padding: 1%;
-  font-size: 0.65em;
-  color: white;
-  background-color: rgba(53, 60, 83, 0.7960784314);
-}
-#contentSectionHome #softwareDevSection #skillChart table tr td .skillBar .hover-indicator:hover {
-  border-style: none;
-}
-#contentSectionHome #softwareDevSection #skillChart table tr td .skillBar .hover-indicator:hover div {
-  display: none;
-}
-#contentSectionHome #softwareDevSection #skillChart table tr td .skillBar .hover-indicator .frameworkName {
-  margin-left: 1%;
-  display: none;
-  font-size: 1.2em;
-  margin: 5%;
-  padding-right: 5%;
-  width: -moz-fit-content;
-  width: fit-content;
-}
-#contentSectionHome #softwareDevSection #skillChart table tr td .skillBar .hover-indicator:hover .frameworkName {
-  display: inline-block;
-}
-#contentSectionHome #softwareDevSection #skillChart table tr #htmlSkill td {
-  background-color: rgb(227, 76, 38);
-}
-#contentSectionHome #softwareDevSection #skillChart table tr #htmlSkill .skillBar {
-  width: 99%;
-  background-color: rgb(227, 76, 38);
-}
-#contentSectionHome #softwareDevSection #skillChart table tr #xamlSkill td {
-  background-color: rgb(66, 103, 178);
-}
-#contentSectionHome #softwareDevSection #skillChart table tr #xamlSkill .skillBar {
-  width: 55%;
-  background-color: rgb(66, 103, 178);
-}
-#contentSectionHome #softwareDevSection #skillChart table tr #cssSkill td {
-  background-color: rgb(38, 77, 228);
-}
-#contentSectionHome #softwareDevSection #skillChart table tr #cssSkill .skillBar {
-  width: 90%;
-  background-color: rgb(38, 77, 228);
-}
-#contentSectionHome #softwareDevSection #skillChart table tr #jsSkill td {
-  background-color: rgb(247, 223, 30);
-}
-#contentSectionHome #softwareDevSection #skillChart table tr #jsSkill .skillBar {
-  width: 80%;
-  background-color: rgb(247, 223, 30);
-  color: black;
-}
-#contentSectionHome #softwareDevSection #skillChart table tr #pySkill td {
-  background-color: rgb(53, 114, 165);
-}
-#contentSectionHome #softwareDevSection #skillChart table tr #pySkill .skillBar {
-  width: 75%;
-  background-color: rgb(53, 114, 165);
-}
-#contentSectionHome #softwareDevSection #skillChart table tr #csharpSkill td {
-  background-color: rgb(155, 89, 182);
-}
-#contentSectionHome #softwareDevSection #skillChart table tr #csharpSkill .skillBar {
-  width: 65%;
-  background-color: rgb(155, 89, 182);
-}
-#contentSectionHome #softwareDevSection #skillChart table tr #cppSkill td {
-  background-color: rgb(0, 122, 204);
-}
-#contentSectionHome #softwareDevSection #skillChart table tr #cppSkill .skillBar {
-  width: 35%;
-  background-color: rgb(0, 122, 204);
-}
-#contentSectionHome #softwareDevSection #skillChart table tr #holyCSkill td {
-  background-color: rgb(153, 0, 0);
-}
-#contentSectionHome #softwareDevSection #skillChart table tr #holyCSkill .skillBar {
-  width: 9%;
-  background-color: rgb(153, 0, 0);
-  overflow: hidden;
+#contentSectionHome #softwareDevSection #idea-form-container form p {
+  margin-top: 10px; /* Abstand zur Nachricht */
+  font-size: 1.2em; /* Größere Schrift für Feedback */
+  text-align: center; /* Zentrierte Nachricht */
 }
 #contentSectionHome #embeddedSoftwareSection {
   display: flex;
@@ -874,6 +662,7 @@ footer button:active {
   border-color: rgba(87, 102, 163, 0.7607843137);
   background: linear-gradient(135deg, #1c202c, rgba(34, 38, 89, 0.1725490196));
   border-radius: 8px;
+  margin-bottom: 2%;
 }
 #contentSectionHome #embeddedSoftwareSection #embeddedSoftwareOverview div h1 {
   margin-left: 2%;
@@ -926,45 +715,314 @@ footer button:active {
   }
   .contentSectionHome-section {
     width: 90%; /* Stellt sicher, dass jede Section 90% der Breite einnimmt */
-    margin-top: 10px; /* Fügt Abstand zwischen den Sections hinzu */
+    margin-top: 10px;
   }
 }
 /* Media Query für sehr kleine Bildschirme */
 @media (max-width: 768px) {
+  #contentSectionHome {
+    flex-direction: column; /* Stellt die Sections untereinander */
+  }
   .contentSectionHome-section {
-    width: 80vw; /* Jede Section nimmt die volle Breite ein */
+    width: 100%; /* Jede Section nimmt die volle Breite ein */
     margin-top: 15px; /* Größerer Abstand für bessere Lesbarkeit */
   }
-  #contentSectionHome .contentSectionHome-section {
-    width: 70vw;
+  #webDevSection section,
+  #softwareDevSection section,
+  #embeddedSoftwareSection section {
+    flex-direction: column; /* Elemente untereinander anordnen */
   }
-  #contentSectionHome #webDevSection section {
-    flex-direction: column;
+  #webDevOverview,
+  #softwareDevOverview,
+  #embeddedSoftwareOverview {
+    text-align: center; /* Zentrierter Text für kleinere Bildschirme */
   }
-  #contentSectionHome #embeddedSoftwareSection {
-    flex-direction: column;
-  }
-  #contentSectionHome #embeddedSoftwareSection #embeddedSoftwareOverview {
-    margin-left: 0%;
-    margin-right: 0%;
-    width: 100%;
-  }
-  /* Optional: Schriftgröße anpassen */
-  .contentSectionHome-section p {
-    font-size: 1.2em; /* Kleinere Schriftgröße auf mobilen Geräten */
-  }
-  #contentSectionHome #embeddedSoftwareSection #embeddedSoftwarePics {
+  #embeddedSoftwarePics {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
+    align-items: center;
   }
-  #contentSectionHome #embeddedSoftwareSection #embeddedSoftwarePics img {
-    max-width: 100%;
+  #embeddedSoftwarePics img {
+    max-width: 100%; /* Bilder passen sich der Bildschirmbreite an */
+    height: auto;
+  }
+  #idea-form-container {
+    width: 100%; /* Volle Breite für das Formular */
+    padding: 10px; /* Zusätzlicher Abstand für kleinere Bildschirme */
   }
 }
+#polygonSlider section {
+  padding: 0.5%;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(87, 102, 163, 0.7607843137);
+  background: linear-gradient(135deg, #1c202c, rgba(34, 38, 89, 0.1725490196));
+  margin-top: 1%;
+  border-style: solid;
+  border-width: 1px;
+  background-color: #202844;
+  display: flex;
+}
+#polygonSlider section #polyBox {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 75vh;
+  margin: auto;
+  position: relative;
+  width: 50%;
+  height: auto;
+}
+#polygonSlider section #polyBox svg {
+  cursor: pointer;
+  width: 70vh;
+  height: 70vh;
+  max-width: 100%;
+  max-height: 100%;
+  position: relative;
+  pointer-events: auto;
+  overflow: visible;
+}
+#polygonSlider section #polygonSliderRightBox {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  margin-left: -4%;
+  margin-right: 2%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(135deg, #191a1b, #3b3f6b);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  color: #f5f5f5;
+  padding: 20px;
+  flex: 1 1;
+}
+#polygonSlider section #polygonSliderRightBox h3 {
+  color: black;
+  padding: 2px 8px;
+  font-size: 1.4em;
+  -webkit-box-decoration-break: clone;
+          box-decoration-break: clone;
+  display: inline;
+  background-color: rgba(211, 250, 13, 0.958);
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 1%;
+}
+#polygonSlider section #polygonSliderRightBox ul {
+  list-style: none;
+  padding: 0;
+}
+#polygonSlider section #polygonSliderRightBox ul li {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+  background: linear-gradient(135deg, rgba(31, 24, 24, 0.596), rgb(25, 37, 70));
+  border-radius: 5px;
+  transition: background 0.3s ease, transform 0.2s ease;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 4%;
+}
+#polygonSlider section #polygonSliderRightBox ul li:hover {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.3));
+  transform: scale(1.02);
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  position: relative;
+  z-index: 10;
+}
+footer button {
+  background-color: #3b3f6b;
+  color: #f5f5f5;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+footer button:hover {
+  background-color: #5766a3;
+}
+footer button:active {
+  background-color: #202844;
+}
+
+@media (max-width: 1024px) {
+  #polygonSlider section {
+    flex-direction: column;
+    padding: 1%;
+  }
+  #polygonSlider section #polyBox {
+    height: 50vh;
+  }
+  #polygonSlider section #polygonSliderRightBox {
+    width: 100%;
+    margin: 0;
+    padding: 10px;
+  }
+}
+@media (max-width: 768px) {
+  #polygonSlider section #polyBox {
+    height: 40vh;
+  }
+  #polygonSlider section #polygonSliderRightBox {
+    padding: 5px;
+  }
+  #polygonSlider section #polygonSliderRightBox h3 {
+    font-size: 1.2em;
+  }
+  #polygonSlider section #polygonSliderRightBox ul li {
+    font-size: 0.9rem;
+    margin: 2%;
+  }
+}
+#skillChart {
+  margin-top: 2%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+  padding: 1%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.5%;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(87, 102, 163, 0.7607843137);
+  background: linear-gradient(135deg, #1c202c, rgba(34, 38, 89, 0.1725490196));
+  border-radius: 12px;
+}
+#skillChart h1 {
+  color: black;
+  padding: 2px 8px;
+  font-size: 1.4em;
+  -webkit-box-decoration-break: clone;
+          box-decoration-break: clone;
+  display: inline;
+  background-color: rgba(211, 250, 13, 0.958);
+  font-size: 1.2em;
+}
+#skillChart table {
+  margin-top: 1%;
+  width: 100%;
+  border-collapse: collapse;
+}
+#skillChart table tr td {
+  color: white;
+  border-radius: 5px;
+  position: relative;
+  display: flex;
+  width: 94%;
+  padding: 5px;
+  height: 2.4em;
+  align-items: center;
+}
+#skillChart table tr td .skillBar {
+  height: 100%;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+#skillChart table tr td .skillBar .hover-indicator {
+  margin-left: 1%;
+  border-style: solid;
+  border-width: 1.5px;
+  display: flex;
+  padding: 1%;
+  font-size: 0.65em;
+  color: white;
+  background-color: rgba(53, 60, 83, 0.7960784314);
+}
+#skillChart table tr td .skillBar .hover-indicator:hover {
+  border-style: none;
+}
+#skillChart table tr td .skillBar .hover-indicator:hover div {
+  display: none;
+}
+#skillChart table tr td .skillBar .hover-indicator .frameworkName {
+  margin-left: 1%;
+  display: none;
+  font-size: 1.2em;
+  margin: 5%;
+  padding-right: 5%;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+#skillChart table tr td .skillBar .hover-indicator:hover .frameworkName {
+  display: inline-block;
+}
+#skillChart table tr #htmlSkill td {
+  background-color: rgb(227, 76, 38);
+}
+#skillChart table tr #htmlSkill .skillBar {
+  width: 99%;
+  background-color: rgb(227, 76, 38);
+}
+#skillChart table tr #xamlSkill td {
+  background-color: rgb(66, 103, 178);
+}
+#skillChart table tr #xamlSkill .skillBar {
+  width: 55%;
+  background-color: rgb(66, 103, 178);
+}
+#skillChart table tr #cssSkill td {
+  background-color: rgb(38, 77, 228);
+}
+#skillChart table tr #cssSkill .skillBar {
+  width: 90%;
+  background-color: rgb(38, 77, 228);
+}
+#skillChart table tr #jsSkill td {
+  background-color: rgb(247, 223, 30);
+}
+#skillChart table tr #jsSkill .skillBar {
+  width: 80%;
+  background-color: rgb(247, 223, 30);
+  color: black;
+}
+#skillChart table tr #pySkill td {
+  background-color: rgb(53, 114, 165);
+}
+#skillChart table tr #pySkill .skillBar {
+  width: 75%;
+  background-color: rgb(53, 114, 165);
+}
+#skillChart table tr #csharpSkill td {
+  background-color: rgb(155, 89, 182);
+}
+#skillChart table tr #csharpSkill .skillBar {
+  width: 65%;
+  background-color: rgb(155, 89, 182);
+}
+#skillChart table tr #cppSkill td {
+  background-color: rgb(0, 122, 204);
+}
+#skillChart table tr #cppSkill .skillBar {
+  width: 35%;
+  background-color: rgb(0, 122, 204);
+}
+#skillChart table tr #holyCSkill td {
+  background-color: rgb(153, 0, 0);
+}
+#skillChart table tr #holyCSkill .skillBar {
+  width: 9%;
+  background-color: rgb(153, 0, 0);
+  overflow: hidden;
+}
+
 #articlesList {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
