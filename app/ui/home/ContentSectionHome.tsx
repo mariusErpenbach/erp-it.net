@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import IdeaForm from './IdeaForm';
-import SkillChart from './SkillChart';
+
 export default function ContentSectionHome() {
     return (
       <div id="contentSectionHome">
