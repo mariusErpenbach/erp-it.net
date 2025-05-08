@@ -5,17 +5,21 @@ import fs from 'fs';
 import os from 'os';
 import path from 'path';
 import dotenv from 'dotenv';
+import connectDB from '@/app/db/mongoDB';
+import { ObjectId } from 'mongodb';
 
 dotenv.config();
 
-export async function convertHtmlToPdfAndSendEmail(htmlFilePath: string, formData: Record<string, string>, recipientEmail: string) {
+export async function convertHtmlToPdfAndSendEmail(formData: Record<string, string>, recipientEmail: string) {
     try {
-        // Create a temporary copy of the HTML file
-        const tempDir = os.tmpdir();
-        const tempHtmlPath = path.join(tempDir, `temp-${Date.now()}.html`);
-        let htmlContent = fs.readFileSync(htmlFilePath, 'utf-8');
+        // Fetch the first entry from the MongoDB collection
+        const htmlContent = await fetchHtmlTemplateFromFirstEntry();
+        if (!htmlContent) {
+            throw new Error('No template found in the database.');
+        }
 
         // Replace placeholders in the HTML with form data
+        let updatedHtmlContent = htmlContent;
         Object.keys(formData).forEach((key) => {
             const placeholder = `{{${key}}}`; // Use {{key}} as placeholder format
             let value = formData[key];
@@ -25,10 +29,13 @@ export async function convertHtmlToPdfAndSendEmail(htmlFilePath: string, formDat
                 value += '<br/>';
             }
 
-            htmlContent = htmlContent.replace(new RegExp(placeholder, 'g'), value);
+            updatedHtmlContent = updatedHtmlContent.replace(new RegExp(placeholder, 'g'), value);
         });
 
-        fs.writeFileSync(tempHtmlPath, htmlContent, 'utf-8');
+        // Create a temporary file for the updated HTML content
+        const tempDir = os.tmpdir();
+        const tempHtmlPath = path.join(tempDir, `temp-${Date.now()}.html`);
+        fs.writeFileSync(tempHtmlPath, updatedHtmlContent, 'utf-8');
 
         // Launch Puppeteer browser
         const browser = await puppeteer.launch();
@@ -79,5 +86,59 @@ export async function convertHtmlToPdfAndSendEmail(htmlFilePath: string, formDat
         fs.unlinkSync(pdfPath);
     } catch (error) {
         console.error('Error occurred:', error);
+    }
+}
+
+export async function fetchHtmlTemplate(templateName: string): Promise<string | null> {
+    try {
+        const database = await connectDB();
+        if (!database) {
+            throw new Error('Failed to connect to the database.');
+        }
+
+        const templates = database.collection('bewerbung');
+        const template = await templates.findOne({ _id: new ObjectId(templateName) });
+        return template ? template.indexEntry : null;
+    } catch (error) {
+        console.error('Error fetching template:', error);
+        return null;
+    }
+}
+
+export async function fetchHtmlTemplateFromFirstEntry(): Promise<string | null> {
+    try {
+        const database = await connectDB();
+        if (!database) {
+            throw new Error('Failed to connect to the database.');
+        }
+
+        const collection = database.collection('bewerbung');
+        const documents = await collection.find({}).toArray();
+        if (documents.length === 0) {
+            throw new Error('No entries found in the bewerbung collection.');
+        }
+
+        return documents[0].indexEntry || null;
+    } catch (error) {
+        console.error('Error fetching first entry from bewerbung collection:', error);
+        return null;
+    }
+}
+
+export async function fetchAndWriteIndexHtml() {
+    try {
+        // Fetch the HTML content from MongoDB
+        const htmlContent = await fetchHtmlTemplate('bewerbung');
+        if (!htmlContent) {
+            throw new Error('Template not found in the database.');
+        }
+
+        // Write the fetched content to the index.html file
+        const filePath = 'app/ui/tools/bewerbungshilfe/index.html';
+        fs.writeFileSync(filePath, htmlContent, 'utf-8');
+
+        console.log('index.html updated successfully from MongoDB.');
+    } catch (error) {
+        console.error('Error fetching and writing index.html:', error);
     }
 }
