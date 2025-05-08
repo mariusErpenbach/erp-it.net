@@ -1,4 +1,6 @@
+"use client";
 import React, { useState } from 'react';
+import { convertHtmlToPdfAndSendEmail } from '@/app/actions/bewerbungshelper';
 
 
 const Bewerbungshilfeformular: React.FC = () => {
@@ -7,21 +9,35 @@ const Bewerbungshilfeformular: React.FC = () => {
         ansprechpartner: '',
         anschrift: '',
         ortPlz: '',
-        datum: ''
+        datum: '',
     });
+    const [recipientEmail, setRecipientEmail] = useState('');
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
     };
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        console.log('Form Data:', formData);
+        setIsSubmitting(true);
+
+        try {
+            const htmlFilePath = 'app/ui/tools/bewerbungshilfe/index.html';
+            await convertHtmlToPdfAndSendEmail(htmlFilePath, formData, recipientEmail);
+
+            alert('Email with PDF sent successfully!');
+        } catch (error) {
+            console.error('Error sending email:', error);
+            alert('Failed to send email. Please try again.');
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (
-        <div>
+        <div id="bewerbungshilfe-form">
             <h1>Bewerbungshilfeformular</h1>
             <form onSubmit={handleSubmit}>
                 <div>
@@ -44,7 +60,7 @@ const Bewerbungshilfeformular: React.FC = () => {
                     />
                 </div>
                 <div>
-                    <label>Anschrift:</label>
+                    <label>Straße + Hausnummer:</label>
                     <input
                         type="text"
                         name="anschrift"
@@ -66,14 +82,26 @@ const Bewerbungshilfeformular: React.FC = () => {
                 <div>
                     <label>Datum:</label>
                     <input
-                        type="date"
+                        type="text"
                         name="datum"
                         value={formData.datum}
                         onChange={handleChange}
                         required
                     />
                 </div>
-                <button type="submit">Absenden</button>
+                <div>
+                    <label htmlFor="email">Bewerbungshelfer Email:</label>
+                    <input
+                        type="email"
+                        id="email"
+                        value={recipientEmail}
+                        onChange={(e) => setRecipientEmail(e.target.value)}
+                        required
+                    />
+                </div>
+                <button type="submit" disabled={isSubmitting}>
+                    {isSubmitting ? 'Sending...' : 'Send PDF'}
+                </button>
             </form>
         </div>
     );
