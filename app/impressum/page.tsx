@@ -1,4 +1,5 @@
 import MenuBar from "../ui/MenuBar";
+import Link from 'next/link';
 
 const ImpressumPage = () => {
   return (
@@ -13,7 +14,7 @@ const ImpressumPage = () => {
 
         <div className="content-container">
           <h3>Kontakt:</h3>
-          <p>E-Mail: <a href="mailto:Kontakt@erp-it.net">Kontakt@erp-it.net</a></p>
+          <p>E-Mail: <Link href="mailto:Kontakt@erp-it.net">Kontakt@erp-it.net</Link></p>
         </div>
 
         <div className="contact-container">

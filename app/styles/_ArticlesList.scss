@@ -53,7 +53,14 @@
         }
       }
     }
- 
-   
+
+    .preview-image-container {
+      position: relative;
+      img {
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
   }
 }
