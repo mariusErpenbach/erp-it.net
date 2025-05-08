@@ -1339,6 +1339,28 @@ footer button:active {
   color: #d3fa0d;
 }
 
+#nutzungsbedingungen {
+  padding: 2rem;
+  background-color: #f9f9f9;
+  color: #333;
+}
+#nutzungsbedingungen h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #202844;
+}
+#nutzungsbedingungen h2 {
+  font-size: 1.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #202844;
+}
+#nutzungsbedingungen p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
 #back-to-top-btn {
   position: fixed;
   bottom: 2em;

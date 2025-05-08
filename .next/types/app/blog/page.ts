@@ -1,8 +1,8 @@
-// File: /home/dci/Desktop/Github/erp-it.net/app/sitemap/page.tsx
-import * as entry from '../../../../app/sitemap/page.js'
+// File: /home/dci/Desktop/Github/erp-it.net/app/blog/page.tsx
+import * as entry from '../../../../app/blog/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
-type TEntry = typeof import('../../../../app/sitemap/page.js')
+type TEntry = typeof import('../../../../app/blog/page.js')
 
 type SegmentParams<T extends Object = any> = T extends Record<string, any>
   ? { [K in keyof T]: T[K] extends string ? string | string[] | undefined : never }

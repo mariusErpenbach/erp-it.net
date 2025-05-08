@@ -43,7 +43,7 @@ export default function FooterMain() {
       <div className="footer-bottom">
         <p>&copy; {new Date().getFullYear()} Alle Rechte vorbehalten.</p>
         <div className="footer-legal-links">
-          {/* <Link href="/nutzungsbedingungen">Nutzungsbedingungen</Link> */}
+          <Link href="/nutzungsbedingungen">Nutzungsbedingungen</Link>
           <Link href="/sitemap">Sitemap</Link>
         </div>
       </div>
