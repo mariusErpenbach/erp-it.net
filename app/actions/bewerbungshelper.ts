@@ -13,10 +13,15 @@ dotenv.config();
 export async function convertHtmlToPdfAndSendEmail(formData: Record<string, string>, recipientEmail: string) {
     try {
         // Fetch the first entry from the MongoDB collection
+        console.log('Fetching HTML template from database...');
         const htmlContent = await fetchHtmlTemplateFromFirstEntry();
         if (!htmlContent) {
             throw new Error('No template found in the database.');
         }
+        console.log('HTML template successfully fetched from database.');
+
+        // Log the length of the fetched HTML content
+        console.log(`Fetched HTML content length: ${htmlContent.length}`);
 
         // Replace placeholders in the HTML with form data
         let updatedHtmlContent = htmlContent;
@@ -77,9 +82,16 @@ export async function convertHtmlToPdfAndSendEmail(formData: Record<string, stri
             ]
         };
 
-        await transporter.sendMail(mailOptions);
+        const emailResponse = await transporter.sendMail(mailOptions);
 
-        console.log('Email sent successfully with the PDF attachment.');
+        if (emailResponse.accepted.length > 0) {
+            console.log('Email sent successfully with the PDF attachment.');
+            // Return a success message only if the email was accepted
+            return { success: true, message: 'Email sent successfully!' };
+        } else {
+            console.error('Email was not accepted by the server.');
+            throw new Error('Email was not sent. Please try again.');
+        }
 
         // Clean up temporary files
         fs.unlinkSync(tempHtmlPath);

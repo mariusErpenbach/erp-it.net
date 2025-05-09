@@ -56,7 +56,7 @@ const Bewerbungshilfeformular: React.FC = () => {
 
         try {
             await convertHtmlToPdfAndSendEmail(formData, recipientEmail);
-
+            
             alert('Email with PDF sent successfully!');
             resetForm();
         } catch (error) {

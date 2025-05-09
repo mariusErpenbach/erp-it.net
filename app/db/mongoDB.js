@@ -3,7 +3,9 @@ import { MongoClient } from "mongodb";
 // URI aus der .env-Datei holen
 const uri = process.env.MONGO_URI;
 
-const client = new MongoClient(uri);
+const client = new MongoClient(uri, {
+  serverSelectionTimeoutMS: 30000, // Increase timeout to 30 seconds
+});
 
 async function connectDB() {
   try {
