@@ -25,6 +25,7 @@
         "nodemailer": "^6.10.0",
         "pdf-lib": "^1.17.1",
         "puppeteer": "^24.8.2",
+        "puppeteer-core": "^10.4.0",
         "react": "^19.0.0",
         "react-dom": "^19.0.0",
         "request-ip": "^3.3.0",
