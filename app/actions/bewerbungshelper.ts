@@ -1,35 +1,33 @@
 "use server";
-import { bewerbungHtml } from "@/app/ui/tools/bewerbungshilfe/bewerbungTemplate";
 import chromium from 'chrome-aws-lambda';
 import puppeteerCore from 'puppeteer-core';
 
-export async function generateBewerbungPdf() {
-  const isProd = process.env.AWS_LAMBDA_FUNCTION_VERSION || process.env.VERCEL;
-  let browser;
+export async function generateBewerbungPdfApi2Pdf() {
+  const apiKey = process.env.API2PDF_KEY;
+  if (!apiKey) throw new Error('API2PDF_KEY ist nicht gesetzt!');
 
-  if (isProd) {
-    // Vercel/AWS Lambda: chrome-aws-lambda + puppeteer-core
-    browser = await puppeteerCore.launch({
-      args: chromium.args,
-      executablePath: await chromium.executablePath,
-      headless: chromium.headless,
-    });
+  // HTML-Template importieren
+  const { bewerbungHtml } = await import("@/app/ui/tools/bewerbungshilfe/bewerbungTemplate");
+
+  // Request an Api2Pdf
+  const response = await fetch('https://v2.api2pdf.com/chrome/html', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': apiKey,
+    },
+    body: JSON.stringify({
+      html: bewerbungHtml,
+      inlinePdf: true,
+      fileName: 'bewerbung.pdf',
+    }),
+  });
+
+  const data = await response.json();
+  console.log('Api2Pdf response:', data);
+  if (data.pdf) {
+    return data.pdf;
   } else {
-    // Lokal: normales Puppeteer mit installiertem Chrome
-    const puppeteerLocal = await import('puppeteer');
-    browser = await puppeteerLocal.default.launch({
-      headless: true,
-    });
+    throw new Error('PDF konnte nicht generiert werden: ' + JSON.stringify(data));
   }
-
-  const page = await browser.newPage();
-  console.log("Setze HTML-Inhalt...");
-  await page.setContent(bewerbungHtml, { waitUntil: "networkidle0" });
-
-  console.log("Erstelle PDF...");
-  const pdfBuffer = await page.pdf({ format: "a4" });
-  await browser.close();
-  console.log("PDF-Generierung abgeschlossen.");
-
-  return pdfBuffer;
 }
