@@ -1,0 +1,341 @@
+// Styles für Bewerbungshilfe PDF-Export
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  font-family: "Source Sans Pro";
+  background-color: #ffffff;
+}
+
+.page {
+  width: 85%;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  box-sizing: border-box;
+  position: relative;
+}
+#cover {
+  // ...SCSS-Nesting wie im Original belassen...
+  .title {
+    text-align: center;
+    width: 100%;
+    padding: 1%;
+    padding-bottom: 3%;
+    border-style: solid;
+    border-width: 0px 0px 1px 0px;
+    border-color: #7a97c9;
+    font-size: 1.6em;
+  }
+  #cover-name {
+    width: 100%;
+    text-align: center;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    font-size: 1.6em;
+  }
+  #cover-main {
+    display: flex;
+    border-style: solid;
+    border-width: 1px 0px 1px 0px;
+    border-color: #7a97c9;
+    align-items: center;
+    justify-content: center;
+    padding: 3%;
+    width: 100%;
+    height: fit-content;
+  }
+  section {
+    display: flex;
+    flex-direction: column;
+  }
+  #cover-section-left {
+    text-wrap: nowrap;
+    text-align: right;
+    padding-right: 1%;
+  }
+  .contact {
+    border-style: solid;
+    border-width: 0px 1px 0px 0px;
+    border-color: #7a97c9;
+    padding-right: 4%;
+  }
+  #cover-section-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-style: solid;
+    border-width: 0px 0px 0px 1px;
+    border-color: #7a97c9;
+    padding: 3%;
+  }
+  #cover-social-links {
+    margin-top: 2%;
+    width: 100%;
+    padding-right: 3%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    a {
+      border-style: solid;
+      border-width: 1px;
+      border-color: #7a97c9;
+      color: black;
+      padding: 1%;
+      margin-right: 5%;
+      width: 100%;
+    }
+    a:visited {
+      color: black;
+    }
+  }
+  #cover-social-links a:hover {
+    background-color: black;
+    color: white;
+  }
+  #mystreet {
+    margin-right: 5.5px;
+  }
+  .jump-links {
+    width: 75%;
+    margin-top: auto;
+    margin-bottom: auto;
+    h3 {
+      text-align: center;
+      margin-top: 10%;
+      margin-bottom: 4%;
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+    ul li {
+      height: 2em;
+      display: flex;
+      align-items: center;
+    }
+    ul li:nth-child(odd) {
+      background-color: #f0f0f0;
+    }
+    ul li a {
+      padding: 1%;
+      margin-left: 1%;
+      width: 100%;
+      color: inherit;
+      display: block;
+    }
+  }
+}
+#vorwort {
+  margin-top: 10%;
+}
+#music {
+  text-align: center;
+  color: #383838da;
+  margin-top: auto;
+  margin-bottom: 0%;
+  p {
+    color: #383838da;
+  }
+}
+#music-link {
+  text-decoration: none;
+  color: #383838da;
+  img {
+    width: 16px;
+    opacity: 0.4;
+  }
+}
+#briefkopf-meine-adresse {
+  margin-bottom: 10%;
+  text-align: right;
+}
+#briefkopf-firma {
+  margin-bottom: 22px;
+}
+#Briefdatum {
+  text-align: right;
+  margin-bottom: 22px;
+}
+#anschreiben {
+  main {
+    margin-top: -16px;
+    padding: 2%;
+  }
+  svg {
+    margin-top: -2%;
+    margin-left: 30%;
+    width: 5.5em;
+    height: auto;
+    overflow: hidden;
+  }
+  #letter-unterschrift {
+    margin-top: -2%;
+    svg {
+      position: absolute;
+      left: 0%;
+    }
+  }
+}
+#cv {
+  h1 {
+    margin-top: -6px;
+  }
+  .contact-flex-row {
+    display: flex;
+    border-style: solid;
+    border-width: 1px 0px 1px 0px;
+    border-color: #7a97c9;
+  }
+  #cv-contact {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: right;
+  }
+  #ausbildung {
+    width: 97%;
+    background-color: rgba(86, 135, 175, 0.185);
+    padding-left: 3%;
+    padding-bottom: 0%;
+    border-radius: 1%;
+    border-style: solid;
+    border-width: 1.5px 1.5px 0px 1.5px;
+    border-color: #7a97c9;
+    border-radius: 1%;
+  }
+  #Berufserfahrung {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 1%;
+    border-color: #7a97c9;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.589);
+    div {
+      padding-left: 3%;
+      padding-bottom: 0%;
+      border-style: solid;
+      border-color: #7a97c9;
+      border-width: 1px;
+      border-radius: 1%;
+    }
+  }
+  #Berufserfahrung div:nth-child(even) {
+    background-color: rgba(86, 135, 175, 0.212);
+  }
+  svg {
+    margin-top: -2%;
+    margin-left: 30%;
+    width: 5.5em;
+    height: auto;
+    overflow: hidden;
+  }
+  #cv-unterschrift {
+    align-self: flex-start;
+    svg {
+      position: absolute;
+      left: 0%;
+    }
+  }
+}
+#Projektbeispiele {
+  h1 {
+    width: 100%;
+    text-align: center;
+    margin-top: -1%;
+    border-style: solid;
+    border-width: 0px 0px 1px 0px;
+    border-color: #7a97c9;
+  }
+  #web-development {
+    margin-top: -4%;
+  }
+  #percurio-preview-img {
+    width: 10em;
+  }
+  #vpd-preview {
+    width: 10em;
+  }
+  .embedded-images {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  img {
+    margin: 1%;
+    max-width: 30%;
+    margin-top: -1%;
+  }
+}
+#grone-brief {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#zeugnis {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#letter {
+  width: 100%;
+  height: auto;
+}
+#pageCorner {
+  width: 4em;
+  height: 4em;
+  position: absolute;
+  border-radius: 100%;
+  background-color: blue;
+}
+#contact-phrase {
+  i {
+    filter: grayscale(100%);
+  }
+}
+#cv-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-size: 1rem;
+  text-align: left;
+  margin-bottom: 10%;
+}
+#cv-table th, #cv-table td {
+  border: none;
+  padding: 0.5rem;
+  height: 4rem;
+  vertical-align: middle;
+}
+#cv-table thead {
+  background-color: #f0f0f0;
+  font-weight: bold;
+}
+#cv-table tbody tr:nth-child(odd) {
+  background-color: rgba(86, 135, 175, 0.1);
+}
+#cv-table tbody tr:hover {
+  background-color: rgba(86, 135, 175, 0.2);
+}
+.education-highlight {
+  text-align: start;
+  background-color: rgba(173, 216, 230, 0.3);
+  border-left: 4px solid #7a97c9;
+}
+.education-highlight td {
+  font-weight: bold;
+}
+#my-street {
+  margin-right: 10px;
+}
