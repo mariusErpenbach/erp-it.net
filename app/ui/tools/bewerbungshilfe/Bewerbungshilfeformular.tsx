@@ -11,7 +11,6 @@ const Bewerbungshilfeformular: React.FC = () => {
         ortPlz: '',
         datum: '',
     });
-    const [recipientEmail, setRecipientEmail] = useState('');
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [password, setPassword] = useState('');
     const [isPasswordValid, setIsPasswordValid] = useState(false);
@@ -40,7 +39,6 @@ const Bewerbungshilfeformular: React.FC = () => {
             ortPlz: '',
             datum: '',
         });
-        setRecipientEmail('');
         setPassword('');
         setIsPasswordValid(false);
     };
@@ -55,7 +53,7 @@ const Bewerbungshilfeformular: React.FC = () => {
         setIsSubmitting(true);
 
         try {
-            const response = await convertHtmlToPdfAndSendEmail(formData, recipientEmail);
+            const response = await convertHtmlToPdfAndSendEmail(formData);
 
             // Create a Blob from the Uint8Array response and trigger a download
             const blob = new Blob([response], { type: 'application/pdf' });
@@ -149,16 +147,7 @@ const Bewerbungshilfeformular: React.FC = () => {
                             required
                         />
                     </div>
-                    <div>
-                        <label htmlFor="email">Bewerbungshelfer Email:</label>
-                        <input
-                            type="email"
-                            id="email"
-                            value={recipientEmail}
-                            onChange={(e) => setRecipientEmail(e.target.value)}
-                            required
-                        />
-                    </div>
+                
                     <button type="submit" disabled={isSubmitting}>
                         {isSubmitting ? 'Sending...' : 'Send PDF'}
                     </button>

@@ -9,7 +9,7 @@ import { ObjectId } from 'mongodb';
 
 dotenv.config();
 
-export async function convertHtmlToPdfAndSendEmail(formData: Record<string, string>, recipientEmail: string) {
+export async function convertHtmlToPdfAndSendEmail(formData: Record<string, string>) {
     try {
         // Fetch the first entry from the MongoDB collection
         console.log('Fetching HTML template from database...');
