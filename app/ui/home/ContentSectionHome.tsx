@@ -49,7 +49,7 @@ export default function ContentSectionHome() {
           <span><strong>Embedded Software</strong></span>
               <div><h1>VPD Systeme</h1><p>Steuerung von Geräten über Relais.</p></div> 
               <div><h1>Hintergrundbeleuchtung</h1><p>LEDs passen Farben dynamisch an.</p></div>
-              <div><h1>Streaming Display</h1><p>ESP32 mit Touchscreen für Steuerung.</p></div>
+              <div><h1>Streaming Display</h1><p>ESP32 mit Touchscreen für Smart-Home Steuerung.</p></div>
           </div>
           <div id="embeddedSoftwarePics">
               <Image src="https://uploads.erp-it.net/images/ES1.jpg" alt="Embedded Software 1" width={300} height={200}/>
