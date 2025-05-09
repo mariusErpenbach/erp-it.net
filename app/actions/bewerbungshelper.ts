@@ -44,9 +44,11 @@ export async function convertHtmlToPdfAndSendEmail(formData: Record<string, stri
 
         // Launch Puppeteer browser
         console.log('Launching Puppeteer browser with no-sandbox options...');
+        const cacheDir = path.join(os.tmpdir(), 'puppeteer-cache');
         const browser = await puppeteer.launch({
             args: ['--no-sandbox', '--disable-setuid-sandbox'],
             headless: true,
+            executablePath: path.join(cacheDir, 'chrome'),
         });
         console.log('Puppeteer browser launched successfully.');
 
