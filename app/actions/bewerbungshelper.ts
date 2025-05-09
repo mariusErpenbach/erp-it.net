@@ -6,6 +6,7 @@ import path from 'path';
 import dotenv from 'dotenv';
 import connectDB from '@/app/db/mongoDB';
 import { ObjectId } from 'mongodb';
+import { NextApiRequest, NextApiResponse } from 'next';
 
 dotenv.config();
 
@@ -126,5 +127,22 @@ export async function fetchAndWriteIndexHtml() {
         console.log('index.html updated successfully from MongoDB.');
     } catch (error) {
         console.error('Error fetching and writing index.html:', error);
+    }
+}
+
+export async function handlePdfDownload(req: NextApiRequest, res: NextApiResponse) {
+    try {
+        // Generate the PDF using the existing function
+        const pdfBuffer = await convertHtmlToPdfAndSendEmail(req.body);
+
+        // Set headers for file download
+        res.setHeader('Content-Type', 'application/pdf');
+        res.setHeader('Content-Disposition', 'attachment; filename="generated.pdf"');
+
+        // Send the PDF buffer as the response
+        res.status(200).send(pdfBuffer);
+    } catch (error) {
+        console.error('Error generating or sending PDF:', error);
+        res.status(500).json({ error: 'Failed to generate or send PDF.' });
     }
 }

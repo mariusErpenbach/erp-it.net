@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from 'react';
-import { convertHtmlToPdfAndSendEmail } from '@/app/actions/bewerbungshelper';
+import { convertHtmlToPdfAndSendEmail} from '@/app/actions/bewerbungshelper';
 
 
 const Bewerbungshilfeformular: React.FC = () => {
@@ -53,13 +53,23 @@ const Bewerbungshilfeformular: React.FC = () => {
         setIsSubmitting(true);
 
         try {
-            await convertHtmlToPdfAndSendEmail(formData);
+            const pdfBuffer = await convertHtmlToPdfAndSendEmail(formData);
+
+            // Create a Blob and trigger download
+            const blob = new Blob([pdfBuffer], { type: 'application/pdf' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'generated.pdf';
+            document.body.appendChild(a);
+            a.click();
+            a.remove();
 
             alert('PDF downloaded successfully!');
             resetForm();
         } catch (error) {
-            console.error('Error sending email:', error);
-            alert('Failed to send email. Please try again.');
+            console.error('Error downloading PDF:', error);
+            alert('Failed to download PDF. Please try again.');
         } finally {
             setIsSubmitting(false);
         }
