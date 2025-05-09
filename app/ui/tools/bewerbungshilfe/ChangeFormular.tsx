@@ -1,6 +1,7 @@
 "use client"
 import React, { useState } from 'react';
 import { generateBewerbungPdf } from '@/app/actions/bewerbungshelper';
+
 const ChangeFormular: React.FC = () => {
     const [formData, setFormData] = useState({
         betrieb: '',
@@ -18,7 +19,7 @@ const ChangeFormular: React.FC = () => {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         try {
-          const pdfBuffer = await generateBewerbungPdf();
+            const pdfBuffer = await generateBewerbungPdf();
           // Blob erzeugen und Download anstoßen
           const blob = new Blob([pdfBuffer], { type: 'application/pdf' });
           const url = window.URL.createObjectURL(blob);
