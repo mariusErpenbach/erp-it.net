@@ -20,6 +20,13 @@ const nextConfig: NextConfig = {
     remotePatterns: allowedRemotePatterns, // Allowed remote image sources
   },
   allowedDevOrigins: [process.env.NEXT_PUBLIC_DEV_URL || 'http://localhost:3000'],
+  webpack: (config) => {
+    config.module.rules.push({
+      test: /\.map$/,
+      use: 'null-loader',
+    });
+    return config;
+  },
 };
 
 export default nextConfig;

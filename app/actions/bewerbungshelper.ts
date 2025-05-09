@@ -7,7 +7,6 @@ import dotenv from 'dotenv';
 import connectDB from '@/app/db/mongoDB';
 import { ObjectId } from 'mongodb';
 import { NextApiRequest, NextApiResponse } from 'next';
-import chromium from 'chrome-aws-lambda';
 
 dotenv.config();
 
@@ -45,11 +44,9 @@ export async function convertHtmlToPdfAndSendEmail(formData: Record<string, stri
 
         // Launch Puppeteer browser
         console.log('Launching Puppeteer browser with no-sandbox options...');
-        const browser = await chromium.puppeteer.launch({
-            executablePath: await chromium.executablePath,
-            args: chromium.args,
-            defaultViewport: chromium.defaultViewport,
-            headless: chromium.headless,
+        const browser = await puppeteer.launch({
+            args: ['--no-sandbox', '--disable-setuid-sandbox'],
+            headless: true,
         });
         console.log('Puppeteer browser launched successfully.');
 
