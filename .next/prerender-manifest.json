@@ -1,7 +1,7 @@
 {
   "version": 4,
   "routes": {
-    "/impressum": {
+    "/datenschutz": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -14,56 +14,8 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/impressum",
-      "dataRoute": "/impressum.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": false,
-      "srcRoute": "/",
-      "dataRoute": "/index.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/art": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": false,
-      "srcRoute": "/art",
-      "dataRoute": "/art.rsc",
+      "srcRoute": "/datenschutz",
+      "dataRoute": "/datenschutz.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -97,7 +49,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/tools/bewerbungshilfe": {
+    "/nutzungsbedingungen": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -110,8 +62,32 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/tools/bewerbungshilfe",
-      "dataRoute": "/tools/bewerbungshilfe.rsc",
+      "srcRoute": "/nutzungsbedingungen",
+      "dataRoute": "/nutzungsbedingungen.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "Next-Action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/",
+      "dataRoute": "/index.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -145,7 +121,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/tools/pyLibs": {
+    "/tools/bewerbungshilfe": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -158,8 +134,8 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/tools/pyLibs",
-      "dataRoute": "/tools/pyLibs.rsc",
+      "srcRoute": "/tools/bewerbungshilfe",
+      "dataRoute": "/tools/bewerbungshilfe.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -193,7 +169,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/tools/xamlList": {
+    "/tools/pyLibs": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -206,8 +182,8 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/tools/xamlList",
-      "dataRoute": "/tools/xamlList.rsc",
+      "srcRoute": "/tools/pyLibs",
+      "dataRoute": "/tools/pyLibs.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -265,7 +241,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/datenschutz": {
+    "/impressum": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -278,8 +254,8 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/datenschutz",
-      "dataRoute": "/datenschutz.rsc",
+      "srcRoute": "/impressum",
+      "dataRoute": "/impressum.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -289,7 +265,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/nutzungsbedingungen": {
+    "/tools/xamlList": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -302,8 +278,8 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/nutzungsbedingungen",
-      "dataRoute": "/nutzungsbedingungen.rsc",
+      "srcRoute": "/tools/xamlList",
+      "dataRoute": "/tools/xamlList.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -336,13 +312,37 @@
         "x-next-revalidated-tags",
         "x-next-revalidate-tag-token"
       ]
+    },
+    "/art": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "Next-Action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/art",
+      "dataRoute": "/art.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
     }
   },
   "dynamicRoutes": {},
   "notFoundRoutes": [],
   "preview": {
-    "previewModeId": "b93e95328cbd8fd5875d4d612b60b9c9",
-    "previewModeSigningKey": "6f76e5850ad8c765ae9305c1ad7ea677eb1f8da9d4c00b6d2a63a473a86f0903",
-    "previewModeEncryptionKey": "5c8e6ef7394b2c623fec9ef1bad70c885627325ff62bfffd75758ef18ef14cb3"
+    "previewModeId": "f0f33142add0f101ee9b4616df8c2ecc",
+    "previewModeSigningKey": "9e0241e9901bc9bd1a4247fad8bebfb6d92adbe5c12dc0f8a631c30826b8fa06",
+    "previewModeEncryptionKey": "7116388eb57bab8eac0ceb728a2bb002f050116acd6dc0696a2697e928f5ac29"
   }
 }
