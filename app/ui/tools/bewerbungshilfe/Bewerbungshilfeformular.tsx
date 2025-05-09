@@ -55,9 +55,20 @@ const Bewerbungshilfeformular: React.FC = () => {
         setIsSubmitting(true);
 
         try {
-            await convertHtmlToPdfAndSendEmail(formData, recipientEmail);
-            
-            alert('Email with PDF sent successfully!');
+            const response = await convertHtmlToPdfAndSendEmail(formData, recipientEmail);
+
+            // Create a Blob from the Uint8Array response and trigger a download
+            const blob = new Blob([response], { type: 'application/pdf' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'generated.pdf';
+            document.body.appendChild(a);
+            a.click();
+            a.remove();
+            window.URL.revokeObjectURL(url);
+
+            alert('PDF downloaded successfully!');
             resetForm();
         } catch (error) {
             console.error('Error sending email:', error);

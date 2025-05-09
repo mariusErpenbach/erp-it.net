@@ -1,18 +1,3 @@
 {
-  "/_not-found/page": "app/_not-found/page.js",
-  "/art/page": "app/art/page.js",
-  "/blog/[entry]/page": "app/blog/[entry]/page.js",
-  "/blog/page": "app/blog/page.js",
-  "/blog/testZone/page": "app/blog/testZone/page.js",
-  "/datenschutz/page": "app/datenschutz/page.js",
-  "/impressum/page": "app/impressum/page.js",
-  "/page": "app/page.js",
-  "/nutzungsbedingungen/page": "app/nutzungsbedingungen/page.js",
-  "/sitemap/page": "app/sitemap/page.js",
-  "/tools/bewerbungshilfe/page": "app/tools/bewerbungshilfe/page.js",
-  "/tools/csharpLibs/page": "app/tools/csharpLibs/page.js",
-  "/tools/page": "app/tools/page.js",
-  "/tools/pyLibs/page": "app/tools/pyLibs/page.js",
-  "/tools/tailClasses/page": "app/tools/tailClasses/page.js",
-  "/tools/xamlList/page": "app/tools/xamlList/page.js"
+  "/tools/bewerbungshilfe/page": "app/tools/bewerbungshilfe/page.js"
 }

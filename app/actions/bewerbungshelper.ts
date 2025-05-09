@@ -1,6 +1,5 @@
 "use server";
 import puppeteer from 'puppeteer';
-import nodemailer from 'nodemailer';
 import fs from 'fs';
 import os from 'os';
 import path from 'path';
@@ -43,61 +42,36 @@ export async function convertHtmlToPdfAndSendEmail(formData: Record<string, stri
         fs.writeFileSync(tempHtmlPath, updatedHtmlContent, 'utf-8');
 
         // Launch Puppeteer browser
-        const browser = await puppeteer.launch();
+        console.log('Launching Puppeteer browser with no-sandbox options...');
+        const browser = await puppeteer.launch({
+            args: ['--no-sandbox', '--disable-setuid-sandbox'],
+        });
+        console.log('Puppeteer browser launched successfully.');
+
         const page = await browser.newPage();
 
-        // Read the temporary HTML file
+        console.log('Reading temporary HTML file...');
         const htmlContentFromFile = fs.readFileSync(tempHtmlPath, 'utf-8');
-        await page.setContent(htmlContentFromFile);
+        console.log('Temporary HTML file read successfully.');
 
-        // Generate PDF
-        const pdfPath = path.join(tempDir, `output-${Date.now()}.pdf`);
-        await page.pdf({ path: pdfPath, format: 'A4' });
+        await page.setContent(htmlContentFromFile);
+        console.log('HTML content set in Puppeteer page.');
+
+        console.log('Generating PDF...');
+        const pdfBuffer = await page.pdf({ format: 'A4' });
+        console.log('PDF generated successfully.');
 
         // Close the browser
         await browser.close();
 
-        // Configure Nodemailer with SiteGround email from .env
-        const transporter = nodemailer.createTransport({
-            host: process.env.SITEGROUND_EMAIL_HOST,
-            port: parseInt(process.env.SITEGROUND_EMAIL_PORT || '465', 10),
-            secure: true, // Use SSL
-            auth: {
-                user: process.env.SITEGROUND_EMAIL_USER,
-                pass: process.env.SITEGROUND_EMAIL_PASSWORD
-            }
-        });
-
-        // Send email with PDF attachment
-        const mailOptions = {
-            from: process.env.SITEGROUND_EMAIL_USER,
-            to: recipientEmail,
-            subject: 'Your PDF Document',
-            text: 'Please find the attached PDF document.',
-            attachments: [
-                {
-                    filename: 'output.pdf',
-                    path: pdfPath
-                }
-            ]
-        };
-
-        const emailResponse = await transporter.sendMail(mailOptions);
-
-        if (emailResponse.accepted.length > 0) {
-            console.log('Email sent successfully with the PDF attachment.');
-            // Return a success message only if the email was accepted
-            return { success: true, message: 'Email sent successfully!' };
-        } else {
-            console.error('Email was not accepted by the server.');
-            throw new Error('Email was not sent. Please try again.');
+        // Ensure the function always returns a Uint8Array
+        if (pdfBuffer && pdfBuffer.length) {
+            return new Uint8Array(pdfBuffer);
         }
-
-        // Clean up temporary files
-        fs.unlinkSync(tempHtmlPath);
-        fs.unlinkSync(pdfPath);
+        throw new Error('Failed to generate PDF buffer.');
     } catch (error) {
         console.error('Error occurred:', error);
+        throw error; // Rethrow the error for the caller to handle
     }
 }
 

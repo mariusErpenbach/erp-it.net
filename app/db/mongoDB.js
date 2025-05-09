@@ -18,6 +18,4 @@ async function connectDB() {
   }
 }
 
-// Removed fetchHtmlTemplate and fetchHtmlTemplateFromFirstEntry functions as they have been moved to bewerbungshelper.ts.
-
 export default connectDB;
