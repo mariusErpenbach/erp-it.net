@@ -1,11 +1,11 @@
 "use server";
-import puppeteer from "puppeteer";
 import { readFile } from "fs/promises";
 import path from "path";
+import puppeteer from "puppeteer";
 
 export async function generateBewerbungPdf() {
-  // Absoluten Pfad zur index.html bestimmen
-  const filePath = path.join(process.cwd(), "app/ui/tools/bewerbungshilfe/index.html");
+  // Absoluter Pfad zur Datei im public-Ordner
+  const filePath = path.join(process.cwd(), "public", "index.html");
   const html = await readFile(filePath, "utf-8");
 
   const browser = await puppeteer.launch({
@@ -17,6 +17,5 @@ export async function generateBewerbungPdf() {
   const pdfBuffer = await page.pdf({ format: "A4" });
   await browser.close();
 
-  // Gib das PDF als Buffer zurück (z.B. für einen API-Download)
   return pdfBuffer;
 }
