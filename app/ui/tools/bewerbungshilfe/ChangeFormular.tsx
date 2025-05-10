@@ -15,7 +15,7 @@ const ChangeFormular: React.FC = () => {
           a.download = 'bewerbung.pdf';
           a.click();
           window.URL.revokeObjectURL(url);
-        } catch (error) {
+        } catch{
           alert('PDF konnte nicht erstellt werden!');
         }
       };
