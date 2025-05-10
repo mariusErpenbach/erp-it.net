@@ -46,7 +46,7 @@ const BewerbungshilfePage: React.FC = () => {
               <div id="bewerbungshilfe-overview">
             <h1>Bewerbungshilfe</h1>
             <p>Durch dieses Formular erhalten sie eine aktualisierte Version meiner Bewerbungsmappe, mit den von ihnen angegeben Daten.</p>
-            <p>          Bitte füllen sie die Felder aus und klicken sie auf "PDF herunterladen".
+            <p>          Bitte füllen sie die Felder aus und klicken sie auf &quot;PDF herunterladen&quot;.
             </p>
             <p>            Der Download Pop-up erscheint automatisch,wenn die Datei bereit ist. <br/>(ca 10 sekunden)
             </p>

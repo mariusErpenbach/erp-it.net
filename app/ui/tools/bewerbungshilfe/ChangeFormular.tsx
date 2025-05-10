@@ -46,7 +46,7 @@ const ChangeFormular: React.FC = () => {
       a.download = "bewerbung.pdf";
       a.click();
       window.URL.revokeObjectURL(url);
-    } catch (error) {
+    } catch {
       clearInterval(progressInterval);
       setLoading(false);
       setProgress(0);

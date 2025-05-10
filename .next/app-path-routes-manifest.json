@@ -1,0 +1,18 @@
+{
+  "/_not-found/page": "/_not-found",
+  "/art/page": "/art",
+  "/blog/page": "/blog",
+  "/blog/[entry]/page": "/blog/[entry]",
+  "/impressum/page": "/impressum",
+  "/blog/testZone/page": "/blog/testZone",
+  "/nutzungsbedingungen/page": "/nutzungsbedingungen",
+  "/datenschutz/page": "/datenschutz",
+  "/sitemap/page": "/sitemap",
+  "/page": "/",
+  "/tools/bewerbungshilfe/page": "/tools/bewerbungshilfe",
+  "/tools/csharpLibs/page": "/tools/csharpLibs",
+  "/tools/page": "/tools",
+  "/tools/pyLibs/page": "/tools/pyLibs",
+  "/tools/xamlList/page": "/tools/xamlList",
+  "/tools/tailClasses/page": "/tools/tailClasses"
+}
