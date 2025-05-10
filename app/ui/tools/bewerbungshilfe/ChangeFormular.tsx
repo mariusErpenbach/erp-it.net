@@ -12,7 +12,7 @@ const initialForm = {
   Grußzeile: "Sehr geehrte Damen und Herren,",
 };
 
-const ChangeFormular: React.FC = () => {
+const ChangeFormular: React.FC<{ isAuthenticated: boolean }> = ({ isAuthenticated }) => {
   const [form, setForm] = useState(initialForm);
   const [loading, setLoading] = useState(false);
   const [progress, setProgress] = useState(0);
@@ -23,6 +23,10 @@ const ChangeFormular: React.FC = () => {
   };
 
   const handleExportPdf = async () => {
+    if (!isAuthenticated) {
+      setError("Nicht authentifiziert. Bitte Passwort eingeben.");
+      return;
+    }
     setError("");
     setLoading(true);
     setProgress(0);
@@ -33,7 +37,7 @@ const ChangeFormular: React.FC = () => {
       if (current >= 100) clearInterval(progressInterval);
     }, 2000);
     try {
-      const pdfUrl = await generateBewerbungPdfApi2Pdf(form);
+      const pdfUrl = await generateBewerbungPdfApi2Pdf({ ...form, isAuthenticated: isAuthenticated ? "true" : "false" });
       clearInterval(progressInterval);
       setProgress(100);
       setLoading(false);
@@ -111,6 +115,7 @@ const ChangeFormular: React.FC = () => {
         />
       </label>
       <br />
+      <input type="hidden" name="isAuthenticated" value={isAuthenticated ? "true" : "false"} />
       <div
         style={{
           display: "flex",
