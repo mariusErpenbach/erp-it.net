@@ -1,8 +1,42 @@
+#bewerbungslogin{
+  height:70vh;
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  button{
+    margin-left:0.5rem;
+  }
+    }
+#bewerbungshilfe-page{
+  display: flex;
+ 
+  justify-content: center;
+  align-items: center;
+
+  
+  #bewerbungshilfe-overview{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align:center;
+    padding: 2rem;
+    width:25%;
+    height:50vh;
+    background-color: #202844;
+    color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  
+  }
+}
+
 #bewerbungshilfe-form {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 2rem;
+  height:50vh;
   background-color: #202844;
   color: #ffffff;
   border-radius: 8px;
@@ -10,8 +44,7 @@
 
   h1 {
     font-size: 2rem;
-    margin-bottom: 1.5rem;
-    color: #d3fa0d;
+    
   }
 
   form {
@@ -27,7 +60,7 @@
 
     input,
     textarea {
-      width: 100%;
+      width: auto;
       padding: 0.75rem;
       margin-bottom: 1rem;
       border: 1px solid #5766a3c2;
@@ -36,21 +69,26 @@
       color: #ffffff;
       font-size: 1rem;
     }
+    
+     
+ 
+  }
+  #grußzeile{
+    width:20em;
+  }
+  #bewerbungsubmitbutton{
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #d3fa0d;
+    color: #202844;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 
-    button {
-      width: 100%;
-      padding: 0.75rem;
-      background-color: #d3fa0d;
-      color: #202844;
-      font-weight: bold;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-
-      &:hover {
-        background-color: #b8e00a;
-      }
+    &:hover {
+      background-color: #b8e00a;
     }
   }
 }

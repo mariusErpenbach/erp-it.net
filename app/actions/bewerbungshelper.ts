@@ -100,3 +100,8 @@ export async function generateBewerbungPdfApi2Pdf(form: Record<string, string>) 
     throw err;
   }
 }
+
+export async function checkBewerbungshelferPasswort(passwort: string): Promise<boolean> {
+  const correct = process.env.BEWERBUNGSHILFE_PASSWORD;
+  return passwort === correct;
+}
