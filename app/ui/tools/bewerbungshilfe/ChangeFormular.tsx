@@ -6,13 +6,19 @@ const ChangeFormular: React.FC = () => {
     const handleExportPdf = async () => {
         try {
           const pdfUrl = await generateBewerbungPdfApi2Pdf();
-          window.open(pdfUrl, '_blank'); // Öffnet das PDF im neuen Tab
-          // Alternativ: Download per fetch und Blob, wenn du es direkt herunterladen willst
-        } catch  {
+          // PDF von der URL laden
+          const res = await fetch(pdfUrl);
+          const blob = await res.blob();
+          const url = window.URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.href = url;
+          a.download = 'bewerbung.pdf';
+          a.click();
+          window.URL.revokeObjectURL(url);
+        } catch (error) {
           alert('PDF konnte nicht erstellt werden!');
         }
       };
-
   return (
     <div>
       <button onClick={handleExportPdf}>Bewerbung als PDF herunterladen</button>
