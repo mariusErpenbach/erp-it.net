@@ -1,5 +1,5 @@
 "use client"
-import React, { useState } from 'react';
+
 import { generateBewerbungPdfApi2Pdf } from '@/app/actions/bewerbungshelper';
 
 const ChangeFormular: React.FC = () => {
@@ -8,7 +8,7 @@ const ChangeFormular: React.FC = () => {
           const pdfUrl = await generateBewerbungPdfApi2Pdf();
           window.open(pdfUrl, '_blank'); // Öffnet das PDF im neuen Tab
           // Alternativ: Download per fetch und Blob, wenn du es direkt herunterladen willst
-        } catch (error) {
+        } catch  {
           alert('PDF konnte nicht erstellt werden!');
         }
       };

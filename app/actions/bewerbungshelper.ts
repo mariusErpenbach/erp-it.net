@@ -1,6 +1,4 @@
 "use server";
-import chromium from 'chrome-aws-lambda';
-import puppeteerCore from 'puppeteer-core';
 
 export async function generateBewerbungPdfApi2Pdf() {
   const apiKey = process.env.API2PDF_KEY;
