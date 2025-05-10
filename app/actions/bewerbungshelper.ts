@@ -1,8 +1,6 @@
 "use server";
 
 import connectDB from "@/app/db/mongoDB";
-import path from "path";
-import fs from "fs/promises";
 
 async function embedImagesAsBase64(html: string) {
   // Finde alle <img src="..."> Tags
