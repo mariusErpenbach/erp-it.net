@@ -61,27 +61,42 @@ export async function generateBewerbungPdfApi2Pdf(form: Record<string, string>) 
     }
   });
 
-  // Lokale Bilder als Base64 einbetten
-  html = await embedImagesAsBase64(html);
+  // Debug-Log: HTML-Länge und Platzhalter-Status
+  console.log("[BewerbungPDF] HTML-Länge nach Platzhalter:", html.length);
+  if (html.length < 1000) console.log("[BewerbungPDF] HTML-Inhalt:", html);
+
+  // Lokale und externe Bilder als Base64 einbetten
+  try {
+    html = await embedImagesAsBase64(html);
+  } catch (err) {
+    console.error("[BewerbungPDF] Fehler beim Einbetten der Bilder:", err);
+  }
+  console.log("[BewerbungPDF] HTML-Länge nach Base64-Embedding:", html.length);
 
   // Request an Api2Pdf
-  const response = await fetch('https://v2.api2pdf.com/chrome/html', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'Authorization': apiKey,
-    },
-    body: JSON.stringify({
-      html,
-      inlinePdf: true,
-      fileName: 'bewerbung.pdf',
-    }),
-  });
+  try {
+    const response = await fetch('https://v2.api2pdf.com/chrome/html', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': apiKey,
+      },
+      body: JSON.stringify({
+        html,
+        inlinePdf: true,
+        fileName: 'bewerbung.pdf',
+      }),
+    });
 
-  const data = await response.json();
-  if (data.pdf) {
-    return data.pdf;
-  } else {
-    throw new Error('PDF konnte nicht generiert werden: ' + JSON.stringify(data));
+    const data = await response.json();
+    console.log("[BewerbungPDF] Api2Pdf Response:", data);
+    if (data.pdf) {
+      return data.pdf;
+    } else {
+      throw new Error('PDF konnte nicht generiert werden: ' + JSON.stringify(data));
+    }
+  } catch (err) {
+    console.error("[BewerbungPDF] Fehler beim Api2Pdf-Request:", err);
+    throw err;
   }
 }
