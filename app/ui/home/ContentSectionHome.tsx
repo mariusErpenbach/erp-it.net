@@ -18,11 +18,6 @@ export default function ContentSectionHome() {
                       />
                     </div>
               </div>
-               <section>
-                <div>
-            
-                </div>
-                </section>
                 <footer>
                 <h1>Mitwirken beim Blog?</h1>
                 <p>                Interesse an IT-Themen? Melde dich und werde Autor!

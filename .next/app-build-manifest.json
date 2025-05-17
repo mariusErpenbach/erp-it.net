@@ -11,15 +11,40 @@
       "static/chunks/main-app.js",
       "static/chunks/app/page.js"
     ],
+    "/nutzungsbedingungen/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/nutzungsbedingungen/page.js"
+    ],
+    "/impressum/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/impressum/page.js"
+    ],
+    "/datenschutz/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/datenschutz/page.js"
+    ],
     "/tools/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/tools/layout.js"
     ],
-    "/tools/bewerbungshilfe/page": [
+    "/tools/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/tools/bewerbungshilfe/page.js"
+      "static/chunks/app/tools/page.js"
+    ],
+    "/tools/cppLibs/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/tools/cppLibs/page.js"
+    ],
+    "/tools/xamlList/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/tools/xamlList/page.js"
     ]
   }
 }

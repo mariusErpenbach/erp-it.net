@@ -18,7 +18,9 @@ $primaryColor:rgba(211, 250, 13, 0.958);
 
 
 #contentSectionHome {
-
+  font-family: 'Roboto', 'Inter', 'Segoe UI', Arial, sans-serif;
+  font-weight: 600; // Schrift etwas dicker
+  letter-spacing: 0.01em;
   margin-top: -1%;
   display: flex;
   flex-wrap: wrap;
@@ -28,11 +30,19 @@ $primaryColor:rgba(211, 250, 13, 0.958);
     margin-left: auto;
     margin-right: auto;
     height:auto;
-    background: linear-gradient(to bottom,#2f3757, #202844 );
-    border-style: solid;
-    border-width: 1px;
-    border-color: #5766a3c2;
+
+ 
     border-radius: 12px; // Stärkere Abrundung
+    font-weight: 500;
+    span, h1, h2, h3, strong {
+      font-family: 'Roboto', 'Inter', 'Segoe UI', Arial, sans-serif;
+      font-weight: 800; // Noch dicker für Überschriften
+      letter-spacing: 0.01em;
+    }
+    p {
+      font-family: 'Roboto', 'Inter', 'Segoe UI', Arial, sans-serif;
+      font-weight: 600;
+    }
     div {
       border-radius: 8px;
       p {
@@ -118,10 +128,17 @@ $primaryColor:rgba(211, 250, 13, 0.958);
       border-color:rgba(211, 250, 13, 0.958);
       border-width:3px;
       border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
    h1{
     @include textHighlight();
     width:fit-content;
     margin-left:2%;
+    font-weight: 700;
+    font-size: 1.5em;
+    margin-bottom: 0.2em;
    }
    p{
     font-size:1.4em;
@@ -129,6 +146,7 @@ $primaryColor:rgba(211, 250, 13, 0.958);
     margin-left: auto;
     margin-right: auto;
     padding: 4%;
+    font-weight: 500;
    }
     }
   }

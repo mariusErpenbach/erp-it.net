@@ -1,0 +1,67 @@
+[
+  {
+    "category": "Ein-/Ausgabe & Strings",
+    "entries": [
+      {
+        "lib": "<iostream>",
+        "desc": "Ein- und Ausgabe-Streams (z.B. Konsole)",
+        "methods": ["std::cout", "std::cin", "std::endl"]
+      },
+      {
+        "lib": "<string>",
+        "desc": "String-Klasse für Textverarbeitung",
+        "methods": ["std::string", "length()", "substr()", "find()"]
+      },
+      {
+        "lib": "<fstream>",
+        "desc": "Datei-Ein- und Ausgabe",
+        "methods": ["std::ifstream", "std::ofstream", "open()", "close()"]
+      }
+    ]
+  },
+  {
+    "category": "Container & Algorithmen",
+    "entries": [
+      {
+        "lib": "<vector>",
+        "desc": "Dynamische Arrays",
+        "methods": ["std::vector", "push_back()", "size()", "at()"]
+      },
+      {
+        "lib": "<map>",
+        "desc": "Assoziative Container (Key-Value)",
+        "methods": ["std::map", "insert()", "find()", "erase()"]
+      },
+      {
+        "lib": "<algorithm>",
+        "desc": "Algorithmen für Container",
+        "methods": ["std::sort", "std::find", "std::reverse"]
+      }
+    ]
+  },
+  {
+    "category": "Weitere wichtige Libraries",
+    "entries": [
+      {
+        "lib": "<memory>",
+        "desc": "Smart Pointer und Speicherverwaltung",
+        "methods": ["std::unique_ptr", "std::shared_ptr", "std::make_unique"]
+      },
+      {
+        "lib": "<thread>",
+        "desc": "Multithreading und Concurrency",
+        "methods": ["std::thread", "join()", "detach()"]
+      },
+      {
+        "lib": "<chrono>",
+        "desc": "Zeitmessung und Zeitpunkte",
+        "methods": ["std::chrono::system_clock", "now()", "duration_cast<>()"]
+      },
+      {
+        "lib": "<cmath>",
+        "desc": "Mathematische Funktionen",
+        "methods": ["std::sqrt", "std::pow", "std::abs"]
+      }
+    ]
+  }
+]

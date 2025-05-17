@@ -28,6 +28,12 @@
     @use "TailwindClasses.scss";
     @use "Xaml-list.scss";
     @use "CsharpLibs.scss";
-@use "BewerbungshilfeForm.scss";
-@use "BewerbungshilfePDF.scss";
+    @use "cppLibs.scss";
+        //bewerbungshilfe
+        @use "BewerbungshilfeForm.scss";
+        @use "BewerbungshilfePDF.scss";
+
+body, html {
+  font-family: 'Roboto', 'Segoe UI', Arial, sans-serif !important;
+}
 

@@ -1,4 +1,7 @@
 {
+  "/impressum/page": "app/impressum/page.js",
+  "/datenschutz/page": "app/datenschutz/page.js",
   "/page": "app/page.js",
-  "/tools/bewerbungshilfe/page": "app/tools/bewerbungshilfe/page.js"
+  "/tools/page": "app/tools/page.js",
+  "/tools/cppLibs/page": "app/tools/cppLibs/page.js"
 }

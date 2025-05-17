@@ -17,9 +17,9 @@ export default function PolygonSlider() {
     "Rollen",
     "Integration",
     "Security",
-    "Scalability",
-    "Analytics",
-    "Usability",
+    "Skalierbarkeit",
+    "Analyse",
+    "Einsatzbereiche",
     "Support"
   ];
   const formatNumber = (num: number) => parseFloat(num.toFixed(6));
@@ -109,7 +109,7 @@ export default function PolygonSlider() {
             const x = formatNumber(centerX + (radius + 15) * Math.cos(angle)); // Adjusted radius further inward for text placement
             const y = formatNumber(centerY + (radius + 15) * Math.sin(angle));
 
-            const textWidth = 80; // Approximate width of the text background
+            const textWidth = 100; // Approximate width of the text background
             const textHeight = 20; // Approximate height of the text background
 
             return (
@@ -162,8 +162,8 @@ export default function PolygonSlider() {
         </ul>
 
         <footer id="polygonSliderFooter">
-          <button id="prevButton" onClick={() => setSpinCounter((prevCounter) => (prevCounter - 1 + polygonSliderData.length) % polygonSliderData.length)}>prev</button>
-          <button id="nextButton" onClick={() => setSpinCounter((prevCounter) => (prevCounter + 1) % polygonSliderData.length)}>next</button>
+          <button id="prevButton" onClick={() => setSpinCounter((prevCounter) => (prevCounter - 1 + polygonSliderData.length) % polygonSliderData.length)}>Zurück</button>
+          <button id="nextButton" onClick={() => setSpinCounter((prevCounter) => (prevCounter + 1) % polygonSliderData.length)}>Nächste</button>
         </footer>
       </div>
     </section>
