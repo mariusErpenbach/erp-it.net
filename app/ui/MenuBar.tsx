@@ -9,7 +9,7 @@ export default function MenuBar() {
         <Link id="blog-btn" href="/blog">Blog</Link>
         {/* <Link id="contact-btn" href="/contact">Contact</Link> */}
         <Link href="https://github.com/mariusErpenbach" target="_blank" rel="noopener noreferrer">Projects</Link>
-        <Link href="https://www.linkedin.com/in/marius-erpenbach-292107297/" target="_blank" rel="noopener noreferrer">About me</Link>
+        <Link href="/aboutme">About me</Link>
       </section>
     </div>
   );

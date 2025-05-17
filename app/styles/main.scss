@@ -32,6 +32,7 @@
         //bewerbungshilfe
         @use "BewerbungshilfeForm.scss";
         @use "BewerbungshilfePDF.scss";
+@use 'MyProfessions.scss' as *;
 
 body, html {
   font-family: 'Roboto', 'Segoe UI', Arial, sans-serif !important;

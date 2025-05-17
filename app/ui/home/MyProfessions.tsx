@@ -1,10 +1,11 @@
 import Image from 'next/image';
 import IdeaForm from './IdeaForm';
+import './MyProfessions.scss';
 
-export default function MyProfessionsSection() {
+export default function MyProfessions() {
     return (
-      <div id="contentSectionHome">
-        <section id="webDevSection" className="contentSectionHome-section">
+      <div id="myProfessions">
+        <section id="webDevSection" className="myProfessions-section">
             <div id="webDevOverview">
             <span><strong>Web-Entwicklung</strong></span> 
             <p>Optimierte Struktur und semantisches HTML für bessere SEO und Barrierefreiheit.
@@ -25,7 +26,7 @@ export default function MyProfessionsSection() {
                 </footer>
         </section>
 
-        <section id="softwareDevSection" className="contentSectionHome-section">
+        <section id="softwareDevSection" className="myProfessions-section">
           <div id="softwareDevOverview">
           <span><strong>Software-Lösungen</strong></span>
             <p>
@@ -39,7 +40,7 @@ export default function MyProfessionsSection() {
         
         </section>
 
-        <section id="embeddedSoftwareSection" className="contentSectionHome-section">
+        <section id="embeddedSoftwareSection" className="myProfessions-section">
           <div id="embeddedSoftwareOverview">
           <span><strong>Embedded Software</strong></span>
               <div><h1>VPD Systeme</h1><p>Steuerung von Geräten über Relais.</p></div> 
