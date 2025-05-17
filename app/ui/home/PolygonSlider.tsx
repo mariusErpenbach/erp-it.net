@@ -26,29 +26,10 @@ export default function PolygonSlider() {
 
   const currentQuestions = polygonSliderData[spinCounter]?.fragen || []; // Get questions for the current index
 
-  const handleFanEffect = () => {
-    // Set all background images to opacity 0
-    const polygons = document.querySelectorAll("#outerPolygon polygon");
-    polygons.forEach((polygon) => {
-      const htmlPolygon = polygon as HTMLElement; // Cast to HTMLElement to access style property
-      htmlPolygon.style.transition = "opacity 0.2s ease";
-      htmlPolygon.style.opacity = "0";
-    });
-
-    // Sequentially set opacity back to 1 with a delay based on distance from spinCounter
-    polygons.forEach((polygon, index) => {
-      const distance = (index - spinCounter + sides) % sides; // Calculate distance from spinCounter
-      setTimeout(() => {
-        const htmlPolygon = polygon as HTMLElement; // Cast to HTMLElement to access style property
-        htmlPolygon.style.transition = "opacity 0.7s ease";
-        htmlPolygon.style.opacity = "1";
-      }, distance * 85); // Delay based on distance, 0.1s per step
-    });
-  };
 
   const spinPoly: () => void = () => {
-    setSpinCounter((prevCounter) => (prevCounter + 1) % polygonSliderData.length); // Increment counter and loop back to 0 after reaching the last field
-    handleFanEffect(); // Trigger the fan effect
+    setSpinCounter((prevCounter) => (prevCounter + 1) % polygonSliderData.length);
+    // handleFanEffect(); // Kein Animationstrigger mehr
   };
 
 

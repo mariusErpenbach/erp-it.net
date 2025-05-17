@@ -9,91 +9,84 @@ $primaryColor:rgba(211, 250, 13, 0.958);
   background-color: $primaryColor;
   };
 
-#polygonSlider{
+#polygonSlider {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  width: 100%;
 
-section{
-    padding: 0.5%;
-    border-style: solid;
-    border-width: 1px;
-    border-color: #5766a3c2;
-    background: linear-gradient(135deg, #1c202c, #2226592c);
-    margin-top:1%;
-    border-style: solid;
-    border-width: 1px;
-   
+  section {
+    display: flex;
+    flex-direction: row;
+    width: 90vw;
+    max-width: 1400px;
+    min-height: 50vh;
+  
+    gap: 2vw;
+    padding: 0;
+    margin: 0 auto;
 
-    display:flex;
     #polyBox {
-        cursor: pointer;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        height: 75vh;
-        margin:auto;
-        position: relative;
-        width: 50%;
-        height: auto;
-
-        svg{
-            cursor:pointer;
-            width: 70vh;
-            height: 70vh;
-            max-width: 100%;
-            max-height: 100%;
-            position: relative;
-            pointer-events: auto;
-            overflow: visible;
-        }
+      border-radius: 22px 0 0 22px;
+      box-shadow: 0 4px 24px 0 #1c202c55;
+      width: 50%;
+      min-width: 320px;
+      max-width: 600px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+ 
+      svg {
+        width: 70vh;
+        height: 70vh;
+        max-width: 100%;
+        max-height: 100%;
       }
-    #polygonSliderRightBox{
-        display:flex;
-        flex-direction: column;
-        align-self:center;
-       
-        margin-left:-4%;
-        margin-right:2%;
-        width:50%;
-        height:100%;
-        background: linear-gradient(135deg, #191a1b, #3b3f6b);
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        color: #f5f5f5; // Slightly brighter white for better contrast
-        padding: 20px;
-        flex: 1; 
-        h3{
-            @include textHighlight;
-            width:fit-content;
-            
-            margin:1%;
-        
-        }
-   
-      
-        ul {
-          list-style: none;
-          padding: 0;
-      
-          li {
-            font-size: 1rem;
-            margin-bottom: 0.5rem;
-            padding: 0.5rem;
-            background: linear-gradient(135deg, rgba(31, 24, 24, 0.596), rgb(25, 37, 70)); // Subtle gradient for better visibility
-            border-radius: 5px;
-            transition: background 0.3s ease, transform 0.2s ease;
-            width:fit-content;
-            margin:4%;
-            &:hover {
-              background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.3));
-              transform: scale(1.02); // Slight zoom effect on hover
-            }
-          }
-        }
-        
-       
     }
-}
-   
+
+    #polygonSliderRightBox {
+      border-radius: 0 22px 22px 0;
+      box-shadow: 0 4px 24px 0 #1c202c33;
+      width: 50%;
+      min-width: 320px;
+      
+      display: flex;
+      flex-direction: column;
+      align-items:center;
+      justify-content: center;
+    
+      color: #f5f5f5;
+      h3 {
+        @include textHighlight;
+        margin-bottom: 1.2em;
+        width:auto;
+      
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+        width: 100%;
+        li {
+          font-size: 1.1rem;
+          margin-bottom: 0.7rem;
+          padding: 0.7rem 1.2rem;
+          background: linear-gradient(135deg, rgba(31, 24, 24, 0.596), rgb(25, 37, 70));
+          border-radius: 14px;
+          transition: background 0.3s, transform 0.2s;
+          width: 100%;
+          &:hover {
+            background: linear-gradient(135deg, rgba(255,255,255,0.13), rgba(255,255,255,0.18));
+            transform: scale(1.02);
+          }
+        
+        }
+       
+      }
+         #polygonSliderFooter{
+            width:60%;
+          }
+    }
+  }
 }
 
 footer {
@@ -124,44 +117,29 @@ footer {
 }
 
 @media (max-width: 1024px) {
-  #polygonSlider {
-    section {
-      flex-direction: column;
-      padding: 1%;
-
-      #polyBox {
-        height: 50vh;
-      }
-
-      #polygonSliderRightBox {
-        width: 100%; 
-        margin: 0;
-        padding: 10px;
-      }
+  #polygonSlider section {
+    flex-direction: column;
+    #polyBox, #polygonSliderRightBox {
+      border-radius: 22px;
+      width: 100%;
+      max-width: 100%;
+      min-width: 0;
+      margin: 0 0 2vw 0;
     }
   }
 }
 
 @media (max-width: 768px) {
-  #polygonSlider {
-    section {
-      #polyBox {
-        height: 40vh; 
-      }
-
-      #polygonSliderRightBox {
-        padding: 5px; 
-        h3 {
-          font-size: 1.2em; 
-        }
-
-        ul {
-          li {
-            font-size: 0.9rem; 
-            margin: 2%;
-          }
-        }
-      }
+  #polygonSlider section {
+    #polyBox, #polygonSliderRightBox {
+      padding: 2vw 1vw;
+    }
+    #polygonSliderRightBox h3 {
+      font-size: 1.1em;
+    }
+    #polygonSliderRightBox ul li {
+      font-size: 0.95rem;
+      padding: 0.6rem 0.7rem;
     }
   }
 }
