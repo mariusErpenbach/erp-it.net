@@ -250,7 +250,7 @@ const ErpSolarSystem: React.FC = () => {
       {/* Control-Menü über dem Grid */}
       <div className="solar-system-controls-bar">
         <h4 className="solar-system-instruction">
-Ziehen Sie die Planeten in das Solar-System, um Ihre ERP-Module anzuzeigen.
+        Ziehen Sie die Planeten in das Solar-System, um Ihre ERP-Module anzuzeigen.
         </h4>
         <button
           className="solar-system-toggle-grid-btn"
