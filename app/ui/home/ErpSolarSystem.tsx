@@ -252,95 +252,39 @@ const ErpSolarSystem: React.FC = () => {
   return (
     <div id="ErpSolarSystem" ref={solarRef} >
       {/* Control-Menü über dem Grid */}
-      <div style={{ width: '85%', display: 'flex', justifyContent: 'flex-end', alignItems: 'center', gap: '1rem', margin: '0 auto', marginTop: '0.5rem', marginBottom: '0.5rem' }}>
-
+      <div className="solar-system-controls-bar">
+        <h4 className="solar-system-instruction">
+Ziehen Sie die Planeten in das Solar-System, um Ihre ERP-Module anzuzeigen.
+        </h4>
         <button
+          className="solar-system-toggle-grid-btn"
           onClick={() => setShowGridLines(v => !v)}
-          style={{
-            padding: '0.4rem 1.2rem',
-            borderRadius: '10px',
-            background: showGridLines ? '#7ec7ff' : '#232b3e',
-            color: showGridLines ? '#232b3e' : '#7ec7ff',
-            border: '1px solid #7ec7ff',
-            fontWeight: 500,
-            fontSize: '1rem',
-            cursor: 'pointer',
-            transition: 'background 0.2s, color 0.2s',
-          }}
         >
           {showGridLines ? 'Linien ausblenden' : 'Linien einblenden'}
         </button>
         <button
+          className="solar-system-reset-btn"
           onClick={() => {
             setAllPlanets(pls => pls.map(p => ({ ...p, position: null })));
-          }}
-          style={{
-            padding: '0.4rem 1.2rem',
-            borderRadius: '10px',
-            background: '#ffb347',
-            color: '#232b3e',
-            border: '1px solid #ffb347',
-            fontWeight: 500,
-            fontSize: '1rem',
-            cursor: 'pointer',
-            transition: 'background 0.2s, color 0.2s',
           }}
         >
           Zurücksetzen
         </button>
         <button
-          style={{
-            padding: '0.4rem 1.2rem',
-            borderRadius: '10px',
-            background: '#232b3e',
-            color: '#7ec7ff',
-            border: '1px solid #7ec7ff',
-            fontWeight: 500,
-            fontSize: '1rem',
-            cursor: 'pointer',
-            opacity: 0.7,
-          }}
+          className="solar-system-export-btn"
           disabled
         >
           Export (bald)
         </button>
-
       </div>
-      <div>
-      
-        <div id="solarSystemWrapper" style={{ display: 'flex', gap: '0.5rem', alignItems: 'center',justifyContent:"center", width: '100vw',padding: '1%' }}>
+        <div className="solar-system-wrapper">
           {/* Linker Bereich: Solar-System (SVG, Drop-Target) */}
-          <div className="solar-system-dropzone" style={{
-          
-            boxSizing: 'border-box',
-            padding: 0,
-            margin: 0,
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'center',
-            overflowX: 'auto',
-          }}>
+          <div className="solar-system-dropzone">
             <svg
               ref={svgRef}
-              width="100%"
-              height={SVG_HEIGHT}
+              className="solar-system-svg"
               viewBox={`0 0 ${SVG_WIDTH} ${SVG_HEIGHT}`}
               preserveAspectRatio="xMidYMid meet"
-              style={{
-                flex: 1,
-                width: '100%',
-                height: '100%',
-                cursor: placingPlanet && customCursor ? customCursor : (draggedPlanet ? 'grabbing' : undefined),
-                background: '#232b3e',
-                borderRadius: '18px',
-                boxShadow: '0 0 24px #10131a88',
-                display: 'block',
-                maxWidth: '100vw',
-                boxSizing: 'border-box',
-                padding: 0,
-                margin: 0
-              }}
               onMouseUp={e => {
                 const cell = getGridCellFromMouseEvent(e);
                 if (cell && movingPlanet) {
@@ -484,66 +428,24 @@ const ErpSolarSystem: React.FC = () => {
           <div
             className="solar-system-controls custom-scrollbar"
             id="rightSideBox"
-            style={{
-             
-              boxSizing: 'border-box',
-              padding: '1rem',
-              background: isControlsHovered && (placingPlanet || movingPlanet) ? '#22304a' : '#10131a',
-              borderRadius: '18px',
-              boxShadow: isControlsHovered && (placingPlanet || movingPlanet)
-                ? '0 0 32px 8px #7ec7ff88, 0 0 24px #10131a88'
-                : '0 0 24px #10131a88',
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '1rem',
-              overflowY: 'auto',
-              transition: 'background 0.2s, box-shadow 0.2s',
-            }}
             onMouseEnter={() => {
               if (placingPlanet || movingPlanet) setIsControlsHovered(true);
             }}
             onMouseLeave={() => setIsControlsHovered(false)}
           >
-            {/* Titel und Anleitung */}
-            <div id="solarSystemTitle" style={{ fontSize: '1.5rem', fontWeight: 'bold', color: '#fff', textAlign: 'center' }}>
-              ERP Solar System
-            </div>
-            <div id="solarSystemInstructions" style={{ fontSize: '0.875rem', color: '#ccc', textAlign: 'center' }}>
-              Ziehen Sie die Planeten in das Solar-System, um Ihre ERP-Module anzuzeigen.
-            </div>
             {/* Planeten-Liste */}
-            <div className="planet-list" style={{
-              flex: 1,
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '0.5rem',
-              overflowY: 'auto',
-              // Cursor-Style für die gesamte Liste, wenn placingPlanet aktiv
-              cursor: placingPlanet && customCursor ? customCursor : undefined
-            }}>
+            <div className="planet-list" style={{ cursor: placingPlanet && customCursor ? customCursor : undefined }}>
               {planetsInBox.map(planet => (
                 <div
                   key={planet.name}
                   className="planet-item"
-                  style={{
-                    padding: '0.5rem',
-                    borderRadius: '12px',
-                    background: '#1e212d',
-                    color: '#fff',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '0.5rem',
-                    cursor: placingPlanet && customCursor ? customCursor : customCursor ? customCursor : 'grab',
-                    boxShadow: '0 0 12px rgba(0, 0, 0, 0.3)',
-                    transition: 'transform 0.1s',
-                    userSelect: 'none'
-                  }}
+                  style={{ cursor: placingPlanet && customCursor ? customCursor : customCursor ? customCursor : 'grab' }}
                   onMouseDown={() => handleBoxPlanetMouseDown(planet)}
                   onMouseEnter={placingPlanet && customCursor ? () => { document.body.style.cursor = customCursor; } : undefined}
                   onMouseLeave={placingPlanet && customCursor ? () => { document.body.style.cursor = ''; } : undefined}
                 >
-                  <div className="planet-color" style={{ width: '12px', height: '12px', borderRadius: '50%', background: planet.color }}></div>
-                  <div className="planet-name" style={{ fontSize: '1rem', fontWeight: '500' }}>{planet.name}</div>
+                  <div className="planet-color" style={{ background: planet.color }}></div>
+                  <div className="planet-name">{planet.name}</div>
                 </div>
               ))}
             </div>
@@ -580,47 +482,12 @@ const ErpSolarSystem: React.FC = () => {
                 Hinzufügen
               </button>
             </div>
-            {/* Neue Planet hinzufügen (Mobile) */}
-            <div className="planet-create-form-mobile" style={{ display: 'none' }}>
-              <input
-                type="text"
-                value={newPlanetName}
-                onChange={e => setNewPlanetName(e.target.value)}
-                placeholder="Name des Moduls"
-                className="planet-input"
-                style={{ marginBottom: '0.5em' }}
-              />
-              <div style={{ display: 'flex', gap: '0.5em', alignItems: 'center' }}>
-                <input
-                  type="color"
-                  value={newPlanetColor}
-                  onChange={e => setNewPlanetColor(e.target.value)}
-                  className="planet-color-picker"
-                />
-                <button
-                  className="planet-add-btn"
-                  style={{ flex: 1 }}
-                  onClick={() => {
-                    if (!newPlanetName.trim()) return;
-                    const name = newPlanetName.trim();
-                    if (allPlanets.some(p => p.name.toLowerCase() === name.toLowerCase())) {
-                      alert('Modul Bereits vorhanden');
-                      return;
-                    }
-                    const color = newPlanetColor;
-                    setAllPlanets(pls => [...pls, { name, color, position: null }]);
-                    setNewPlanetName("");
-                    setNewPlanetColor(DEFAULT_COLORS[Math.floor(Math.random()*DEFAULT_COLORS.length)]);
-                  }}
-                >
-                  Hinzufügen
-                </button>
-              </div>
-            </div>
+           
+         
           </div>
         </div>
       </div>
-    </div>
+  
   );
 };
 
