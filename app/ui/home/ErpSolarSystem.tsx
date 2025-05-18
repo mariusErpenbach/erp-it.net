@@ -248,10 +248,12 @@ const ErpSolarSystem: React.FC = () => {
     window.addEventListener('mouseup', handleMouseUp);
   }
 
+
   return (
-    <div id="ErpSolarSystem" ref={solarRef} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', height: '90vh', boxSizing: 'border-box', padding: 0, margin:"auto" }}>
+    <div id="ErpSolarSystem" ref={solarRef} >
       {/* Control-Menü über dem Grid */}
-      <div style={{ width: '100%', maxWidth: '1000px', display: 'flex', justifyContent: 'flex-end', alignItems: 'center', gap: '1rem', margin: '0 auto', marginTop: '0.5rem', marginBottom: '0.5rem' }}>
+      <div style={{ width: '85%', display: 'flex', justifyContent: 'flex-end', alignItems: 'center', gap: '1rem', margin: '0 auto', marginTop: '0.5rem', marginBottom: '0.5rem' }}>
+
         <button
           onClick={() => setShowGridLines(v => !v)}
           style={{
@@ -302,85 +304,86 @@ const ErpSolarSystem: React.FC = () => {
         >
           Export (bald)
         </button>
+
       </div>
-      <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center', width: '100vw', maxWidth: '1600px', margin: '0 auto', padding: '1%' }}>
-        {/* Linker Bereich: Solar-System (SVG, Drop-Target) */}
-        <div className="solar-system-dropzone" style={{
-          minWidth: 0,
-          width: SVG_WIDTH,
-          height: SVG_HEIGHT,
-          maxWidth: SVG_WIDTH,
-          maxHeight: SVG_HEIGHT,
-          boxSizing: 'border-box',
-          padding: 0,
-          margin: 0,
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}>
-          <svg
-            ref={svgRef}
-            width="100%"
-            height="100%"
-            viewBox={`0 0 ${SVG_WIDTH} ${SVG_HEIGHT}`}
-            preserveAspectRatio="xMidYMid meet"
-            style={{
-              flex: 1,
-              width: '100%',
-              height: '100%',
-              cursor: placingPlanet && customCursor ? customCursor : (draggedPlanet ? 'grabbing' : undefined),
-              background: '#232b3e',
-              borderRadius: '18px',
-              boxShadow: '0 0 24px #10131a88',
-              display: 'block',
-              maxWidth: '100%',
-              boxSizing: 'border-box',
-              padding: 0,
-              margin: 0
-            }}
-            onMouseUp={e => {
-              const cell = getGridCellFromMouseEvent(e);
-              if (cell && movingPlanet) {
-                // Prüfe, ob das Feld frei ist (kein anderer Planet dort)
-                const occupied = allPlanets.some(p => p.position && p.position.row === cell.row && p.position.col === cell.col);
-                if (!occupied) {
-                  setAllPlanets(pls => pls.map(p =>
-                    p.name === movingPlanet ? { ...p, position: { row: cell.row, col: cell.col } } : p
-                  ));
+      <div>
+      
+        <div id="solarSystemWrapper" style={{ display: 'flex', gap: '0.5rem', alignItems: 'center',justifyContent:"center", width: '100vw',padding: '1%' }}>
+          {/* Linker Bereich: Solar-System (SVG, Drop-Target) */}
+          <div className="solar-system-dropzone" style={{
+          
+            boxSizing: 'border-box',
+            padding: 0,
+            margin: 0,
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            overflowX: 'auto',
+          }}>
+            <svg
+              ref={svgRef}
+              width="100%"
+              height={SVG_HEIGHT}
+              viewBox={`0 0 ${SVG_WIDTH} ${SVG_HEIGHT}`}
+              preserveAspectRatio="xMidYMid meet"
+              style={{
+                flex: 1,
+                width: '100%',
+                height: '100%',
+                cursor: placingPlanet && customCursor ? customCursor : (draggedPlanet ? 'grabbing' : undefined),
+                background: '#232b3e',
+                borderRadius: '18px',
+                boxShadow: '0 0 24px #10131a88',
+                display: 'block',
+                maxWidth: '100vw',
+                boxSizing: 'border-box',
+                padding: 0,
+                margin: 0
+              }}
+              onMouseUp={e => {
+                const cell = getGridCellFromMouseEvent(e);
+                if (cell && movingPlanet) {
+                  // Prüfe, ob das Feld frei ist (kein anderer Planet dort)
+                  const occupied = allPlanets.some(p => p.position && p.position.row === cell.row && p.position.col === cell.col);
+                  if (!occupied) {
+                    setAllPlanets(pls => pls.map(p =>
+                      p.name === movingPlanet ? { ...p, position: { row: cell.row, col: cell.col } } : p
+                    ));
+                  }
+                  setMovingPlanet(null);
+                  setCustomCursor(null);
+                  document.body.style.cursor = '';
+                } else if (!cell) {
+                  setMovingPlanet(null);
+                  setCustomCursor(null);
+                  document.body.style.cursor = '';
                 }
-                setMovingPlanet(null);
-                setCustomCursor(null);
-                document.body.style.cursor = '';
-              } else if (!cell) {
-                setMovingPlanet(null);
-                setCustomCursor(null);
-                document.body.style.cursor = '';
-              }
-            }}
-          >
-            {/* Grid */}
-            {[...Array(GRID_ROWS)].map((_, row) =>
-              [...Array(GRID_COLS)].map((_, col) => (
-                <g key={`cell-${row}-${col}`}>
-                  <rect
-                    x={col * CELL_SIZE}
-                    y={row * CELL_SIZE}
-                    width={CELL_SIZE}
-                    height={CELL_SIZE}
-                    fill={((placingPlanet || movingPlanet) && hoverCell && hoverCell.row === row && hoverCell.col === col) ? '#7ec7ff33' : 'transparent'}
-                    stroke={showGridLines ? '#7ec7ff' : 'transparent'}
-                    strokeWidth={0.7}
-                    onDragOver={e => handleGridDragOver(e, row, col)}
-                    onDragLeave={handleGridDragLeave}
-                    onDrop={e => handleGridDrop(e, row, col)}
-                    onMouseEnter={() => {
-                      if (placingPlanet || movingPlanet) setHoverCell({ row, col });
-                    }}
-                    onMouseLeave={handleGridDragLeave}
-                    style={{ pointerEvents: 'all', transition: 'fill 0.1s, stroke 0.2s' }}
-                  />
-                  {/* <text
+              }}
+            >
+
+              {/* Grid */}
+              {[...Array(GRID_ROWS)].map((_, row) =>
+                [...Array(GRID_COLS)].map((_, col) => (
+                  <g key={`cell-${row}-${col}`}>
+                    <rect
+                      x={col * CELL_SIZE}
+                      y={row * CELL_SIZE}
+                      width={CELL_SIZE}
+                      height={CELL_SIZE}
+                      fill={((placingPlanet || movingPlanet) && hoverCell && hoverCell.row === row && hoverCell.col === col) ? '#7ec7ff33' : 'transparent'}
+                      stroke={showGridLines ? '#7ec7ff' : 'transparent'}
+                      strokeWidth={0.7}
+                      onDragOver={e => handleGridDragOver(e, row, col)}
+                      onDragLeave={handleGridDragLeave}
+                      onDrop={e => handleGridDrop(e, row, col)}
+                      onMouseEnter={() => {
+                        if (placingPlanet || movingPlanet) setHoverCell({ row, col });
+                      }}
+                      onMouseLeave={handleGridDragLeave}
+                      style={{ pointerEvents: 'all', transition: 'fill 0.1s, stroke 0.2s' }}
+                    />
+                    {/* <text
                     x={col * CELL_SIZE + CELL_SIZE / 2}
                     y={row * CELL_SIZE + CELL_SIZE / 2}
                     textAnchor="middle"
@@ -393,204 +396,177 @@ const ErpSolarSystem: React.FC = () => {
                   >
                     {row * GRID_COLS + col + 1}
                   </text> */}
-                </g>
-              ))
-            )}
-            {/* Sonne in der Mitte */}
-            <circle
-              cx={SUN_COL * CELL_SIZE + CELL_SIZE / 2}
-              cy={SUN_ROW * CELL_SIZE + CELL_SIZE / 2}
-              r={SUN_RADIUS}
-              fill="rgba(211, 250, 13, 0.958)"
-              filter="url(#sun-glow)"
-            />
-            <text
-              x={SUN_COL * CELL_SIZE + CELL_SIZE / 2}
-              y={SUN_ROW * CELL_SIZE + CELL_SIZE / 2}
-              textAnchor="middle"
-              dominantBaseline="middle"
-              className="svg-sun-label"
-            >
-              ERP
-            </text>
-            {/* Verbindungslinien von jedem platzierten Planeten zur Sonne */}
-            {planetsInGrid.map((planet) => {
-              if (!planet.position) return null;
-              const planetX = planet.position.col * CELL_SIZE + CELL_SIZE / 2;
-              const planetY = planet.position.row * CELL_SIZE + CELL_SIZE / 2;
-              const sunX = SUN_COL * CELL_SIZE + CELL_SIZE / 2;
-              const sunY = SUN_ROW * CELL_SIZE + CELL_SIZE / 2;
-              return (
-                <line
-                  key={planet.name + '-line'}
-                  x1={sunX}
-                  y1={sunY}
-                  x2={planetX}
-                  y2={planetY}
-                  stroke="#7ec7ff"
-                  strokeWidth={2.2}
-                  opacity={0.45}
-                  strokeDasharray="6 6"
-                  style={{ pointerEvents: 'none' }}
-                />
-              );
-            })}
-            {/* Platzierte Planeten (NACH den Linien, damit sie davor liegen) */}
-            {planetsInGrid.map((planet) => {
-              // Verstecke den Planeten, wenn er gerade verschoben wird (movingPlanet aktiv)
-              if (movingPlanet === planet.name) return null;
-              return (
-                <g key={planet.name}
-                  style={{ cursor: customCursor ? customCursor : (draggedPlanet ? 'none' : 'grab') }}
-                  onMouseEnter={() => setHoveredPlanet(planet.name)}
-                  onMouseLeave={() => setHoveredPlanet(null)}
-                  onMouseDown={() => handleGridPlanetMouseDown(planet)}
-                >
-                  {hoveredPlanet === planet.name && (
+                  </g>
+                ))
+              )}
+              {/* Sonne in der Mitte */}
+              <circle
+                cx={SUN_COL * CELL_SIZE + CELL_SIZE / 2}
+                cy={SUN_ROW * CELL_SIZE + CELL_SIZE / 2}
+                r={SUN_RADIUS}
+                fill="rgba(211, 250, 13, 0.958)"
+                filter="url(#sun-glow)"
+              />
+              <text
+                x={SUN_COL * CELL_SIZE + CELL_SIZE / 2}
+                y={SUN_ROW * CELL_SIZE + CELL_SIZE / 2}
+                textAnchor="middle"
+                dominantBaseline="middle"
+                className="svg-sun-label"
+              >
+                ERP
+              </text>
+              {/* Verbindungslinien von jedem platzierten Planeten zur Sonne */}
+              {planetsInGrid.map((planet) => {
+                if (!planet.position) return null;
+                const planetX = planet.position.col * CELL_SIZE + CELL_SIZE / 2;
+                const planetY = planet.position.row * CELL_SIZE + CELL_SIZE / 2;
+                const sunX = SUN_COL * CELL_SIZE + CELL_SIZE / 2;
+                const sunY = SUN_ROW * CELL_SIZE + CELL_SIZE / 2;
+                return (
+                  <line
+                    key={planet.name + '-line'}
+                    x1={sunX}
+                    y1={sunY}
+                    x2={planetX}
+                    y2={planetY}
+                    stroke="#7ec7ff"
+                    strokeWidth={2.2}
+                    opacity={0.45}
+                    strokeDasharray="6 6"
+                    style={{ pointerEvents: 'none' }}
+                  />
+                );
+              })}
+              {/* Platzierte Planeten (NACH den Linien, damit sie davor liegen) */}
+              {planetsInGrid.map((planet) => {
+                // Verstecke den Planeten, wenn er gerade verschoben wird (movingPlanet aktiv)
+                if (movingPlanet === planet.name) return null;
+                return (
+                  <g key={planet.name}
+                    style={{ cursor: customCursor ? customCursor : (draggedPlanet ? 'none' : 'grab') }}
+                    onMouseEnter={() => setHoveredPlanet(planet.name)}
+                    onMouseLeave={() => setHoveredPlanet(null)}
+                    onMouseDown={() => handleGridPlanetMouseDown(planet)}
+                  >
+                    {hoveredPlanet === planet.name && (
+                      <circle
+                        cx={(planet.position!.col * CELL_SIZE) + CELL_SIZE / 2}
+                        cy={(planet.position!.row * CELL_SIZE) + CELL_SIZE / 2}
+                        r={PLANET_RADIUS - 2}
+                        fill={planet.color}
+                        filter="url(#planet-glow)"
+                      />
+                    )}
                     <circle
                       cx={(planet.position!.col * CELL_SIZE) + CELL_SIZE / 2}
                       cy={(planet.position!.row * CELL_SIZE) + CELL_SIZE / 2}
-                      r={PLANET_RADIUS - 2}
+                      r={PLANET_RADIUS}
                       fill={planet.color}
-                      filter="url(#planet-glow)"
+                      stroke="#232b3e"
+                      strokeWidth="2"
                     />
-                  )}
-                  <circle
-                    cx={(planet.position!.col * CELL_SIZE) + CELL_SIZE / 2}
-                    cy={(planet.position!.row * CELL_SIZE) + CELL_SIZE / 2}
-                    r={PLANET_RADIUS}
-                    fill={planet.color}
-                    stroke="#232b3e"
-                    strokeWidth="2"
-                  />
-                  <text
-                    x={(planet.position!.col * CELL_SIZE) + CELL_SIZE / 2}
-                    y={(planet.position!.row * CELL_SIZE) + CELL_SIZE / 2}
-                    textAnchor="middle"
-                    className="svg-planet-label"
-                  >
-                    {planet.name}
-                  </text>
-                </g>
-              );
-            })}
-          </svg>
-        </div>
-        {/* Rechter Bereich: Planeten-Liste und Steuerung */}
-        <div
-          className="solar-system-controls custom-scrollbar"
-          style={{
-            minWidth: '300px',
-            maxWidth: '100%',
-            width: 'auto',
-            height: '700px',
-            maxHeight: '80vh',
-            boxSizing: 'border-box',
-            padding: '1rem',
-            background: isControlsHovered && (placingPlanet || movingPlanet) ? '#22304a' : '#10131a',
-            borderRadius: '18px',
-            boxShadow: isControlsHovered && (placingPlanet || movingPlanet)
-              ? '0 0 32px 8px #7ec7ff88, 0 0 24px #10131a88'
-              : '0 0 24px #10131a88',
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '1rem',
-            overflowY: 'auto',
-            transition: 'background 0.2s, box-shadow 0.2s',
-          }}
-          onMouseEnter={() => {
-            if (placingPlanet || movingPlanet) setIsControlsHovered(true);
-          }}
-          onMouseLeave={() => setIsControlsHovered(false)}
-        >
-          {/* Titel und Anleitung */}
-          <div className="title" style={{ fontSize: '1.5rem', fontWeight: 'bold', color: '#fff', textAlign: 'center' }}>
-            ERP Solar System
+                    <text
+                      x={(planet.position!.col * CELL_SIZE) + CELL_SIZE / 2}
+                      y={(planet.position!.row * CELL_SIZE) + CELL_SIZE / 2}
+                      textAnchor="middle"
+                      className="svg-planet-label"
+                    >
+                      {planet.name}
+                    </text>
+                  </g>
+                );
+              })}
+            </svg>
+
           </div>
-          <div className="instructions" style={{ fontSize: '0.875rem', color: '#ccc', textAlign: 'center' }}>
-            Ziehen Sie die Planeten in das Solar-System, um Ihre ERP-Module anzuzeigen.
-          </div>
-          {/* Planeten-Liste */}
-          <div className="planet-list" style={{
-            flex: 1,
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '0.5rem',
-            overflowY: 'auto',
-            // Cursor-Style für die gesamte Liste, wenn placingPlanet aktiv
-            cursor: placingPlanet && customCursor ? customCursor : undefined
-          }}>
-            {planetsInBox.map(planet => (
-              <div
-                key={planet.name}
-                className="planet-item"
-                style={{ 
-                  padding: '0.5rem',
-                  borderRadius: '12px',
-                  background: '#1e212d',
-                  color: '#fff',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '0.5rem',
-                  cursor: placingPlanet && customCursor ? customCursor : customCursor ? customCursor : 'grab',
-                  boxShadow: '0 0 12px rgba(0, 0, 0, 0.3)',
-                  transition: 'transform 0.1s',
-                  userSelect: 'none'
-                }}
-                onMouseDown={() => handleBoxPlanetMouseDown(planet)}
-                onMouseEnter={placingPlanet && customCursor ? () => { document.body.style.cursor = customCursor; } : undefined}
-                onMouseLeave={placingPlanet && customCursor ? () => { document.body.style.cursor = ''; } : undefined}
-              >
-                <div className="planet-color" style={{ width: '12px', height: '12px', borderRadius: '50%', background: planet.color }}></div>
-                <div className="planet-name" style={{ fontSize: '1rem', fontWeight: '500' }}>{planet.name}</div>
-              </div>
-            ))}
-          </div>
-          {/* Neue Planet hinzufügen */}
-          <div className="add-planet" style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-            <div className="add-planet-title" style={{ fontSize: '1rem', fontWeight: '500', color: '#fff' }}>
-              Neuen Planeten hinzufügen
+          {/* Rechter Bereich: Planeten-Liste und Steuerung */}
+          <div
+            className="solar-system-controls custom-scrollbar"
+            id="rightSideBox"
+            style={{
+             
+              boxSizing: 'border-box',
+              padding: '1rem',
+              background: isControlsHovered && (placingPlanet || movingPlanet) ? '#22304a' : '#10131a',
+              borderRadius: '18px',
+              boxShadow: isControlsHovered && (placingPlanet || movingPlanet)
+                ? '0 0 32px 8px #7ec7ff88, 0 0 24px #10131a88'
+                : '0 0 24px #10131a88',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '1rem',
+              overflowY: 'auto',
+              transition: 'background 0.2s, box-shadow 0.2s',
+            }}
+            onMouseEnter={() => {
+              if (placingPlanet || movingPlanet) setIsControlsHovered(true);
+            }}
+            onMouseLeave={() => setIsControlsHovered(false)}
+          >
+            {/* Titel und Anleitung */}
+            <div id="solarSystemTitle" style={{ fontSize: '1.5rem', fontWeight: 'bold', color: '#fff', textAlign: 'center' }}>
+              ERP Solar System
             </div>
-            <div className="add-planet-controls" style={{ display: 'flex', gap: '0.5rem' }}>
+            <div id="solarSystemInstructions" style={{ fontSize: '0.875rem', color: '#ccc', textAlign: 'center' }}>
+              Ziehen Sie die Planeten in das Solar-System, um Ihre ERP-Module anzuzeigen.
+            </div>
+            {/* Planeten-Liste */}
+            <div className="planet-list" style={{
+              flex: 1,
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '0.5rem',
+              overflowY: 'auto',
+              // Cursor-Style für die gesamte Liste, wenn placingPlanet aktiv
+              cursor: placingPlanet && customCursor ? customCursor : undefined
+            }}>
+              {planetsInBox.map(planet => (
+                <div
+                  key={planet.name}
+                  className="planet-item"
+                  style={{
+                    padding: '0.5rem',
+                    borderRadius: '12px',
+                    background: '#1e212d',
+                    color: '#fff',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '0.5rem',
+                    cursor: placingPlanet && customCursor ? customCursor : customCursor ? customCursor : 'grab',
+                    boxShadow: '0 0 12px rgba(0, 0, 0, 0.3)',
+                    transition: 'transform 0.1s',
+                    userSelect: 'none'
+                  }}
+                  onMouseDown={() => handleBoxPlanetMouseDown(planet)}
+                  onMouseEnter={placingPlanet && customCursor ? () => { document.body.style.cursor = customCursor; } : undefined}
+                  onMouseLeave={placingPlanet && customCursor ? () => { document.body.style.cursor = ''; } : undefined}
+                >
+                  <div className="planet-color" style={{ width: '12px', height: '12px', borderRadius: '50%', background: planet.color }}></div>
+                  <div className="planet-name" style={{ fontSize: '1rem', fontWeight: '500' }}>{planet.name}</div>
+                </div>
+              ))}
+            </div>
+            {/* Neue Planet hinzufügen (Desktop) */}
+            <div className="planet-create-form">
               <input
                 type="text"
                 value={newPlanetName}
                 onChange={e => setNewPlanetName(e.target.value)}
                 placeholder="Name des Moduls"
-                style={{
-                  flex: 1,
-                  padding: '0.5rem',
-                  borderRadius: '12px',
-                  border: '1px solid #7ec7ff',
-                  background: '#1e212d',
-                  color: '#fff',
-                  fontSize: '0.875rem',
-                  outline: 'none',
-                  transition: 'border 0.2s',
-                  boxShadow: 'inset 0 0 8px rgba(255, 255, 255, 0.1)'
-                }}
+                className="planet-input"
               />
               <input
                 type="color"
                 value={newPlanetColor}
                 onChange={e => setNewPlanetColor(e.target.value)}
-                style={{
-                  width: '2.2em',
-                  height: '2.2em',
-                  border: 'none',
-                  background: 'none',
-                  cursor: 'pointer',
-                  borderRadius: '50%',
-                  boxShadow: '0 1px 4px #1c202c33',
-                  marginLeft: '0.2em'
-                }}
                 className="planet-color-picker"
               />
               <button
+                className="planet-add-btn"
                 onClick={() => {
                   if (!newPlanetName.trim()) return;
                   const name = newPlanetName.trim();
-                  // Prüfe auf Duplikat
                   if (allPlanets.some(p => p.name.toLowerCase() === name.toLowerCase())) {
                     alert('Modul Bereits vorhanden');
                     return;
@@ -600,28 +576,46 @@ const ErpSolarSystem: React.FC = () => {
                   setNewPlanetName("");
                   setNewPlanetColor(DEFAULT_COLORS[Math.floor(Math.random()*DEFAULT_COLORS.length)]);
                 }}
-                style={{
-                  padding: '0.5rem 1rem',
-                  borderRadius: '12px',
-                  background: '#7ec7ff',
-                  color: '#10131a',
-                  fontSize: '0.875rem',
-                  fontWeight: '500',
-                  border: 'none',
-                  cursor: 'pointer',
-                  transition: 'background 0.2s, transform 0.2s',
-                  boxShadow: '0 4px 12px rgba(0, 0, 0, 0.2)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  gap: '0.5rem'
-                }}
               >
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-plus" viewBox="0 0 16 16">
-                  <path fillRule="evenodd" d="M8.5 3a.5.5 0 0 1 .5.5v10a.5.5 0 0 1-1 0v-10A.5.5 0 0 1 8.5 3zM3 8.5a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3.5A.5.5 0 0 1 3 8.5z"/>
-                </svg>
                 Hinzufügen
               </button>
+            </div>
+            {/* Neue Planet hinzufügen (Mobile) */}
+            <div className="planet-create-form-mobile" style={{ display: 'none' }}>
+              <input
+                type="text"
+                value={newPlanetName}
+                onChange={e => setNewPlanetName(e.target.value)}
+                placeholder="Name des Moduls"
+                className="planet-input"
+                style={{ marginBottom: '0.5em' }}
+              />
+              <div style={{ display: 'flex', gap: '0.5em', alignItems: 'center' }}>
+                <input
+                  type="color"
+                  value={newPlanetColor}
+                  onChange={e => setNewPlanetColor(e.target.value)}
+                  className="planet-color-picker"
+                />
+                <button
+                  className="planet-add-btn"
+                  style={{ flex: 1 }}
+                  onClick={() => {
+                    if (!newPlanetName.trim()) return;
+                    const name = newPlanetName.trim();
+                    if (allPlanets.some(p => p.name.toLowerCase() === name.toLowerCase())) {
+                      alert('Modul Bereits vorhanden');
+                      return;
+                    }
+                    const color = newPlanetColor;
+                    setAllPlanets(pls => [...pls, { name, color, position: null }]);
+                    setNewPlanetName("");
+                    setNewPlanetColor(DEFAULT_COLORS[Math.floor(Math.random()*DEFAULT_COLORS.length)]);
+                  }}
+                >
+                  Hinzufügen
+                </button>
+              </div>
             </div>
           </div>
         </div>

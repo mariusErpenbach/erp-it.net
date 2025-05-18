@@ -1,5 +1,6 @@
 #ErpSolarSystem {
   display: flex;
+flex-direction: column;
   justify-content: center;
   align-items: center;
 
@@ -13,7 +14,8 @@ border-color:#5e6d8fa2;
   --planet-radius: 24px;
   --planet-label-font-size: 7px;
   --sun-label-font-size: 1em;
-
+margin-left:auto;
+margin-right:auto;
   .svg-planet-label {
     font-size: var(--planet-label-font-size);
     font-family: 'Inter', 'Roboto', 'Segoe UI', Arial, sans-serif;
@@ -40,14 +42,6 @@ border-color:#5e6d8fa2;
     display: block;
   }
 
-  @media (min-width: 1400px) {
-    --planet-radius: 32px;
-    --planet-label-font-size: 11px;
-    --sun-label-font-size: 1.5em;
-    .solar-system-dropzone svg {
-      max-width: 1300px;
-    }
-  }
 
   .solar-center {
     flex: 1;
@@ -58,7 +52,7 @@ border-color:#5e6d8fa2;
   }
 
   #planet-drag-box {
-    min-width: 180px;
+
     background: #232b3e;
     border-radius: 18px;
     box-shadow: 0 4px 16px #1c202c55;
@@ -78,7 +72,14 @@ border-color:#5e6d8fa2;
       font-size: 1.2em;
     }
   }
-
+  #solarHeader{
+    width:97%;
+    border-style:solid;
+    border-width:1px 0px 0px 0px;
+    padding-top:1%;
+    margin-top:0%;
+     border-color:#8faadc58;
+  }
   .planet-draggable {
     width: 85px;
     height: 85px;
@@ -135,13 +136,13 @@ border-color:#5e6d8fa2;
       margin-left: 0.2em;
     }
     .planet-add-btn {
-      background: linear-gradient(90deg, #d1f50d 0%, #ffcc00 100%);
+      background: rgba(211, 250, 13, 0.958);
       color: #232b3e;
       font-weight: 900;
       font-size: 1.3em;
       border: none;
       border-radius: 8px;
-      padding: 0.3em 1em;
+      padding: 0.3em 0em 0.3em 0em;
       cursor: pointer;
       transition: background 0.2s, color 0.2s;
       &:hover {
@@ -172,4 +173,53 @@ border-color:#5e6d8fa2;
 .custom-scrollbar::-webkit-scrollbar-corner {
   background: #232b3e;
 }
+#rightSideBox{ width: 'auto',
+
+}
+  @media (max-width: 723px) {
+    #ErpSolarSystem{
+      background-color:yellow;
+   
+   
+ 
+    }
+    #solarSystemWrapper{
+         width:90vw;
+     background-color:red;
+      flex-direction: column;
+      #rightSideBox,
+    .solar-system-controls {
+  
+  
+      padding: 0.7em 0.5em;
+      font-size: 0.98em;
+    }
+         
+     #solarSystemTitle{
+          display:none;
+          
+         }
+    #solarSystemInstructions{
+          display:none;
+         }
+        
+    .planet-create-form {
+      display: none !important;
+    }
+    .planet-create-form-mobile {
+      display: flex !important;
+      flex-direction: column;
+      gap: 0.5em; 
+      width: 'auto';
+      margin: 1em 0 0.5em 0;
+      background: #232b3e;
+      border-radius: 10px;
+      padding: 0.7em 0.7em 0.5em 0.7em;
+      box-shadow: 0 2px 8px #1c202c33;
+    }
+    }
+    
+  }
+  
+
 }
