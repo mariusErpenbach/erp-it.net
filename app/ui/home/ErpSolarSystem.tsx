@@ -48,7 +48,7 @@ const ErpSolarSystem: React.FC = () => {
   const CELL_SIZE = SVG_WIDTH / GRID_COLS;
   const SUN_RADIUS = 28; //
   const SUN_COL = Math.floor(GRID_COLS / 2);
-  const SUN_ROW = Math.floor(GRID_ROWS / 2);
+  const SUN_ROW = Math.floor(GRID_ROWS / 2) - 4;
 
   // Für Hover-Effekt auf Grid-Zelle
   const [hoverCell, setHoverCell] = useState<{row: number, col: number} | null>(null);
@@ -295,9 +295,9 @@ const ErpSolarSystem: React.FC = () => {
           Export (bald)
         </button>
       </div>
-      <div style={{ display: 'flex', gap: '2rem', alignItems: 'center', width: '100%' }}>
+      <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center', width: '100%' }}>
         {/* Linker Bereich: Solar-System (SVG, Drop-Target) */}
-        <div className="solar-system-dropzone" style={{ flex: 1, minWidth: 0, height: '100%', boxSizing: 'border-box', padding: 0, margin: 0 }}>
+        <div className="solar-system-dropzone" style={{ flex: 1, minWidth: 0, height: '100%', boxSizing: 'border-box', padding: "0em -1em 0em 1em", margin: 0 }}>
           <svg
             ref={svgRef}
             width="100%"
@@ -345,13 +345,15 @@ const ErpSolarSystem: React.FC = () => {
                     y={row * CELL_SIZE}
                     width={CELL_SIZE}
                     height={CELL_SIZE}
-                    fill={hoverCell && hoverCell.row === row && hoverCell.col === col ? '#7ec7ff33' : 'transparent'}
+                    fill={((placingPlanet || movingPlanet) && hoverCell && hoverCell.row === row && hoverCell.col === col) ? '#7ec7ff33' : 'transparent'}
                     stroke={showGridLines ? '#7ec7ff' : 'transparent'}
                     strokeWidth={0.7}
                     onDragOver={e => handleGridDragOver(e, row, col)}
                     onDragLeave={handleGridDragLeave}
                     onDrop={e => handleGridDrop(e, row, col)}
-                    onMouseEnter={() => setHoverCell({ row, col })}
+                    onMouseEnter={() => {
+                      if (placingPlanet || movingPlanet) setHoverCell({ row, col });
+                    }}
                     onMouseLeave={handleGridDragLeave}
                     style={{ pointerEvents: 'all', transition: 'fill 0.1s, stroke 0.2s' }}
                   />
