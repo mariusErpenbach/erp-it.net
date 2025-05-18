@@ -118,8 +118,6 @@ const ErpSolarSystem: React.FC = () => {
   const [movingPlanet, setMovingPlanet] = useState<string | null>(null);
   // State für Planeten, der aus der rechten Box gezogen wird
   const [placingPlanet, setPlacingPlanet] = useState<string | null>(null);
-  // State für Hover-Effekt auf rechte Box beim Platzieren
-  const [isControlsHovered, setIsControlsHovered] = useState(false);
   // State für Grid-Linien anzeigen/ausblenden
   const [showGridLines, setShowGridLines] = useState(true);
 
@@ -193,7 +191,6 @@ const ErpSolarSystem: React.FC = () => {
         (svgRef.current.style as React.CSSProperties).cursor = '';
       }
       setPlacingPlanet(null);
-      setIsControlsHovered(false); // Unfocus/Highlight-Reset
       // Feld berechnen und Planet platzieren
       const cell = getGridCellFromMouseEvent(e);
       if (cell) {
@@ -232,7 +229,6 @@ const ErpSolarSystem: React.FC = () => {
       setCustomCursor(null);
       document.body.style.cursor = '';
       setMovingPlanet(null);
-      setIsControlsHovered(false); // Unfocus/Highlight-Reset
       // Prüfen, ob MouseUp in der rechten Box war
       const controls = document.querySelector('.solar-system-controls');
       if (controls && e.target instanceof Node && controls.contains(e.target)) {
@@ -428,10 +424,6 @@ Ziehen Sie die Planeten in das Solar-System, um Ihre ERP-Module anzuzeigen.
           <div
             className="solar-system-controls custom-scrollbar"
             id="rightSideBox"
-            onMouseEnter={() => {
-              if (placingPlanet || movingPlanet) setIsControlsHovered(true);
-            }}
-            onMouseLeave={() => setIsControlsHovered(false)}
           >
             {/* Planeten-Liste */}
             <div className="planet-list" style={{ cursor: placingPlanet && customCursor ? customCursor : undefined }}>
