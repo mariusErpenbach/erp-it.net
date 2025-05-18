@@ -41,14 +41,14 @@ const ErpSolarSystem: React.FC = () => {
 
   // Grid-Konstanten
   const GRID_COLS = 32;
-  const GRID_ROWS = 14;
+  const GRID_ROWS = 18; // vorher 14, jetzt 18 für mehr Kästchen
   // SVG-Größe und quadratische Zellen
   const SVG_WIDTH = 1000;
   const SVG_HEIGHT = Math.round((SVG_WIDTH / GRID_COLS) * GRID_ROWS);
   const CELL_SIZE = SVG_WIDTH / GRID_COLS;
   const SUN_RADIUS = 28; //
   const SUN_COL = Math.floor(GRID_COLS / 2);
-  const SUN_ROW = Math.floor(GRID_ROWS / 2) - 4;
+  const SUN_ROW = Math.floor(GRID_ROWS / 2) - 2; // vorher -4, jetzt -2 für mittige Sonne
 
   // Für Hover-Effekt auf Grid-Zelle
   const [hoverCell, setHoverCell] = useState<{row: number, col: number} | null>(null);
@@ -101,8 +101,16 @@ const ErpSolarSystem: React.FC = () => {
 
   // Die Planeten in der rechten Box haben minHeight: 2.2em und fontSize: 0.95em
   // Wir nehmen für SVG die gleiche optische Größe an:
-  const PLANET_RADIUS = 24; // vorher 22, jetzt noch etwas größer
-  const PLANET_LABEL_FONT_SIZE = 7; // px, deutlich kleiner für SVG-Planeten
+  // Radius und Font-Size aus CSS-Variablen lesen, Fallback auf Default
+  function getCssVarPx(varName: string, fallback: number) {
+    if (typeof window === 'undefined') return fallback;
+    const el = document.getElementById('ErpSolarSystem');
+    if (!el) return fallback;
+    const val = getComputedStyle(el).getPropertyValue(varName);
+    return val ? parseFloat(val) : fallback;
+  }
+  const PLANET_RADIUS = (typeof window !== 'undefined') ? getCssVarPx('--planet-radius', 24) : 24;
+  const PLANET_LABEL_FONT_SIZE = (typeof window !== 'undefined') ? getCssVarPx('--planet-label-font-size', 7) : 7;
 
   // State für Hover-Effekt auf Planeten
   const [hoveredPlanet, setHoveredPlanet] = useState<string | null>(null);
@@ -241,7 +249,7 @@ const ErpSolarSystem: React.FC = () => {
   }
 
   return (
-    <div id="ErpSolarSystem" ref={solarRef} style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', alignItems: 'center', height: '90vh', boxSizing: 'border-box', padding: 0, margin: 0 }}>
+    <div id="ErpSolarSystem" ref={solarRef} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', height: '90vh', boxSizing: 'border-box', padding: 0, margin:"auto" }}>
       {/* Control-Menü über dem Grid */}
       <div style={{ width: '100%', maxWidth: '1000px', display: 'flex', justifyContent: 'flex-end', alignItems: 'center', gap: '1rem', margin: '0 auto', marginTop: '0.5rem', marginBottom: '0.5rem' }}>
         <button
@@ -295,9 +303,22 @@ const ErpSolarSystem: React.FC = () => {
           Export (bald)
         </button>
       </div>
-      <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center', width: '100%' }}>
+      <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center', width: '100vw', maxWidth: '1600px', margin: '0 auto', padding: '1%' }}>
         {/* Linker Bereich: Solar-System (SVG, Drop-Target) */}
-        <div className="solar-system-dropzone" style={{ flex: 1, minWidth: 0, height: '100%', boxSizing: 'border-box', padding: "0em -1em 0em 1em", margin: 0 }}>
+        <div className="solar-system-dropzone" style={{
+          minWidth: 0,
+          width: SVG_WIDTH,
+          height: SVG_HEIGHT,
+          maxWidth: SVG_WIDTH,
+          maxHeight: SVG_HEIGHT,
+          boxSizing: 'border-box',
+          padding: 0,
+          margin: 0,
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}>
           <svg
             ref={svgRef}
             width="100%"
@@ -305,13 +326,15 @@ const ErpSolarSystem: React.FC = () => {
             viewBox={`0 0 ${SVG_WIDTH} ${SVG_HEIGHT}`}
             preserveAspectRatio="xMidYMid meet"
             style={{
+              flex: 1,
+              width: '100%',
+              height: '100%',
               cursor: placingPlanet && customCursor ? customCursor : (draggedPlanet ? 'grabbing' : undefined),
               background: '#232b3e',
               borderRadius: '18px',
               boxShadow: '0 0 24px #10131a88',
               display: 'block',
               maxWidth: '100%',
-              height: '100%',
               boxSizing: 'border-box',
               padding: 0,
               margin: 0
@@ -386,10 +409,7 @@ const ErpSolarSystem: React.FC = () => {
               y={SUN_ROW * CELL_SIZE + CELL_SIZE / 2}
               textAnchor="middle"
               dominantBaseline="middle"
-              fontSize="1em"
-              fontWeight="bold"
-              fill="#232b3e"
-              fontFamily="'Inter', 'Roboto', 'Segoe UI', Arial, sans-serif"
+              className="svg-sun-label"
             >
               ERP
             </text>
@@ -447,12 +467,7 @@ const ErpSolarSystem: React.FC = () => {
                     x={(planet.position!.col * CELL_SIZE) + CELL_SIZE / 2}
                     y={(planet.position!.row * CELL_SIZE) + CELL_SIZE / 2}
                     textAnchor="middle"
-                    fontWeight={500}
-                    fontSize={`${PLANET_LABEL_FONT_SIZE}px`}
-                    fill="#232b3e"
-                    fontFamily="'Inter', 'Roboto', 'Segoe UI', Arial, sans-serif"
-                    pointerEvents="none"
-                    style={{ dominantBaseline: 'middle', letterSpacing: 0 }}
+                    className="svg-planet-label"
                   >
                     {planet.name}
                   </text>
@@ -468,8 +483,8 @@ const ErpSolarSystem: React.FC = () => {
             minWidth: '300px',
             maxWidth: '100%',
             width: 'auto',
-            height: '700px', // Feste Höhe für die rechte Box
-            maxHeight: '80vh', // Optional: Begrenzung auf 80% der Viewport-Höhe
+            height: '700px',
+            maxHeight: '80vh',
             boxSizing: 'border-box',
             padding: '1rem',
             background: isControlsHovered && (placingPlanet || movingPlanet) ? '#22304a' : '#10131a',
@@ -554,6 +569,22 @@ const ErpSolarSystem: React.FC = () => {
                   transition: 'border 0.2s',
                   boxShadow: 'inset 0 0 8px rgba(255, 255, 255, 0.1)'
                 }}
+              />
+              <input
+                type="color"
+                value={newPlanetColor}
+                onChange={e => setNewPlanetColor(e.target.value)}
+                style={{
+                  width: '2.2em',
+                  height: '2.2em',
+                  border: 'none',
+                  background: 'none',
+                  cursor: 'pointer',
+                  borderRadius: '50%',
+                  boxShadow: '0 1px 4px #1c202c33',
+                  marginLeft: '0.2em'
+                }}
+                className="planet-color-picker"
               />
               <button
                 onClick={() => {

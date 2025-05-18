@@ -10,6 +10,45 @@ border-style:solid;
 border-width:1px;
 border-width:0px 0px 1px 0px;
 border-color:#5e6d8fa2;
+  --planet-radius: 24px;
+  --planet-label-font-size: 7px;
+  --sun-label-font-size: 1em;
+
+  .svg-planet-label {
+    font-size: var(--planet-label-font-size);
+    font-family: 'Inter', 'Roboto', 'Segoe UI', Arial, sans-serif;
+    font-weight: 500;
+    fill: #232b3e;
+    dominant-baseline: middle;
+    letter-spacing: 0;
+    pointer-events: none;
+  }
+  .svg-sun-label {
+    font-size: var(--sun-label-font-size);
+    font-family: 'Inter', 'Roboto', 'Segoe UI', Arial, sans-serif;
+    font-weight: bold;
+    fill: #232b3e;
+    dominant-baseline: middle;
+    pointer-events: none;
+  }
+
+  .solar-system-dropzone svg {
+    /* Standardgröße */
+    max-width: 1000px;
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  @media (min-width: 1400px) {
+    --planet-radius: 32px;
+    --planet-label-font-size: 11px;
+    --sun-label-font-size: 1.5em;
+    .solar-system-dropzone svg {
+      max-width: 1300px;
+    }
+  }
+
   .solar-center {
     flex: 1;
     display: flex;
