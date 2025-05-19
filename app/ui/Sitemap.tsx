@@ -7,6 +7,7 @@ const Sitemap: React.FC = () => {
             <ul>
                 <li><Link href="/">Home</Link></li>
                 <li><Link href="/blog">Blog</Link></li>
+                <li><Link href="/aboutme">About Me</Link> </li>
                 <li><Link href="/tools">Tools</Link>
                     <ul>
                         <li><Link href="/tools/csharpLibs">C# Libraries</Link></li>
@@ -17,6 +18,7 @@ const Sitemap: React.FC = () => {
                 </li>
                 <li><Link href="/impressum">Impressum</Link></li>
                 <li><Link href="/datenschutz">Datenschutz</Link></li>
+                <li><Link href="/nutzungsbedingungen">Nutzungsbedingungen</Link></li>
             </ul>
         </div>
     );

@@ -185,6 +185,25 @@
 #menuBar section a:hover::after {
   width: 80%;
 }
+#menuBar .menuBar-lang-select {
+  padding: 0.3rem 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  background-color: rgba(15, 23, 42, 0.8);
+  color: #e2e8f0;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+#menuBar .menuBar-lang-select:hover {
+  background-color: rgb(15, 23, 42);
+  border-color: #d3fa0d;
+}
+#menuBar .menuBar-lang-select option {
+  background-color: #0f172a;
+  color: #e2e8f0;
+}
 #main-landing {
   min-height: 80vh;
   background: linear-gradient(180deg, #181d2a 0%, #232b3e 100%);
@@ -1352,13 +1371,25 @@ footer button:active {
   padding: 2rem;
   background-color: #202844;
   color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 #sitemap ul {
-  list-style: none;
+  list-style: disc;
+  list-style-position: inside;
   padding: 0;
+  max-width: 600px;
+  margin: 0;
 }
 #sitemap ul li {
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  font-weight: 500;
 }
 #sitemap ul li a {
   color: #66baff;
@@ -1373,7 +1404,8 @@ footer button:active {
   margin-left: 1.5rem;
 }
 #sitemap ul li ul li {
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
 }
 #sitemap ul li ul li a {
   font-weight: normal;

@@ -7,7 +7,6 @@ export default function Home() {
      <Quotes></Quotes>
      <ErpSolarSystem></ErpSolarSystem>
      <PolygonSlider></PolygonSlider>
-     
     </div>
   );
 }

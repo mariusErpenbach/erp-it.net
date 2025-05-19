@@ -1,6 +1,7 @@
 "use client";
 import React, { useRef, useState } from 'react';
 import '../../styles/_ErpSolarSystem.scss';
+import { useLanguage } from '../LanguageContext';
 
 const PLANETS = [
   { name: 'Finanzen', color: '#7ec7ff' },
@@ -28,8 +29,10 @@ type Planet = {
 };
 
 const ErpSolarSystem: React.FC = () => {
+  const { t, lang } = useLanguage(); // Extracting 'lang' from the useLanguage hook
+
   // Zentrales Datenmodell: Jeder Planet hat eine Position (null = in Box, {row, col} = im Grid)
-  const [allPlanets, setAllPlanets] = useState(
+  const [allPlanets, setAllPlanets] = useState<Planet[]>(
     PLANETS.map(p => ({ ...p, position: null as null | { row: number, col: number } }))
   );
   const [newPlanetName, setNewPlanetName] = useState("");
@@ -250,13 +253,13 @@ const ErpSolarSystem: React.FC = () => {
       {/* Control-Menü über dem Grid */}
       <div className="solar-system-controls-bar">
         <h4 className="solar-system-instruction">
-        Ziehen Sie die Planeten in das Solar-System, um Ihre ERP-Module anzuzeigen.
+          {t.solarSystemInstruction}
         </h4>
         <button
           className="solar-system-toggle-grid-btn"
           onClick={() => setShowGridLines(v => !v)}
         >
-          {showGridLines ? 'Linien ausblenden' : 'Linien einblenden'}
+          {showGridLines ? t.hideGridLines : t.showGridLines}
         </button>
         <button
           className="solar-system-reset-btn"
@@ -264,13 +267,13 @@ const ErpSolarSystem: React.FC = () => {
             setAllPlanets(pls => pls.map(p => ({ ...p, position: null })));
           }}
         >
-          Zurücksetzen
+          {t.reset}
         </button>
         <button
           className="solar-system-export-btn"
           disabled
         >
-          Export (bald)
+          {t.export}
         </button>
       </div>
         <div className="solar-system-wrapper">
@@ -462,7 +465,7 @@ const ErpSolarSystem: React.FC = () => {
                   if (!newPlanetName.trim()) return;
                   const name = newPlanetName.trim();
                   if (allPlanets.some(p => p.name.toLowerCase() === name.toLowerCase())) {
-                    alert('Modul Bereits vorhanden');
+                    alert(t.addButton[lang]); // Use translation for alert
                     return;
                   }
                   const color = newPlanetColor;
@@ -471,7 +474,7 @@ const ErpSolarSystem: React.FC = () => {
                   setNewPlanetColor(DEFAULT_COLORS[Math.floor(Math.random()*DEFAULT_COLORS.length)]);
                 }}
               >
-                Hinzufügen
+                {t.addButton[lang]} {/* Dynamically render button text based on language */}
               </button>
             </div>
            

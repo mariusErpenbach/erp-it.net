@@ -2,13 +2,25 @@
     padding: 2rem;
     background-color: #202844;
     color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 
     ul {
-        list-style: none;
+        list-style: disc;
+        list-style-position: inside;
         padding: 0;
+        max-width: 600px;
+        margin: 0;
 
         li {
-            margin-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            font-weight: 500;
 
             a {
                 color: #66baff;
@@ -25,7 +37,8 @@
                 margin-left: 1.5rem;
 
                 li {
-                    margin-bottom: 0.3rem;
+                    margin-bottom: 0.5rem;
+                    font-size: 1rem;
 
                     a {
                         font-weight: normal;

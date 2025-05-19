@@ -3,8 +3,10 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import polygonSliderData from "./polygonSliderData.json";
+import { useLanguage } from "../LanguageContext";
 
 export default function PolygonSlider() {
+  const { lang, t } = useLanguage();
   const [spinCounter, setSpinCounter] = useState(0); // Counter to track the current field in the outer polygon
 
   const radius = 100; // Radius des Kreises
@@ -22,17 +24,26 @@ export default function PolygonSlider() {
     "Einsatzbereiche",
     "Support"
   ];
+  const translatedWords = [
+    "Processes",
+    "Master Data",
+    "Roles",
+    "Integration",
+    "Security",
+    "Scalability",
+    "Analytics",
+    "Usability",
+    "Support"
+  ];
   const formatNumber = (num: number) => parseFloat(num.toFixed(6));
 
-  const currentQuestions = polygonSliderData[spinCounter]?.fragen || []; // Get questions for the current index
-
+  const currentQuestions = polygonSliderData[spinCounter]?.fragen[lang] || []; // Fetch questions based on selected language
+  const currentBereich = polygonSliderData[spinCounter]?.bereich[lang] || ""; // Fetch category based on selected language
 
   const spinPoly: () => void = () => {
     setSpinCounter((prevCounter) => (prevCounter + 1) % polygonSliderData.length);
     // handleFanEffect(); // Kein Animationstrigger mehr
   };
-
-
   return (
     <div id="polygonSlider">
     <section id="polygonSliderSection">
@@ -117,7 +128,7 @@ export default function PolygonSlider() {
                   transition={{ duration: 0.2 }}
                   style={{ fontSize: '0.8em' }}
                 >
-                  {words[i]}
+                  {lang === "de" ? words[i] : translatedWords[i]}
                 </motion.text>
               </g>
             );
@@ -125,7 +136,9 @@ export default function PolygonSlider() {
         </svg>
       </div>
       <div id="polygonSliderRightBox">
-        <h3 id="polygonSliderHeading">Wichtige Fragen bei der Planung ihrer Software: {words[spinCounter]}</h3>
+        <h3 id="polygonSliderHeading">
+          {t.polygonSliderHeading} {currentBereich}
+        </h3>
         <ul id="polygonSliderQuestions">
           <AnimatePresence mode="wait">
             {currentQuestions.map((question, index) => (
@@ -143,8 +156,26 @@ export default function PolygonSlider() {
         </ul>
 
         <footer id="polygonSliderFooter">
-          <button id="prevButton" onClick={() => setSpinCounter((prevCounter) => (prevCounter - 1 + polygonSliderData.length) % polygonSliderData.length)}>Zurück</button>
-          <button id="nextButton" onClick={() => setSpinCounter((prevCounter) => (prevCounter + 1) % polygonSliderData.length)}>Nächste</button>
+          <button
+            id="prevButton"
+            onClick={() =>
+              setSpinCounter(
+                (prevCounter) => (prevCounter - 1 + polygonSliderData.length) % polygonSliderData.length
+              )
+            }
+          >
+            {lang === "de" ? "Zurück" : "Previous"}
+          </button>
+          <button
+            id="nextButton"
+            onClick={() =>
+              setSpinCounter(
+                (prevCounter) => (prevCounter + 1) % polygonSliderData.length
+              )
+            }
+          >
+            {lang === "de" ? "Nächste" : "Next"}
+          </button>
         </footer>
       </div>
     </section>

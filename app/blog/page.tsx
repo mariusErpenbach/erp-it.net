@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { fetchAllArticles } from "../actions/blogActions"; 
 import Link from "next/link";
 import Image from "next/image";
+import { useLanguage } from "../ui/LanguageContext"; // Corrected import path for LanguageContext
 
 type Article = {
   id: string;
@@ -38,6 +39,7 @@ function BlogSkeletonList({ count = 3 }) {
 export default function BlogOverview() {
   const [articles, setArticles] = useState<Article[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const { lang } = useLanguage(); // Extract language context
 
   useEffect(() => {
     async function loadArticles() {
@@ -55,6 +57,24 @@ export default function BlogOverview() {
 
   return (
     <div id="blog-page">
+      {lang !== "de" && (
+        <div
+          className="info-message"
+          style={{
+            textAlign: "center",
+            margin: "1rem 0",
+            padding: "0.5rem",
+            backgroundColor: "#f8d7da",
+            color: "#721c24",
+            border: "1px solid #f5c6cb",
+            borderRadius: "4px",
+            transition: "opacity 0.5s ease-in-out",
+            opacity: 1, // Always visible when lang !== "de"
+          }}
+        >
+          This blog is currently only available in German.
+        </div>
+      )}
       <main id="articlesList">
         {isLoading ? (
           <BlogSkeletonList count={3} />

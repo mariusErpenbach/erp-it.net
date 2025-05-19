@@ -4,6 +4,7 @@ import MenuBar from "./ui/MenuBar";
 import FooterMain from "./ui/FooterMain";
 // import '../app/styles/Tailwindglobals.css'
 import { Roboto } from 'next/font/google'
+import { LanguageProvider } from "./ui/LanguageContext";
 
 const roboto = Roboto({
   subsets: ['latin'],
@@ -24,9 +25,11 @@ export default function RootLayout({
   return ( 
     <html lang="en" className={roboto.className}>
       <body>
-        <MenuBar></MenuBar>
-        {children}
-        <FooterMain></FooterMain>
+        <LanguageProvider>
+          <MenuBar></MenuBar>
+          {children}
+          <FooterMain></FooterMain>
+        </LanguageProvider>
       </body>
     </html>
   );
