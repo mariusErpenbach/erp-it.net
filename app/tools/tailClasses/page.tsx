@@ -1,9 +1,11 @@
-import { CheatsheetTable } from "@/app/ui/tools/TailwindSheet"
+"use client";
 
-export default function tailClassesPage(){
-    return(
-        <div   >
-            <CheatsheetTable></CheatsheetTable>
-        </div>
-    )
+import { CheatsheetTable } from "@/app/ui/tools/TailwindSheet";
+
+export default function TailClassesPage() {
+  return (
+    <div>
+      <CheatsheetTable></CheatsheetTable>
+    </div>
+  );
 }

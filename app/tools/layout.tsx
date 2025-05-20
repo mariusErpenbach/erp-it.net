@@ -1,28 +1,17 @@
-"use client"
-import { useEffect, useState } from "react";
+import { Metadata } from "next";
 import { ReactNode } from "react";
 
+export const metadata: Metadata = {
+  title: "Tools - Erp-IT",
+  description: "Entdecken Sie nützliche Tools und Ressourcen für Entwickler und IT-Profis.",
+  keywords: ["Tools", "IT", "Entwickler", "Ressourcen", "Erp-IT"],
+};
+
 export default function BlogLayout({ children }: { children: ReactNode }) {
-    const [showButton, setShowButton] = useState(false);
-    useEffect(() => {
-        const handleScroll = () => {
-          setShowButton(window.scrollY > window.innerHeight);
-        };
-    
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
-      }, []);
-    const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-    };
+
   return (
     <div>
       <header className="mb-6">
-      {showButton && (
-        <button id="back-to-top-btn" onClick={scrollToTop}>
-          ↑ Nach oben
-        </button>
-      )}
       </header>
       <main>{children}</main>
     </div>

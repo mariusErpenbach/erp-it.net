@@ -3,9 +3,10 @@ import { useEffect, useState } from "react";
 import { fetchAllArticles } from "../actions/blogActions"; 
 import Link from "next/link";
 import Image from "next/image";
-import { useLanguage } from "../ui/LanguageContext"; // Corrected import path for LanguageContext
+import { useLanguage } from "../ui/LanguageContext";
 
 type Article = {
+  published_date: string ;
   id: string;
   title: string;
   preview: string;
@@ -13,8 +14,6 @@ type Article = {
   author: string;
   preview_image_url: string;
   image_alt: string;
-  published_date: string;
-  sources: string;
 };
 
 function BlogSkeletonList({ count = 3 }) {
@@ -39,14 +38,14 @@ function BlogSkeletonList({ count = 3 }) {
 export default function BlogOverview() {
   const [articles, setArticles] = useState<Article[]>([]);
   const [isLoading, setIsLoading] = useState(true);
-  const { lang } = useLanguage(); // Extract language context
+  const { lang } = useLanguage();
 
   useEffect(() => {
     async function loadArticles() {
       setIsLoading(true);
       const response = await fetchAllArticles();
       if (response.success) {
-        setArticles(response.data ?? []); 
+        setArticles(response.data ?? []);
       } else {
         console.error("Fehler beim Laden der Artikel:", response);
       }
@@ -69,7 +68,7 @@ export default function BlogOverview() {
             border: "1px solid #f5c6cb",
             borderRadius: "4px",
             transition: "opacity 0.5s ease-in-out",
-            opacity: 1, // Always visible when lang !== "de"
+            opacity: 1,
           }}
         >
           This blog is currently only available in German.
@@ -93,7 +92,7 @@ export default function BlogOverview() {
                   <Link href={`/blog/${article.id}`}>read more</Link>
                 </div>
               </div>
-              <div className="preview-image-container">  
+              <div className="preview-image-container">
                 <Image src={article.preview_image_url} alt={article.image_alt} width={500} height={350} />
               </div>
             </div>
