@@ -79,7 +79,7 @@ export default function BlogOverview() {
         {isLoading ? (
           <BlogSkeletonList count={3} />
         ) : (
-          articles.map((article) => (
+          articles.slice().reverse().map((article) => (
             <div key={article.id} className="articleShort">
               <div className="content-wrapper">
                 <div className="article-header-short">
