@@ -90,7 +90,7 @@ export default function ArticlePage({ params }: ArticlePageProps) {
           <header>
           <h1>{article.title}</h1>
           <p>Veröffentlicht am: {new Date(article.published_date).toLocaleDateString()}</p>
-
+          <p>Autor: {article.author}</p>
           </header>
               {/* content section */}
           <div dangerouslySetInnerHTML={{ __html: articleContentHtml }} />

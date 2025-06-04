@@ -11,15 +11,15 @@
       "static/chunks/main-app.js",
       "static/chunks/app/page.js"
     ],
-    "/tools/layout": [
+    "/blog/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/tools/layout.js"
+      "static/chunks/app/blog/page.js"
     ],
-    "/tools/bewerbungshilfe/page": [
+    "/blog/[entry]/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/tools/bewerbungshilfe/page.js"
+      "static/chunks/app/blog/[entry]/page.js"
     ]
   }
 }

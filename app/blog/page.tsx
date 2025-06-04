@@ -43,6 +43,7 @@ export default function BlogOverview() {
           <div className="content-wrapper">
             <div className="article-header-short">
               <h3>{article.title}</h3>
+              <span className="author">by {article.author}</span>
             </div>
             <div className="text-container">
               <span>{new Date(article.published_date).toLocaleDateString()}</span>

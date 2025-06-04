@@ -1,8 +1,8 @@
-// File: /home/dci/Desktop/Github/erp-it.net/app/tools/bewerbungshilfe/page.tsx
-import * as entry from '../../../../../app/tools/bewerbungshilfe/page.js'
+// File: D:\github\erp-it.net\app\blog\[entry]\page.tsx
+import * as entry from '../../../../../app/blog/[entry]/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
-type TEntry = typeof import('../../../../../app/tools/bewerbungshilfe/page.js')
+type TEntry = typeof import('../../../../../app/blog/[entry]/page.js')
 
 type SegmentParams<T extends Object = any> = T extends Record<string, any>
   ? { [K in keyof T]: T[K] extends string ? string | string[] | undefined : never }
