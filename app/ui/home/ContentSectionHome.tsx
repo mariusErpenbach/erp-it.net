@@ -1,12 +1,12 @@
 import Image from 'next/image';
 import IdeaForm from './IdeaForm';
 
-export default function ContentSectionHome() {
+export default function MyProfessionsSection() {
     return (
       <div id="contentSectionHome">
         <section id="webDevSection" className="contentSectionHome-section">
             <div id="webDevOverview">
-            <span><strong>Web-Development</strong></span> 
+            <span><strong>Web-Entwicklung</strong></span> 
             <p>Optimierte Struktur und semantisches HTML für bessere SEO und Barrierefreiheit.
                 </p>
                 <div id="webDev-image-container">
@@ -18,11 +18,6 @@ export default function ContentSectionHome() {
                       />
                     </div>
               </div>
-               <section>
-                <div>
-            
-                </div>
-                </section>
                 <footer>
                 <h1>Mitwirken beim Blog?</h1>
                 <p>                Interesse an IT-Themen? Melde dich und werde Autor!
@@ -32,7 +27,7 @@ export default function ContentSectionHome() {
 
         <section id="softwareDevSection" className="contentSectionHome-section">
           <div id="softwareDevOverview">
-          <span><strong>Software-Solutions</strong></span>
+          <span><strong>Software-Lösungen</strong></span>
             <p>
             Maßgeschneiderte Software für Effizienz und Zukunftssicherheit.
             </p>

@@ -1,11 +1,9 @@
 /* eslint-disable react/no-unescaped-entities */
-import MenuBar from "../ui/MenuBar";
-import FooterMain from "../ui/FooterMain";
 import Link from "next/link";
+
 const DatenschutzPage = () => {
   return (
     <>
-      <MenuBar />
       <section id="privacySection">
       <>
   <h1>Datenschutzerklärung</h1>
@@ -882,6 +880,8 @@ const DatenschutzPage = () => {
         premiumtext premiumtext premiumtext premiumtext premiumtext premiumtext
         premiumtext premiumtext premiumtext premiumtext premiumtext premiumtext
         premiumtext premiumtext premiumtext premiumtext premiumtext premiumtext
+        premiumtext premiumtext premiumtext premiumtext premiumtext premiumtext
+        premiumtext premiumtext premiumtext premiumtext premiumtext premiumtext
         premiumtext{" "}
       </span>
       ;{" "}
@@ -1367,6 +1367,7 @@ const DatenschutzPage = () => {
       Barrow Street, Dublin 4, Irland;{" "}
       <span className="">
         <strong>Rechtsgrundlagen:</strong> Berechtigte Interessen (Art. 6 Abs. 1
+       
         S. 1 lit. f) DSGVO);{" "}
       </span>
       <strong>Website:</strong>{" "}
@@ -1550,7 +1551,6 @@ const DatenschutzPage = () => {
 </>
 
       </section>
-      <FooterMain></FooterMain>
     </>
   );
 };

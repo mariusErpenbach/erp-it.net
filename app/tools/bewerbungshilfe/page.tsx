@@ -41,6 +41,7 @@ const BewerbungshilfePage: React.FC = () => {
         );
     }
 
+    
     return (
         <div id="bewerbungshilfe-page">
               <div id="bewerbungshilfe-overview">

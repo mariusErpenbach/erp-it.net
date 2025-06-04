@@ -1,9 +1,11 @@
-import XamlElementList from "@/app/ui/tools/XamlElementTable"
+"use client";
 
-export default function xamlListPage(){
-    return(
-        <div>
-            <XamlElementList></XamlElementList>
-        </div>
-    )
+import XamlElementList from "@/app/ui/tools/XamlElementTable";
+
+export default function XamlListPage() {
+  return (
+    <div>
+      <XamlElementList></XamlElementList>
+    </div>
+  );
 }

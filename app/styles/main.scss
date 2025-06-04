@@ -5,11 +5,10 @@
 // Main Page
 @use "Home.scss";
    
-    @use './Hypercube.scss';
-    @use "BannerTop.scss";
+   
     // Content Section Main Page
         @use "Quotes.scss";
-        @use "ContentSectionHome.scss";
+        @use 'MyProfessions.scss';
         @use './PolygonSlider.scss';
         @use "Skillchart.scss";
 
@@ -18,16 +17,35 @@
 @use "ArticlePage";
 
 // Footer Pages:
-
 @use "Impressum.scss";
 @use "Datenschutz.scss";
 @use 'Sitemap.scss';
+@use 'Hypercube.scss';
 @use 'Nutzungsbedingungen.scss';
 @use "Tools.scss";
     @use "PyLibs.scss";
     @use "TailwindClasses.scss";
     @use "Xaml-list.scss";
     @use "CsharpLibs.scss";
-@use "BewerbungshilfeForm.scss";
-@use "BewerbungshilfePDF.scss";
+    @use "cppLibs.scss";
+        //bewerbungshilfe
+        @use "BewerbungshilfeForm.scss";
+        @use "BewerbungshilfePDF.scss";
+// About Me
+@use "_Aboutme.scss";
+    @use "BannerTop.scss";
 
+body, html {
+  font-family: 'Roboto', 'Segoe UI', Arial, sans-serif !important;
+}
+
+body {
+    color: white;
+    background-color: #1e2952;
+    max-width: 100vw;
+margin-left:auto;
+margin-right:auto;
+    overflow-x: hidden;
+    margin-top:3.5em;
+
+  }

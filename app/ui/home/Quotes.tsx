@@ -14,7 +14,7 @@ const quotes = [
   { text: "If you failed to plan, you planned to fail.", author: "Benjamin Franklin" }
 ];
 
-export default function QuoteComponent() {
+export default function Quotes() {
   const [quoteIndex, setQuoteIndex] = useState(0);
   const [isFading, setIsFading] = useState(false);
 

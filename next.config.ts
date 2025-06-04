@@ -12,7 +12,12 @@ const allowedRemotePatterns: { protocol: "https"; hostname: string; pathname: st
   { protocol: "https", hostname: "p7q8s5f8.rocketcdn.me", pathname: "/**" },
   { protocol: "https", hostname: "erp-it.net", pathname: "/**" },
   { protocol: "https", hostname: "www.agrarheute.com", pathname: "/**" },
-  { protocol: "https", hostname: "uploads.erp-it.net", pathname: "/**" }
+  { protocol: "https", hostname: "uploads.erp-it.net", pathname: "/**" },
+  { protocol: "https", hostname: "www.digitalzentrum-zukunftskultur.de", pathname: "/**" },
+  { protocol: "https", hostname: "www.mobile-university.de", pathname: "/**" },
+  { protocol: "https", hostname: "alleherzen.de", pathname: "/**" },
+  { protocol: "https", hostname: "blog.iao.fraunhofer.de", pathname: "/**" },
+  { protocol: "https", hostname: "www.berger.team", pathname: "/**" },
 ];
 
 const nextConfig: NextConfig = {

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 // File: D:\github\erp-it.net\app\blog\page.tsx
+=======
+// File: /home/dci/Desktop/Github/erp-it.net/app/blog/page.tsx
+>>>>>>> d053006ab38f3fb060ab195b934230796bcf5d88
 import * as entry from '../../../../app/blog/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
