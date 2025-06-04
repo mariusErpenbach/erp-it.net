@@ -1,4 +1,4 @@
-// File: /home/dci/Desktop/Github/erp-it.net/app/blog/layout.tsx
+// File: D:\github\erp-it.net\app\blog\layout.tsx
 import * as entry from '../../../../app/blog/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

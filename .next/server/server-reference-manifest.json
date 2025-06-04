@@ -1,25 +1,13 @@
-<<<<<<< HEAD
 {
   "node": {
-    "400feb5cd9729fce0afb9089affb7e205f1099c490": {
-      "workers": {
-        "app/page": {
-          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22D%3A%5C%5Cgithub%5C%5Cerp-it.net%5C%5Capp%5C%5Cactions%5C%5CsubmitIdea.ts%22%2C%5B%7B%22id%22%3A%22400feb5cd9729fce0afb9089affb7e205f1099c490%22%2C%22exportedName%22%3A%22submitIdea%22%7D%5D%5D%5D&__client_imported__=true!",
-          "async": false
-        }
-      },
-      "layer": {
-        "app/page": "action-browser"
-      }
-    },
-    "0012a35dbb0b72ae768ec19b572b15f81a0077a18c": {
+    "007a0999fb2a88732477dad45b99ab39dc53022912": {
       "workers": {
         "app/blog/page": {
-          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22D%3A%5C%5Cgithub%5C%5Cerp-it.net%5C%5Capp%5C%5Cactions%5C%5CblogActions.ts%22%2C%5B%7B%22id%22%3A%220012a35dbb0b72ae768ec19b572b15f81a0077a18c%22%2C%22exportedName%22%3A%22fetchAllArticles%22%7D%2C%7B%22id%22%3A%2240e50642d586fed86cdefbb8f4df6410c7704794a7%22%2C%22exportedName%22%3A%22fetchArticleById%22%7D%5D%5D%5D&__client_imported__=true!",
+          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22D%3A%5C%5Cgithub%5C%5Cerp-it.net%5C%5Capp%5C%5Cactions%5C%5CblogActions.ts%22%2C%5B%7B%22id%22%3A%22007a0999fb2a88732477dad45b99ab39dc53022912%22%2C%22exportedName%22%3A%22fetchAllArticles%22%7D%2C%7B%22id%22%3A%2240dfe2a1604e76b58a8560d6c9ac16e18f5b03ff2f%22%2C%22exportedName%22%3A%22fetchArticleById%22%7D%5D%5D%5D&__client_imported__=true!",
           "async": false
         },
         "app/blog/[entry]/page": {
-          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22D%3A%5C%5Cgithub%5C%5Cerp-it.net%5C%5Capp%5C%5Cactions%5C%5CblogActions.ts%22%2C%5B%7B%22id%22%3A%220012a35dbb0b72ae768ec19b572b15f81a0077a18c%22%2C%22exportedName%22%3A%22fetchAllArticles%22%7D%2C%7B%22id%22%3A%2240e50642d586fed86cdefbb8f4df6410c7704794a7%22%2C%22exportedName%22%3A%22fetchArticleById%22%7D%5D%5D%5D&__client_imported__=true!",
+          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22D%3A%5C%5Cgithub%5C%5Cerp-it.net%5C%5Capp%5C%5Cactions%5C%5CblogActions.ts%22%2C%5B%7B%22id%22%3A%22007a0999fb2a88732477dad45b99ab39dc53022912%22%2C%22exportedName%22%3A%22fetchAllArticles%22%7D%2C%7B%22id%22%3A%2240dfe2a1604e76b58a8560d6c9ac16e18f5b03ff2f%22%2C%22exportedName%22%3A%22fetchArticleById%22%7D%5D%5D%5D&__client_imported__=true!",
           "async": false
         }
       },
@@ -28,14 +16,14 @@
         "app/blog/[entry]/page": "action-browser"
       }
     },
-    "40e50642d586fed86cdefbb8f4df6410c7704794a7": {
+    "40dfe2a1604e76b58a8560d6c9ac16e18f5b03ff2f": {
       "workers": {
         "app/blog/page": {
-          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22D%3A%5C%5Cgithub%5C%5Cerp-it.net%5C%5Capp%5C%5Cactions%5C%5CblogActions.ts%22%2C%5B%7B%22id%22%3A%220012a35dbb0b72ae768ec19b572b15f81a0077a18c%22%2C%22exportedName%22%3A%22fetchAllArticles%22%7D%2C%7B%22id%22%3A%2240e50642d586fed86cdefbb8f4df6410c7704794a7%22%2C%22exportedName%22%3A%22fetchArticleById%22%7D%5D%5D%5D&__client_imported__=true!",
+          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22D%3A%5C%5Cgithub%5C%5Cerp-it.net%5C%5Capp%5C%5Cactions%5C%5CblogActions.ts%22%2C%5B%7B%22id%22%3A%22007a0999fb2a88732477dad45b99ab39dc53022912%22%2C%22exportedName%22%3A%22fetchAllArticles%22%7D%2C%7B%22id%22%3A%2240dfe2a1604e76b58a8560d6c9ac16e18f5b03ff2f%22%2C%22exportedName%22%3A%22fetchArticleById%22%7D%5D%5D%5D&__client_imported__=true!",
           "async": false
         },
         "app/blog/[entry]/page": {
-          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22D%3A%5C%5Cgithub%5C%5Cerp-it.net%5C%5Capp%5C%5Cactions%5C%5CblogActions.ts%22%2C%5B%7B%22id%22%3A%220012a35dbb0b72ae768ec19b572b15f81a0077a18c%22%2C%22exportedName%22%3A%22fetchAllArticles%22%7D%2C%7B%22id%22%3A%2240e50642d586fed86cdefbb8f4df6410c7704794a7%22%2C%22exportedName%22%3A%22fetchArticleById%22%7D%5D%5D%5D&__client_imported__=true!",
+          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22D%3A%5C%5Cgithub%5C%5Cerp-it.net%5C%5Capp%5C%5Cactions%5C%5CblogActions.ts%22%2C%5B%7B%22id%22%3A%22007a0999fb2a88732477dad45b99ab39dc53022912%22%2C%22exportedName%22%3A%22fetchAllArticles%22%7D%2C%7B%22id%22%3A%2240dfe2a1604e76b58a8560d6c9ac16e18f5b03ff2f%22%2C%22exportedName%22%3A%22fetchArticleById%22%7D%5D%5D%5D&__client_imported__=true!",
           "async": false
         }
       },
@@ -46,8 +34,5 @@
     }
   },
   "edge": {},
-  "encryptionKey": "n8eTukD2V5r5RIliRHw4vZFcLTh1ziI57lmrpc05oo8="
+  "encryptionKey": "4YjE7g3PWZnA1ADiiZ3l/hR6ZG6NX8X98LToUZxzaFw="
 }
-=======
-{"node":{"40cecb35741436251f5bf1bcdca7968352874c4e6c":{"workers":{"app/aboutme/page":{"moduleId":"3713","async":false}},"layer":{"app/aboutme/page":"action-browser"}},"008ad6f0060007e539a833195873823177695fbb58":{"workers":{"app/blog/[entry]/page":{"moduleId":"9534","async":false},"app/blog/page":{"moduleId":"9534","async":false}},"layer":{"app/blog/[entry]/page":"action-browser","app/blog/page":"action-browser"}},"402610484fad6a6f39a7ffa90aad8b755e59f3e845":{"workers":{"app/blog/[entry]/page":{"moduleId":"9534","async":false},"app/blog/page":{"moduleId":"9534","async":false}},"layer":{"app/blog/[entry]/page":"action-browser","app/blog/page":"action-browser"}},"4006a50929253ea497df7e3c989acc499bcf7d5ef8":{"workers":{"app/tools/bewerbungshilfe/page":{"moduleId":"9060","async":false}},"layer":{"app/tools/bewerbungshilfe/page":"action-browser"}},"40efc0311036e801cb294a1591939c9d9d50cad21c":{"workers":{"app/tools/bewerbungshilfe/page":{"moduleId":"9060","async":false}},"layer":{"app/tools/bewerbungshilfe/page":"action-browser"}}},"edge":{},"encryptionKey":"DGpzwVVW7fU3uBeeFCrXJU21x+IP3HZOYDGqqTrrH7g="}
->>>>>>> d053006ab38f3fb060ab195b934230796bcf5d88

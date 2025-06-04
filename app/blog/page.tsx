@@ -27,7 +27,11 @@ export default function BlogOverview() {
 
       const response = await fetchAllArticles();
       if (response.success) {
-        setArticles(response.data ?? []);
+        const sortedArticles = (response.data ?? []).sort((a, b) => 
+          new Date(b.published_date).getTime() - new Date(a.published_date).getTime()
+        );
+        setArticles(sortedArticles);
+        console.log("Sortierte Artikel:", sortedArticles.map(a => ({ title: a.title, date: a.published_date })));
       } else {
         console.error("Fehler beim Laden der Artikel:", response);
       }
@@ -62,6 +66,7 @@ export default function BlogOverview() {
           <div className="content-wrapper">
             <div className="article-header-short">
               <h3>{article.title}</h3>
+              <span className="author">{article.author}</span>
             </div>
             <div className="text-container">
               <span>{new Date(article.published_date).toLocaleDateString()}</span>
